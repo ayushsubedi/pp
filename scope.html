@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scope &middot; RealEZ Planning Notes</title>
+<link rel="stylesheet" href="assets/css/bulma.min.css">
+<link rel="stylesheet" href="assets/css/theme.css">
+<link rel="stylesheet" href="assets/css/custom.css">
+<link rel="stylesheet" href="assets/css/notes.css">
+</head>
+<body>
+
+<div class="notes-topbar">
+  <div class="notes-topbar-inner">
+    <a href="index.html" class="notes-wordmark">RealEZ <span class="accent">Notes</span></a>
+    <nav class="notes-nav">
+      <a href="index.html">Index</a>
+      <a href="scenarios.html">Scenarios</a>
+      <a href="scope.html" class="is-active">Scope</a>
+      <a href="timeline.html">Timeline</a>
+      <a href="dependencies.html">Dependencies</a>
+      <a href="team.html">Team</a>
+      <a href="tech-stack.html">Tech Stack</a>
+      <a href="engineering-foundations.html">Foundations</a>
+      <a href="cost.html">Cost</a>
+      <a href="knowledge.md">Knowledge.md</a>
+    </nav>
+  </div>
+</div>
+
+<div class="notes-shell">
+
+  <p class="notes-eyebrow">Phase 1</p>
+  <h1 style="font-family: var(--font-serif); font-size: 1.9rem; margin-bottom: 0.6rem;">Scope</h1>
+  <p class="notes-lede">Every scope decision, side by side. Column C is highlighted where it matches the recommendation.</p>
+
+  <div class="table-scroll">
+    <table class="matrix-table">
+      <thead>
+        <tr>
+          <th>Dimension</th>
+          <th>A &middot; Full Scope</th>
+          <th>B &middot; Lean Pilot</th>
+          <th>C &middot; AI-Native</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>E-signature</th>
+          <td>Build in-house, ESIGN/UETA-compliant</td>
+          <td>3rd-party integration</td>
+          <td class="is-recommended">3rd-party integration</td>
+        </tr>
+        <tr>
+          <th>Money custody</th>
+          <td>Direct earnest-money custody (flagged as high-risk &mdash; see <a href="scenarios.html#scenario-a">Scenario A</a>)</td>
+          <td>None &mdash; referral/redirect only</td>
+          <td class="is-recommended">None &mdash; referral/redirect only</td>
+        </tr>
+        <tr>
+          <th>Pilot geography</th>
+          <td>2&ndash;3 states</td>
+          <td>1 state</td>
+          <td class="is-recommended">1 state</td>
+        </tr>
+        <tr>
+          <th>Product focus</th>
+          <td>Full transaction lifecycle, broadly</td>
+          <td>Transitional Document + Merchant Integration (two pillars)</td>
+          <td class="is-recommended">Transitional Document + Merchant Integration (two pillars)</td>
+        </tr>
+        <tr>
+          <th>Mobile scope</th>
+          <td>Full native parity, all 5 portals</td>
+          <td>Native for Agent + Client; web for Broker/Admin/Vendor</td>
+          <td class="is-recommended">Native for Agent + Client; web for Broker/Admin/Vendor</td>
+        </tr>
+        <tr>
+          <th>Founder's role</th>
+          <td>Hands-on: architecture, AWS, backend, CTO</td>
+          <td>Non-coding: team, vision, roadmap, architecture</td>
+          <td class="is-recommended">Non-coding: team, vision, roadmap, architecture</td>
+        </tr>
+        <tr>
+          <th>DevOps/Platform ownership</th>
+          <td>Founder, hands-on</td>
+          <td>Optional 5th hire, if budget allows</td>
+          <td class="is-recommended">Required hire, week 1 &mdash; foundations need an explicit owner</td>
+        </tr>
+        <tr>
+          <th>QA timing</th>
+          <td>Continuous from month 3</td>
+          <td>Continuous from month 2</td>
+          <td class="is-recommended">Continuous from month 1, alongside foundations</td>
+        </tr>
+        <tr>
+          <th>How we build</th>
+          <td>Traditional, human-authored</td>
+          <td>Traditional, human-authored</td>
+          <td class="is-recommended">AI-native (Claude access for every dev) with mandatory HITL review &mdash; see <a href="tech-stack.html">Tech Stack</a></td>
+        </tr>
+        <tr>
+          <th>Team size (new hires)</th>
+          <td>5</td>
+          <td>5</td>
+          <td class="is-recommended">6</td>
+        </tr>
+        <tr>
+          <th>Team size (total, incl. founder)</th>
+          <td>8</td>
+          <td>8 (7 builders + founder)</td>
+          <td class="is-recommended">9 (8 builders + founder)</td>
+        </tr>
+        <tr>
+          <th>Timeline</th>
+          <td>6 months</td>
+          <td>5 months (4 if smooth)</td>
+          <td class="is-recommended">5 months &mdash; slower start, safer finish</td>
+        </tr>
+        <tr>
+          <th>Est. build-team cost</th>
+          <td>See <a href="cost.html#cost-a">Cost &rarr; A</a></td>
+          <td>~$71,800 over 5 months &mdash; see <a href="cost.html#cost-b">Cost &rarr; B</a></td>
+          <td class="is-recommended">See <a href="cost.html#cost-c">Cost &rarr; C</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="notes-footer">Highlighted cells mark where the recommended scenario (C) lands. GTM and Compliance scope (pilot sourcing, legal, licensing) is intentionally out of this matrix &mdash; owned by other cofounders in every scenario.</p>
+
+</div>
+
+</body>
+</html>

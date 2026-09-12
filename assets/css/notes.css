@@ -1,0 +1,257 @@
+/* RealEZ Planning Notes — site-only additions layered on theme.css/custom.css tokens.
+   Nothing here redefines a color; everything reads from the existing --bulma-*/--text-*/--surface-*
+   custom properties so this site stays visually identical to the real product, light and dark. */
+
+body {
+  background: var(--realez-app-bg);
+}
+
+.notes-shell {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 1.5rem 4rem;
+}
+
+/* ---------------------------------------------------------------- Top bar */
+
+.notes-topbar {
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+  margin-bottom: 2.5rem;
+}
+.notes-topbar-inner {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 1.1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+}
+.notes-wordmark {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--text-strong);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.notes-wordmark .accent { color: var(--realez-secondary); }
+.notes-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.15rem 0.3rem;
+  margin-left: auto;
+}
+.notes-nav a {
+  padding: 0.4rem 0.65rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.notes-nav a:hover { background: var(--surface-alt); color: var(--text-strong); }
+.notes-nav a.is-active { background: var(--realez-primary-lite); color: var(--bulma-primary); }
+
+@media (max-width: 760px) {
+  .notes-nav { gap: 0.1rem; }
+  .notes-nav a { padding: 0.35rem 0.5rem; font-size: 0.8rem; }
+}
+
+/* ---------------------------------------------------------------- Page intro */
+
+.notes-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 0.4rem;
+}
+.notes-lede {
+  color: var(--text-secondary);
+  max-width: 70ch;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+/* ---------------------------------------------------------------- Tabs */
+
+.notes-tabs {
+  display: flex;
+  gap: 0.4rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 1.75rem;
+  flex-wrap: wrap;
+}
+.notes-tab-btn {
+  appearance: none;
+  border: none;
+  background: none;
+  font: inherit;
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  padding: 0.75rem 1.1rem;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  margin-bottom: -1px;
+}
+.notes-tab-btn:hover { color: var(--text-strong); }
+.notes-tab-btn.is-active { color: var(--bulma-primary); border-bottom-color: var(--bulma-primary); }
+.notes-tab-panel { display: none; }
+.notes-tab-panel.is-active { display: block; }
+
+/* ---------------------------------------------------------------- Recommendation callout */
+
+.notes-recommend {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  margin: 1.25rem 0 2rem;
+}
+.notes-recommend-tag {
+  flex-shrink: 0;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.3rem 0.6rem;
+  border-radius: 3px;
+  background: var(--badge-success-bg);
+  color: var(--badge-success-text);
+  border-left: 3px solid var(--badge-success-text);
+  white-space: nowrap;
+}
+
+/* ---------------------------------------------------------------- Card grid (index) */
+
+.notes-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+.notes-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+.notes-card .notes-card-title {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-strong);
+  margin-bottom: 0.4rem;
+}
+.notes-card .notes-card-desc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+.notes-card:hover { border-color: var(--border-strong); }
+
+/* ---------------------------------------------------------------- Tier / priority list */
+
+.tier-group { margin-bottom: 2rem; }
+.tier-group:last-child { margin-bottom: 0; }
+.tier-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin-bottom: 0.9rem;
+}
+.tier-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.7rem; }
+.tier-item {
+  display: grid;
+  grid-template-columns: 2.4rem 1fr;
+  gap: 0.9rem;
+  padding: 0.95rem 1.1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+.tier-item-num {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: var(--bulma-primary);
+  line-height: 1;
+}
+.tier-item h4 { margin: 0 0 0.3rem; font-size: 0.98rem; font-weight: 700; color: var(--text-strong); }
+.tier-item p { margin: 0; font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; }
+.tier-item .tier-when {
+  display: inline-block;
+  font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+  font-size: 0.72rem;
+  color: var(--text-faint);
+  margin-bottom: 0.35rem;
+}
+
+/* ---------------------------------------------------------------- Matrix / comparison table */
+
+.table-scroll { overflow-x: auto; }
+.matrix-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; min-width: 640px; }
+.matrix-table th, .matrix-table td { padding: 0.65rem 0.8rem; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; }
+.matrix-table thead th {
+  font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em;
+  color: var(--text-muted); font-weight: 700; border-bottom: 2px solid var(--border-strong);
+}
+.matrix-table thead th:first-child { color: var(--text-muted); }
+.matrix-table tbody th {
+  font-weight: 600; color: var(--text-strong); white-space: nowrap; font-size: 0.85rem;
+}
+.matrix-table tbody tr:hover { background: var(--surface-alt); }
+.matrix-table td.is-recommended,
+.matrix-table tr.is-recommended td,
+.matrix-table tr.is-recommended th { background: var(--realez-secondary-lite); }
+
+/* ---------------------------------------------------------------- Mermaid containers */
+
+.diagram-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  overflow-x: auto;
+}
+.diagram-card .mermaid { min-width: 640px; }
+
+/* ---------------------------------------------------------------- Pros/cons table */
+
+.proscons-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; margin-bottom: 1rem; }
+.proscons-table th, .proscons-table td { padding: 0.6rem 0.75rem; border: 1px solid var(--border); vertical-align: top; }
+.proscons-table thead th { background: var(--surface-alt); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-muted); }
+.proscons-table td.pros { color: var(--badge-success-text); }
+.proscons-table td.cons { color: var(--badge-danger-text); }
+.proscons-table ul { margin: 0; padding-left: 1.1rem; }
+.proscons-table li { margin-bottom: 0.3rem; }
+.proscons-table li:last-child { margin-bottom: 0; }
+
+/* ---------------------------------------------------------------- Checklist */
+
+.notes-checklist { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.55rem; }
+.notes-checklist li { display: flex; align-items: flex-start; gap: 0.7rem; font-size: 0.94rem; }
+.notes-checklist li::before {
+  content: ""; flex-shrink: 0; width: 0.95rem; height: 0.95rem; margin-top: 0.2rem;
+  border: 1.5px solid var(--border-strong); border-radius: 3px;
+}
+
+/* ---------------------------------------------------------------- Misc */
+
+.notes-footer {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.82rem;
+  color: var(--text-faint);
+  font-style: italic;
+}
+.mono { font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace; }

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RealEZ Planning Notes</title>
+<link rel="stylesheet" href="assets/css/bulma.min.css">
+<link rel="stylesheet" href="assets/css/theme.css">
+<link rel="stylesheet" href="assets/css/custom.css">
+<link rel="stylesheet" href="assets/css/notes.css">
+</head>
+<body>
+
+<div class="notes-topbar">
+  <div class="notes-topbar-inner">
+    <a href="index.html" class="notes-wordmark">RealEZ <span class="accent">Notes</span></a>
+    <nav class="notes-nav">
+      <a href="index.html" class="is-active">Index</a>
+      <a href="scenarios.html">Scenarios</a>
+      <a href="scope.html">Scope</a>
+      <a href="timeline.html">Timeline</a>
+      <a href="dependencies.html">Dependencies</a>
+      <a href="team.html">Team</a>
+      <a href="tech-stack.html">Tech Stack</a>
+      <a href="engineering-foundations.html">Foundations</a>
+      <a href="cost.html">Cost</a>
+      <a href="knowledge.md">Knowledge.md</a>
+    </nav>
+  </div>
+</div>
+
+<div class="notes-shell">
+
+  <p class="notes-eyebrow">RealEZ &middot; Founder Planning</p>
+  <h1 style="font-family: var(--font-serif); font-size: 2.1rem; margin-bottom: 0.6rem;">Phase 1 Planning Notes</h1>
+  <p class="notes-lede">
+    A growing collection of build-planning notes for RealEZ's Phase 1: three full scenarios (scope,
+    team, timeline, cost), a deep look at who we actually need to hire, tech-stack reasoning, and the
+    engineering foundations we're committing to from day one. This is a living reference &mdash;
+    expect more pages over time.
+  </p>
+
+  <div class="hairline-card" style="margin-bottom: 2.5rem;">
+    <p class="section-title" style="margin-bottom: 0.6rem;">Three scenarios, side by side</p>
+    <table class="matrix-table" style="min-width: 0;">
+      <thead>
+        <tr><th>Scenario</th><th>Shape</th><th></th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>A &middot; Full Scope</th>
+          <td>6 months &middot; 2&ndash;3 states &middot; in-house ESIGN e-signature &middot; direct earnest-money custody</td>
+          <td><a href="scenarios.html#scenario-a">View &rarr;</a></td>
+        </tr>
+        <tr>
+          <th>B &middot; Lean Pilot</th>
+          <td>5 months &middot; 1 state &middot; 3rd-party e-signature &middot; no custody &middot; Nepal-costed</td>
+          <td><a href="scenarios.html#scenario-b">View &rarr;</a></td>
+        </tr>
+        <tr class="is-recommended">
+          <th>C &middot; AI-Native, Foundations-First</th>
+          <td>Same lean scope as B, rebuilt around AI-assisted development with HITL review and mandatory engineering foundations from week 1</td>
+          <td><a href="scenarios.html#scenario-c">View &rarr;</a></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="notes-recommend" style="margin-top: 1.1rem; margin-bottom: 0;">
+      <span class="notes-recommend-tag">Recommended</span>
+      <p style="margin: 0; font-size: 0.9rem; color: var(--text-secondary);">
+        Scenario C. Same cost and timeline ballpark as B, but the team and process are shaped for how
+        we're actually building this &mdash; see <a href="team.html">Team</a> for the full reasoning.
+      </p>
+    </div>
+  </div>
+
+  <p class="section-title">Every page</p>
+  <div class="notes-card-grid">
+    <a class="notes-card hairline-card" href="scenarios.html">
+      <div class="notes-card-title">Scenarios</div>
+      <div class="notes-card-desc">Full A / B / C comparison, tabbed &mdash; objective, team, timeline, exit criteria, risks for each.</div>
+    </a>
+    <a class="notes-card hairline-card" href="scope.html">
+      <div class="notes-card-title">Scope</div>
+      <div class="notes-card-desc">One matrix: e-signature, custody, geography, product focus, mobile, team size, cost &mdash; across all three.</div>
+    </a>
+    <a class="notes-card hairline-card" href="timeline.html">
+      <div class="notes-card-title">Timeline</div>
+      <div class="notes-card-desc">Gantt chart per scenario &mdash; what happens month by month.</div>
+    </a>
+    <a class="notes-card hairline-card" href="dependencies.html">
+      <div class="notes-card-title">Dependencies</div>
+      <div class="notes-card-desc">What engineering is blocked on from GTM/Compliance, and the internal build dependencies.</div>
+    </a>
+    <a class="notes-card hairline-card" href="team.html">
+      <div class="notes-card-title">Team</div>
+      <div class="notes-card-desc">Who we actually need, in what order, and why &mdash; the deep hiring analysis.</div>
+    </a>
+    <a class="notes-card hairline-card" href="tech-stack.html">
+      <div class="notes-card-title">Tech Stack</div>
+      <div class="notes-card-desc">Language and framework pros/cons, and how AI-native + HITL building actually works day to day.</div>
+    </a>
+    <a class="notes-card hairline-card" href="engineering-foundations.html">
+      <div class="notes-card-title">Foundations</div>
+      <div class="notes-card-desc">The concrete CI/CD, testing, review, and security practices we're not deferring.</div>
+    </a>
+    <a class="notes-card hairline-card" href="cost.html">
+      <div class="notes-card-title">Cost</div>
+      <div class="notes-card-desc">Nepal-based senior team costs, per scenario &mdash; payroll, overhead, hardware, office.</div>
+    </a>
+    <a class="notes-card hairline-card" href="knowledge.md">
+      <div class="notes-card-title">Knowledge.md</div>
+      <div class="notes-card-desc">Every page above, as one long reference document.</div>
+    </a>
+  </div>
+
+  <p class="notes-footer">Founder/business planning notes, not product documentation &mdash; kept separate from the RealEZ app repo on purpose. Figures throughout are planning estimates, not commitments.</p>
+
+</div>
+
+<script src="assets/js/notes.js"></script>
+</body>
+</html>

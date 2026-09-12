@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Engineering Foundations &middot; RealEZ Planning Notes</title>
+<link rel="stylesheet" href="assets/css/bulma.min.css">
+<link rel="stylesheet" href="assets/css/theme.css">
+<link rel="stylesheet" href="assets/css/custom.css">
+<link rel="stylesheet" href="assets/css/notes.css">
+</head>
+<body>
+
+<div class="notes-topbar">
+  <div class="notes-topbar-inner">
+    <a href="index.html" class="notes-wordmark">RealEZ <span class="accent">Notes</span></a>
+    <nav class="notes-nav">
+      <a href="index.html">Index</a>
+      <a href="scenarios.html">Scenarios</a>
+      <a href="scope.html">Scope</a>
+      <a href="timeline.html">Timeline</a>
+      <a href="dependencies.html">Dependencies</a>
+      <a href="team.html">Team</a>
+      <a href="tech-stack.html">Tech Stack</a>
+      <a href="engineering-foundations.html" class="is-active">Foundations</a>
+      <a href="cost.html">Cost</a>
+      <a href="knowledge.md">Knowledge.md</a>
+    </nav>
+  </div>
+</div>
+
+<div class="notes-shell">
+
+  <p class="notes-eyebrow">Not deferring this</p>
+  <h1 style="font-family: var(--font-serif); font-size: 1.9rem; margin-bottom: 0.6rem;">Engineering Foundations</h1>
+  <p class="notes-lede">"Strong foundations from day 1" only means something if it's a concrete, checkable list &mdash; not a value statement. This is that list. Owned by the DevOps/Platform Engineer and the Founding Engineer together, built in month 1 before either product pillar.</p>
+
+  <h2 class="section-title">Source control &amp; review</h2>
+  <ul class="notes-checklist">
+    <li>Trunk-based development, short-lived branches &mdash; not long-running feature branches that drift and merge painfully</li>
+    <li>No direct pushes to main; every change goes through a pull request</li>
+    <li>Minimum 1 senior approval to merge; <strong>2 approvals</strong> for anything touching commission math, e-signature integration, jurisdiction rules, or auth/permissions</li>
+    <li>PR template requires: what changed, why, how it was tested &mdash; AI-authored or not</li>
+  </ul>
+
+  <h2 class="section-title" style="margin-top: 2rem;">CI pipeline &mdash; required to merge, not advisory</h2>
+  <ul class="notes-checklist">
+    <li>Lint (formatting + style) fails the build, not just warns</li>
+    <li>Type-check (mypy/pyright for Python, Dart's analyzer for Flutter)</li>
+    <li>Unit tests + integration tests &mdash; a defined coverage floor on the two pillars specifically, not just an aggregate number that can hide gaps</li>
+    <li>Dependency/security scanning (e.g. Dependabot or Snyk) on every PR, not a quarterly afterthought</li>
+    <li>Build must succeed for both the API and the Flutter app before merge</li>
+  </ul>
+
+  <h2 class="section-title" style="margin-top: 2rem;">Infrastructure</h2>
+  <ul class="notes-checklist">
+    <li>Infrastructure as code (Terraform or AWS CDK) &mdash; environments are reproducible from a repo, not hand-configured in the console</li>
+    <li>Separate staging and production, with the same IaC deploying both</li>
+    <li>Secrets in AWS Secrets Manager / Parameter Store &mdash; never in code, never in plain env files committed anywhere</li>
+    <li>IAM least-privilege from the start, not "make it work, lock it down later"</li>
+    <li>Automated backups with a tested restore process, not just backups nobody's confirmed work</li>
+  </ul>
+
+  <h2 class="section-title" style="margin-top: 2rem;">Observability</h2>
+  <ul class="notes-checklist">
+    <li>Structured logging (not print statements) from day one</li>
+    <li>Error tracking (e.g. Sentry-equivalent) wired in before the first real user touches the system</li>
+    <li>Basic uptime/health monitoring on every deployed service</li>
+    <li>A place these actually get looked at &mdash; alerting to somewhere a human will see it, not a dashboard nobody opens</li>
+  </ul>
+
+  <h2 class="section-title" style="margin-top: 2rem;">Decisions &amp; process</h2>
+  <ul class="notes-checklist">
+    <li>Lightweight Architecture Decision Records (ADRs) for anything hard to reverse &mdash; database schema for the Transitional Document, the e-sig vendor choice, the commission-ledger design</li>
+    <li>A written incident/postmortem practice, even at this size &mdash; what broke, why, what changes so it doesn't happen the same way twice</li>
+    <li>A written AI-usage policy (see <a href="tech-stack.html">Tech Stack</a> for the actual safe/always-human-verified split) that's part of onboarding, not tribal knowledge</li>
+  </ul>
+
+  <div class="journey-callout" style="margin-top: 2rem;">
+    <strong>Why this is a hire, not a hope:</strong> if nobody's job is explicitly "make sure this list
+    stays true," it doesn't happen &mdash; it either gets skipped under deadline pressure, or it gets
+    retrofitted later at several times the cost, usually right after an incident forces the issue.
+    That's what the DevOps/Platform Engineer in <a href="team.html">Scenario C's team plan</a> is for.
+  </div>
+
+</div>
+
+</body>
+</html>

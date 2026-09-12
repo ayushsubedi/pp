@@ -1,0 +1,282 @@
+/* RealEZ brand theme — overrides Bulma 1.0.4's CSS custom properties.
+   Loaded after vendor/bulma.min.css.
+
+   Design system: one distinctive accent (a single orange, #ff8800) against an
+   otherwise neutral ink/paper palette — deliberately not a "primary blue +
+   secondary orange" two-brand-color scheme. Primary and link both point at
+   the same accent hue below so every interactive surface (buttons, links,
+   active nav, chart highlights, the wordmark's second syllable) reads as one
+   consistent color, not a rotating cast of brand colors. */
+
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url("../fonts/manrope/Manrope-Variable.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Fraunces";
+  font-style: normal;
+  font-weight: 300 900;
+  font-display: swap;
+  src: url("../fonts/fraunces/Fraunces-Variable.woff2") format("woff2");
+}
+
+:root {
+  /* neutral base: flatten Bulma's default blue-tinted gray toward true neutral
+     to match RealEZ's slate-gray hairline borders */
+  --bulma-scheme-h: 220deg;
+  --bulma-scheme-s: 4%;
+
+  /* primary = the one RealEZ accent, #ff8800 */
+  --bulma-primary-h: 32deg;
+  --bulma-primary-s: 100%;
+  --bulma-primary-l: 50%;
+
+  /* link mirrors primary — one accent color, not a separate blue */
+  --bulma-link-h: 32deg;
+  --bulma-link-s: 100%;
+  --bulma-link-l: 50%;
+
+  /* danger = RealEZ red #f12525 */
+  --bulma-danger-h: 0deg;
+  --bulma-danger-s: 88%;
+  --bulma-danger-l: 55%;
+
+  /* success = RealEZ supplementary green #34A853 */
+  --bulma-success-h: 136deg;
+  --bulma-success-s: 53%;
+  --bulma-success-l: 43%;
+
+  /* warning = RealEZ supplementary yellow #FABF01 */
+  --bulma-warning-h: 46deg;
+  --bulma-warning-s: 99%;
+  --bulma-warning-l: 49%;
+
+  /* border radius: cap at RealEZ's 8px ceiling */
+  --bulma-radius-small: 4px;
+  --bulma-radius: 6px;
+  --bulma-radius-medium: 8px;
+  --bulma-radius-large: 8px;
+  /* --bulma-radius-rounded intentionally left at Bulma's default 9999px —
+     full-pill token for avatars/tags, not part of the "large corner" cap */
+
+  /* RealEZ's one accent, in hex (same hue as --bulma-primary/--bulma-link
+     above) plus its tint — kept as its own token since a handful of
+     components need the flat hex rather than Bulma's HSL pipeline. Named
+     "secondary" for historical reasons; there is no second brand color. */
+  --realez-secondary: #ff8800;
+  --realez-secondary-lite: #ffe5cc;
+  --realez-secondary-invert: #ffffff;
+  --realez-primary-lite: #ffe5cc;
+  --realez-app-bg: #f9f8f6;
+
+  --bulma-body-family: "Manrope", sans-serif;
+  --bulma-family-primary: "Manrope", sans-serif;
+  --font-serif: "Fraunces", Georgia, "Times New Roman", serif;
+
+  /* ---- RealEZ semantic tokens (light) — every literal color custom.css
+     uses beyond Bulma's own palette, named by role so the dark theme below
+     can override them in one place instead of chasing hex codes through
+     every component class. */
+  --surface: #ffffff;
+  --surface-alt: #f4f6f8;
+  --surface-raised: #f7f8fa;
+  --surface-hover: #f9fafb;
+  --border: #e5e7eb;
+  --border-soft: #eef1f4;
+  --border-strong: #d1d5db;
+  --text-strong: #1f2933;
+  --text: #33414f;
+  --text-secondary: #4a5568;
+  --text-muted: #6b7684;
+  --text-tertiary: #5c6b7a;
+  --text-faint: #8a95a1;
+  --text-faintest: #c2cad2;
+  --text-disclaimer: #a2acb5;
+  --badge-warning-bg: #fff7cf;
+  --badge-warning-text: #806600;
+  --badge-success-bg: #e3f6ea;
+  --badge-success-text: #1a7a41;
+  --badge-info-bg: #eceef1;
+  --badge-info-text: #3d4650;
+  --badge-danger-bg: #fde4e4;
+  --badge-danger-text: #a11d1d;
+  --revenue-text: #7a4500;
+  --tour-border: #ffc670;
+  --tour-title: #7a4500;
+}
+
+/* RealEZ has no dark theme designed anywhere — every color/contrast choice
+   in custom.css assumes a light scheme. Bulma 1.0.4 ships its own automatic
+   dark scheme keyed off the viewer's OS/browser `prefers-color-scheme`,
+   which flips table/card/input backgrounds near-black while custom.css's
+   text-color overrides stay tuned for a light background — unreadable
+   low-contrast tables and inputs on any device set to dark mode. Pin the
+   scheme to light unconditionally by re-asserting Bulma's own light-mode
+   variable values inside the same media query, so it always loses regardless
+   of the viewer's preference. Values below are copied verbatim from Bulma's
+   default (non-dark) :root block — see app/static/vendor/bulma.min.css. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bulma-white-on-scheme-l: 35%;
+    --bulma-black-on-scheme-l: 4%;
+    --bulma-light-on-scheme-l: 36%;
+    --bulma-dark-on-scheme-l: 21%;
+    --bulma-text-on-scheme-l: 29%;
+    --bulma-primary-on-scheme-l: 21%;
+    --bulma-link-on-scheme-l: 58%;
+    --bulma-info-on-scheme-l: 25%;
+    --bulma-success-on-scheme-l: 23%;
+    --bulma-warning-on-scheme-l: 23%;
+    --bulma-danger-on-scheme-l: 40%;
+    --bulma-scheme-brightness: light;
+    --bulma-scheme-main-l: 100%;
+    --bulma-scheme-main-bis-l: 98%;
+    --bulma-scheme-main-ter-l: 96%;
+    --bulma-soft-l: 90%;
+    --bulma-bold-l: 20%;
+    --bulma-soft-invert-l: 20%;
+    --bulma-bold-invert-l: 90%;
+    --bulma-background-l: 96%;
+    --bulma-border-weak-l: 93%;
+    --bulma-border-l: 86%;
+    --bulma-text-weak-l: 48%;
+    --bulma-text-l: 29%;
+    --bulma-text-strong-l: 21%;
+    --bulma-text-title-l: 14%;
+    --bulma-hover-background-l-delta: -5%;
+    --bulma-active-background-l-delta: -10%;
+    --bulma-hover-border-l-delta: -10%;
+    --bulma-active-border-l-delta: -20%;
+    --bulma-hover-color-l-delta: -5%;
+    --bulma-active-color-l-delta: -10%;
+    --bulma-shadow-h: 221deg;
+    --bulma-shadow-s: 14%;
+    --bulma-shadow-l: 4%;
+  }
+}
+
+/* A real, opt-in dark theme — distinct from the OS-driven scheme neutralized
+   above. This one only ever activates when the viewer explicitly flips the
+   toggle in the header (app/static/js/app.js writes the choice to
+   localStorage and stamps data-theme on <html>); `prefers-color-scheme`
+   alone never triggers it. `:root[data-theme="dark"]` has higher CSS
+   specificity than the bare `:root` inside the media query above (an
+   attribute selector always outweighs a lone pseudo-class, independent of
+   media-query nesting or source order), so this wins whenever it's set,
+   on any OS preference. The --bulma-* values are Bulma's own real dark
+   palette, copied verbatim from its dark media query in
+   app/static/vendor/bulma.min.css; everything else is a RealEZ-specific
+   token declared in the :root block above and consumed by custom.css. */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bulma-white-on-scheme-l: 100%;
+  --bulma-black-on-scheme-l: -51%;
+  --bulma-light-on-scheme-l: 96%;
+  --bulma-dark-on-scheme-l: 56%;
+  --bulma-text-on-scheme-l: 54%;
+  --bulma-primary-on-scheme-l: 41%;
+  --bulma-link-on-scheme-l: 73%;
+  --bulma-info-on-scheme-l: 70%;
+  --bulma-success-on-scheme-l: 53%;
+  --bulma-warning-on-scheme-l: 53%;
+  --bulma-danger-on-scheme-l: 70%;
+  --bulma-scheme-brightness: dark;
+  --bulma-scheme-main-l: 9%;
+  --bulma-scheme-main-bis-l: 11%;
+  --bulma-scheme-main-ter-l: 13%;
+  --bulma-soft-l: 20%;
+  --bulma-bold-l: 90%;
+  --bulma-soft-invert-l: 90%;
+  --bulma-bold-invert-l: 20%;
+  --bulma-background-l: 14%;
+  --bulma-border-weak-l: 21%;
+  --bulma-border-l: 24%;
+  --bulma-text-weak-l: 53%;
+  --bulma-text-l: 71%;
+  --bulma-text-strong-l: 93%;
+  --bulma-text-title-l: 100%;
+  --bulma-hover-background-l-delta: 5%;
+  --bulma-active-background-l-delta: 10%;
+  --bulma-hover-border-l-delta: 10%;
+  --bulma-active-border-l-delta: 20%;
+  --bulma-hover-color-l-delta: 5%;
+  --bulma-active-color-l-delta: 10%;
+  --bulma-shadow-h: 0deg;
+  --bulma-shadow-s: 0%;
+  --bulma-shadow-l: 100%;
+
+  --realez-app-bg: #10161d;
+  --realez-primary-lite: #4a3018;
+  --realez-secondary-lite: #4a3018;
+
+  --surface: #1a2129;
+  --surface-alt: #232c35;
+  --surface-raised: #1f2830;
+  --surface-hover: #232c35;
+  --border: #333f4a;
+  --border-soft: #2a3339;
+  --border-strong: #46525e;
+  --text-strong: #f1f4f7;
+  --text: #ccd4db;
+  --text-secondary: #aeb8c2;
+  --text-muted: #98a3ae;
+  --text-tertiary: #98a3ae;
+  --text-faint: #7c8793;
+  --text-faintest: #55606b;
+  --text-disclaimer: #6b7684;
+  --badge-warning-bg: #4a3c0a;
+  --badge-warning-text: #f0c948;
+  --badge-success-bg: #123821;
+  --badge-success-text: #4ade80;
+  --badge-info-bg: #2a3339;
+  --badge-info-text: #c3ccd4;
+  --badge-danger-bg: #451515;
+  --badge-danger-text: #f87171;
+  --revenue-text: #f0b25c;
+  --tour-border: #6b4a1f;
+  --tour-title: #f0b25c;
+}
+
+/* Defensive final cap mirroring RealEZ's own literal !important pattern, for any
+   component whose radius isn't wired to the tokens above. */
+.card, .box, .modal-card-body, .modal-card-head, .modal-card-foot,
+.dropdown-menu, .message, .notification, .panel, .input, .button, .select select {
+  border-radius: 8px !important;
+}
+
+.button.is-secondary {
+  background-color: var(--realez-secondary);
+  color: var(--realez-secondary-invert);
+  border-color: transparent;
+}
+.button.is-secondary:hover { filter: brightness(0.92); }
+.button.is-secondary:focus { box-shadow: 0 0 0 0.125em rgba(255, 136, 0, 0.25); }
+
+.tag.is-secondary {
+  background-color: var(--realez-secondary-lite);
+  color: var(--revenue-text);
+}
+
+/* Bulma's .is-outlined only defines visible text/border when paired with a
+   color modifier (.is-primary, .is-danger, ...) — a bare "just outlined,
+   no particular color" button (used throughout as the app's default
+   secondary-action style) is otherwise invisible: transparent background,
+   undefined border/text color. Give the bare case sensible neutral styling. */
+.button.is-outlined:not(.is-primary):not(.is-secondary):not(.is-danger):not(.is-link):not(.is-info):not(.is-warning):not(.is-success) {
+  background-color: var(--surface);
+  border-color: var(--border-strong);
+  color: var(--text);
+}
+.button.is-outlined:not(.is-primary):not(.is-secondary):not(.is-danger):not(.is-link):not(.is-info):not(.is-warning):not(.is-success):hover {
+  border-color: var(--bulma-primary);
+  color: var(--bulma-primary);
+}
+
+body {
+  background-color: var(--realez-app-bg);
+  font-family: "Manrope", sans-serif;
+}

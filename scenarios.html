@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scenarios &middot; RealEZ Planning Notes</title>
+<link rel="stylesheet" href="assets/css/bulma.min.css">
+<link rel="stylesheet" href="assets/css/theme.css">
+<link rel="stylesheet" href="assets/css/custom.css">
+<link rel="stylesheet" href="assets/css/notes.css">
+</head>
+<body>
+
+<div class="notes-topbar">
+  <div class="notes-topbar-inner">
+    <a href="index.html" class="notes-wordmark">RealEZ <span class="accent">Notes</span></a>
+    <nav class="notes-nav">
+      <a href="index.html">Index</a>
+      <a href="scenarios.html" class="is-active">Scenarios</a>
+      <a href="scope.html">Scope</a>
+      <a href="timeline.html">Timeline</a>
+      <a href="dependencies.html">Dependencies</a>
+      <a href="team.html">Team</a>
+      <a href="tech-stack.html">Tech Stack</a>
+      <a href="engineering-foundations.html">Foundations</a>
+      <a href="cost.html">Cost</a>
+      <a href="knowledge.md">Knowledge.md</a>
+    </nav>
+  </div>
+</div>
+
+<div class="notes-shell">
+
+  <p class="notes-eyebrow">Phase 1</p>
+  <h1 style="font-family: var(--font-serif); font-size: 1.9rem; margin-bottom: 0.6rem;">Scenarios</h1>
+  <p class="notes-lede">Three full plans for the same six-ish months, compared on the same structure so they're actually comparable. Jump straight to one, or read all three.</p>
+
+  <div class="notes-tabs" data-panels="#scenario-panels">
+    <button class="notes-tab-btn is-active" data-tab-target="#scenario-a">A &middot; Full Scope</button>
+    <button class="notes-tab-btn" data-tab-target="#scenario-b">B &middot; Lean Pilot</button>
+    <button class="notes-tab-btn" data-tab-target="#scenario-c">C &middot; AI-Native</button>
+  </div>
+
+  <div id="scenario-panels">
+
+  <!-- ============================== SCENARIO A ============================== -->
+  <section id="scenario-a" class="notes-tab-panel is-active">
+    <h2 class="section-title">Objective</h2>
+    <p>Live pilot with 1&ndash;2 real brokerages across 2&ndash;3 states by month 6: real agents, real clients, real transactions, real legal and financial stakes.</p>
+
+    <h2 class="section-title" style="margin-top: 1.75rem;">Key inputs</h2>
+    <div class="table-scroll">
+      <table class="matrix-table" style="min-width: 0;">
+        <tbody>
+          <tr><th>E-signature</th><td>Build in-house, ESIGN/UETA-compliant</td></tr>
+          <tr><th>Mobile</th><td>Full native (iOS + Android) parity with web</td></tr>
+          <tr><th>Pilot geography</th><td>2&ndash;3 states</td></tr>
+          <tr><th>Money handling</th><td>RealEZ holds/moves earnest money directly</td></tr>
+          <tr><th>Timeline</th><td>6 months</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="journey-callout" style="margin-top: 1.5rem;">
+      <strong>Flagged risk:</strong> direct earnest-money custody in 2&ndash;3 states inside 6 months is a
+      state-licensing problem, not an engineering one &mdash; broker trust accounts / escrow licenses are
+      typically per-state and slow to obtain properly. Recommendation: partner with a licensed
+      escrow/title company for Phase 1 (RealEZ still looks and feels like it's tracking the money);
+      treat true self-custody as a Phase 2+ goal.
+    </div>
+
+    <h2 class="section-title" style="margin-top: 1.75rem;">Team (5 new hires)</h2>
+    <p>You (architect/AWS/backend/CTO, hands-on) + 1 FTE backend dev + 1 FTE Flutter dev, plus:</p>
+    <ol class="tier-list" style="list-style: decimal; padding-left: 1.3rem;">
+      <li>Senior Backend Engineer #2</li>
+      <li>Compliance &amp; Trust Operations Lead</li>
+      <li>Product/UX Designer</li>
+      <li>QA/Automation Engineer</li>
+      <li>Pilot/GTM Lead</li>
+    </ol>
+
+    <h2 class="section-title" style="margin-top: 1.75rem;">Timeline shape</h2>
+    <p>Months 1&ndash;2 Foundation &middot; Months 3&ndash;4 Build &middot; Months 5&ndash;6 Harden &amp; Launch. See <a href="timeline.html#gantt-a">Gantt</a>.</p>
+
+    <h2 class="section-title" style="margin-top: 1.75rem;">Exit criteria</h2>
+    <ul class="notes-checklist">
+      <li>10&ndash;20 real transactions closed end-to-end across the pilot brokerages</li>
+      <li>E-signature engine reviewed and approved by outside counsel, no open exceptions</li>
+      <li>Escrow-partner trust flow running with zero reconciliation discrepancies</li>
+      <li>Native iOS + Android apps live for Agent and Client at minimum</li>
+      <li>Jurisdiction rules validated for all pilot states by counsel</li>
+      <li>Pen test complete, critical/high findings remediated</li>
+    </ul>
+
+    <h2 class="section-title" style="margin-top: 1.75rem;">Top risks</h2>
+    <ul class="notes-checklist">
+      <li>Money-transmitter/escrow licensing arriving late or being shortcut</li>
+      <li>Full native parity across 5 portals with one Flutter engineer</li>
+      <li>Legal review as a bottleneck across e-sig, escrow, and 2&ndash;3 state pilot agreements</li>
+      <li>Founder bandwidth split across architecture, AWS, backend, and leadership</li>
+    </ul>
+  </section>
+
+  <!-- ============================== SCENARIO B ============================== -->
+  <section id="scenario-b" class="notes-tab-panel">
+    <h2 class="section-title">Objective</h2>
+    <p>Have the product ready &mdash; technically and legally-reviewable &mdash; for a live pilot with 1&ndash;2 real brokerages in a single state, contingent on Compliance/GTM (owned by other cofounders) landing their pieces on a compatible timeline.</p>
+
+    <h2 class="section-title" style="margin-top: 1.75rem;">Key inputs</h2>
+    <div class="table-scroll">
+      <table class="matrix-table" style="min-width: 0;">
+        <tbody>
+          <tr><th>Your role</th><td>Team, vision, roadmap, architecture &mdash; not hands-on building</td></tr>
+          <tr><th>E-signature</th><td>3rd-party integration, not built in-house</td></tr>
+          <tr><th>Pilot geography</th><td>1 state</td></tr>
+          <tr><th>Money handling</th><td>No direct earnest-money custody</td></tr>
+          <tr><th>Product focus</th><td>Transitional Document + Merchant Integration, the two pillars</td></tr>
+          <tr><th>Team location</th><td>Nepal-based, all senior</td></tr>
+          <tr><th>Timeline</th><td>5 months (4 if hiring lands fast)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="section-title" style="margin-top: 1.75rem;">Team (5 new hires)</h2>
+    <p>You (non-coding) + 1 FTE backend dev + 1 FTE Flutter dev, plus:</p>
+    <ol class="tier-list" style="list-style: decimal; padding-left: 1.3rem;">
+      <li>Senior Backend Engineer #2</li>
+      <li>Second Mobile/Flutter Engineer</li>
+      <li>Product/UX Designer</li>
+      <li>QA/Automation Engineer</li>
+      <li>Project Manager</li>
+    </ol>
+
+    <h2 class="section-title" style="margin-top: 1.75rem;">Timeline shape</h2>
+    <p>Month 1 Foundation &middot; Months 2&ndash;3 Core Build (the two pillars) &middot; Months 4&ndash;5 Test &amp; Polish. See <a href="timeline.html#gantt-b">Gantt</a>.</p>
+
+    <h2 class="section-title" style="margin-top: 1.75rem;">Exit criteria</h2>
+    <ul class="notes-checklist">
+      <li>Transitional Document feature-complete and demoable end to end</li>
+      <li>Merchant Integration live: vendor onboarding, real payments, accurate commission tracking</li>
+      <li>3rd-party e-signature wired into the transaction flow, signed docs stored/retrievable</li>
+      <li>Jurisdiction rules validated for the single pilot state</li>
+      <li>Native iOS + Android apps live for Agent and Client at minimum</li>
+      <li>QA regression suite passing; pen-test critical/high findings remediated</li>
+    </ul>
+
+    <h2 class="section-title" style="margin-top: 1.75rem;">Top risks</h2>
+    <ul class="notes-checklist">
+      <li>Hiring five seniors fast enough to hit the 5-month window</li>
+      <li>E-sig vendor contracting delay blocking backend integration</li>
+      <li>Testing compressed into the last two months</li>
+      <li>Mobile parity beyond Agent/Client sliding into Phase 2</li>
+    </ul>
+  </section>
+
+  <!-- ============================== SCENARIO C ============================== -->
+  <section id="scenario-c" class="notes-tab-panel">
+    <div class="notes-recommend">
+      <span class="notes-recommend-tag">Recommended</span>
+      <p style="margin: 0; font-size: 0.9rem; color: var(--text-secondary);">Same product scope and cost ballpark as B &mdash; the team and process are what change.</p>
+    </div>
+
+    <h2 class="section-title">Objective</h2>
+    <p>The same pilot-ready product as Scenario B, built with AI-assisted development and human-in-the-loop review, on engineering foundations that are load-bearing from week 1 rather than retrofitted once something breaks.</p>
+
+    <h2 class="section-title" style="margin-top: 1.75rem;">Key inputs</h2>
+    <div class="table-scroll">
+      <table class="matrix-table" style="min-width: 0;">
+        <tbody>
+          <tr><th>Your role</th><td>Team, vision, roadmap, architecture &mdash; not hands-on building</td></tr>
+          <tr><th>How we build</th><td>AI-native (Claude coding access for every developer), with mandatory human-in-the-loop review &mdash; see <a href="tech-stack.html">Tech Stack</a></td></tr>
+          <tr><th>E-signature</th><td>3rd-party integration, not built in-house</td></tr>
+          <tr><th>Pilot geography</th><td>1 state</td></tr>
+          <tr><th>Money handling</th><td>No direct earnest-money custody</td></tr>
+          <tr><th>Product focus</th><td>Transitional Document + Merchant Integration</td></tr>
+          <tr><th>Engineering foundations</th><td>CI/CD, IaC, security scanning, and review discipline required from week 1 &mdash; see <a href="engineering-foundations.html">Foundations</a></td></tr>
+          <tr><th>Timeline</th><td>5 months &mdash; slower to start, safer to finish, not faster</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="section-title" style="margin-top: 1.75rem;">Why this team differs from B</h2>
+    <p>AI coding assistance amplifies whoever directs it. A senior engineer with Claude ships fast <em>and</em> correct; a junior engineer with Claude ships fast and confidently wrong &mdash; dangerous specifically where the product touches real legal/financial logic. So the team gets more senior for feature work, but two things move in the other direction: DevOps/Platform becomes a <strong>required</strong> hire (not optional, since the founder isn't hands-on and foundations need an explicit owner), and QA/Verification starts in month 1 instead of month 2, because AI-generated code needs adversarial checking from day one. Full reasoning: <a href="team.html#scenario-c-team">Team</a>.</p>
+
+    <h2 class="section-title" style="margin-top: 1.75rem;">Team (6 new hires)</h2>
+    <p>You (non-coding) + 1 FTE backend dev + 1 FTE Flutter dev, plus:</p>
+    <ol class="tier-list" style="list-style: decimal; padding-left: 1.3rem;">
+      <li>Founding/Staff Engineer (de facto tech lead, primary reviewer of AI-generated code)</li>
+      <li>DevOps/Platform Engineer (required, not optional &mdash; owns foundations from week 1)</li>
+      <li>Second Mobile/Flutter Engineer</li>
+      <li>QA/Verification Engineer (starts alongside foundations, not after)</li>
+      <li>Product/UX Designer</li>
+      <li>Project Manager (joins month 2, once there's real coordination complexity)</li>
+    </ol>
+
+    <h2 class="section-title" style="margin-top: 1.75rem;">Timeline shape</h2>
+    <p>Month 1: Foundations (CI/CD, IaC, security baseline) run in parallel with pillar design, owned by the Founding Engineer + DevOps hires from day one. Months 2&ndash;3 Core Build. Months 4&ndash;5 Test &amp; Polish. See <a href="timeline.html#gantt-c">Gantt</a>.</p>
+
+    <h2 class="section-title" style="margin-top: 1.75rem;">Exit criteria</h2>
+    <ul class="notes-checklist">
+      <li>Everything in Scenario B's exit criteria, plus:</li>
+      <li>CI pipeline enforcing lint, type-check, tests, and security scanning on every merge</li>
+      <li>Infrastructure defined as code, not hand-configured</li>
+      <li>A written, followed AI-usage policy distinguishing AI-generate-freely from always-human-authored code</li>
+    </ul>
+
+    <h2 class="section-title" style="margin-top: 1.75rem;">Top risks</h2>
+    <ul class="notes-checklist">
+      <li>Hiring two strong technical co-leads (Founding Engineer + DevOps) fast enough to start month 1 on foundations, not features</li>
+      <li>Review discipline eroding under deadline pressure &mdash; the whole model depends on HITL review actually happening on every merge</li>
+      <li>E-sig vendor contracting delay (same as B)</li>
+      <li>Mobile parity beyond Agent/Client sliding into Phase 2 (same as B)</li>
+    </ul>
+  </section>
+
+  </div><!-- /scenario-panels -->
+
+  <p class="notes-footer">All three scenarios assume GTM and Compliance are owned by other cofounders, staffed and budgeted separately from this build plan.</p>
+
+</div>
+
+<script src="assets/js/notes.js"></script>
+</body>
+</html>

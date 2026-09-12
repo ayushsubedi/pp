@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tech Stack &middot; RealEZ Planning Notes</title>
+<link rel="stylesheet" href="assets/css/bulma.min.css">
+<link rel="stylesheet" href="assets/css/theme.css">
+<link rel="stylesheet" href="assets/css/custom.css">
+<link rel="stylesheet" href="assets/css/notes.css">
+</head>
+<body>
+
+<div class="notes-topbar">
+  <div class="notes-topbar-inner">
+    <a href="index.html" class="notes-wordmark">RealEZ <span class="accent">Notes</span></a>
+    <nav class="notes-nav">
+      <a href="index.html">Index</a>
+      <a href="scenarios.html">Scenarios</a>
+      <a href="scope.html">Scope</a>
+      <a href="timeline.html">Timeline</a>
+      <a href="dependencies.html">Dependencies</a>
+      <a href="team.html">Team</a>
+      <a href="tech-stack.html" class="is-active">Tech Stack</a>
+      <a href="engineering-foundations.html">Foundations</a>
+      <a href="cost.html">Cost</a>
+      <a href="knowledge.md">Knowledge.md</a>
+    </nav>
+  </div>
+</div>
+
+<div class="notes-shell">
+
+  <p class="notes-eyebrow">How we build</p>
+  <h1 style="font-family: var(--font-serif); font-size: 1.9rem; margin-bottom: 0.6rem;">Tech Stack</h1>
+  <p class="notes-lede">Language and framework choices, and what "AI-native with human-in-the-loop" actually means day to day, not just as a slogan.</p>
+
+  <h2 class="section-title">Backend language</h2>
+  <div class="table-scroll">
+    <table class="proscons-table">
+      <thead><tr><th>Option</th><th>Pros</th><th>Cons</th></tr></thead>
+      <tbody>
+        <tr>
+          <th>Python / FastAPI <span class="mono" style="font-weight:400;">(current)</span></th>
+          <td class="pros"><ul><li>Already built &mdash; the POC exists and works</li><li>Excellent AI-coding-assistant support (heavily represented in training data)</li><li>Fast to iterate, low ceremony</li><li>Strong, available talent pool including Nepal</li></ul></td>
+          <td class="cons"><ul><li>Weaker raw throughput than compiled languages at high scale &mdash; irrelevant at pilot volume</li><li>Type safety requires discipline (mypy/pyright), doesn't come for free</li></ul></td>
+        </tr>
+        <tr>
+          <th>Node.js / TypeScript</th>
+          <td class="pros"><ul><li>Strong typing by default</li><li>One language across backend and any future frontend SPA</li><li>Very strong AI-assistant support</li></ul></td>
+          <td class="cons"><ul><li>Would mean rewriting a working backend for no functional gain right now</li><li>Async footguns are a real, common source of subtle bugs</li></ul></td>
+        </tr>
+        <tr>
+          <th>Go</th>
+          <td class="pros"><ul><li>Excellent performance and concurrency story</li><li>Simple, hard to write deeply "clever" bad code</li></ul></td>
+          <td class="cons"><ul><li>Rewrite cost with no near-term payoff</li><li>Slower to prototype in &mdash; verbose for CRUD-heavy product work</li><li>Smaller Nepal talent pool than Python/Node</li></ul></td>
+        </tr>
+        <tr>
+          <th>Java / Kotlin</th>
+          <td class="pros"><ul><li>Mature ecosystem, strong typing, good for large teams over years</li></ul></td>
+          <td class="cons"><ul><li>Heaviest ceremony of the options here &mdash; wrong trade for a 6&ndash;9 person team validating a pilot</li><li>Rewrite cost with no near-term payoff</li></ul></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="notes-recommend">
+    <span class="notes-recommend-tag">Recommendation</span>
+    <p style="margin:0; font-size:0.9rem; color:var(--text-secondary);">Keep Python/FastAPI. Rewriting working code for hypothetical future scale before product-market fit is a classic, avoidable mistake. Add mypy/pyright to CI (see <a href="engineering-foundations.html">Foundations</a>) to get real type safety without a rewrite.</p>
+  </div>
+
+  <h2 class="section-title" style="margin-top: 2.25rem;">Mobile</h2>
+  <div class="table-scroll">
+    <table class="proscons-table">
+      <thead><tr><th>Option</th><th>Pros</th><th>Cons</th></tr></thead>
+      <tbody>
+        <tr>
+          <th>Flutter <span class="mono" style="font-weight:400;">(current)</span></th>
+          <td class="pros"><ul><li>Already built &mdash; existing FTE dev and app shell</li><li>One codebase for iOS + Android &mdash; critical with only 2 mobile engineers</li><li>Decent AI-assistant support</li></ul></td>
+          <td class="cons"><ul><li>Occasional platform-specific quirks need native escape hatches</li><li>Smaller hiring pool than React Native in some markets</li></ul></td>
+        </tr>
+        <tr>
+          <th>React Native</th>
+          <td class="pros"><ul><li>Large ecosystem and hiring pool</li><li>Shares some mental model with a future web SPA, if we ever adopt one</li></ul></td>
+          <td class="cons"><ul><li>Rewrite cost with no functional gain right now</li><li>Bridge-related performance quirks of its own</li></ul></td>
+        </tr>
+        <tr>
+          <th>Native (Swift + Kotlin, separately)</th>
+          <td class="pros"><ul><li>Best possible platform fit and performance</li></ul></td>
+          <td class="cons"><ul><li>Two codebases to build and review &mdash; directly conflicts with a 2-person mobile team</li><li>Not remotely justified at pilot scale</li></ul></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="notes-recommend">
+    <span class="notes-recommend-tag">Recommendation</span>
+    <p style="margin:0; font-size:0.9rem; color:var(--text-secondary);">Keep Flutter. Same logic as backend &mdash; it's built, it works, and a single codebase is the only realistic way two mobile engineers cover both platforms in a 5-month window.</p>
+  </div>
+
+  <h2 class="section-title" style="margin-top: 2.25rem;">Web frontend</h2>
+  <div class="table-scroll">
+    <table class="proscons-table">
+      <thead><tr><th>Option</th><th>Pros</th><th>Cons</th></tr></thead>
+      <tbody>
+        <tr>
+          <th>Server-rendered Jinja2 + HTMX + Bulma <span class="mono" style="font-weight:400;">(current)</span></th>
+          <td class="pros"><ul><li>Already built across every portal</li><li>No build step, no client-state framework to reason about</li><li>Simpler for AI to generate safely &mdash; less room for subtle client-state bugs</li></ul></td>
+          <td class="cons"><ul><li>Less suited to a highly interactive experience if Merchant Integration's marketplace browsing ever needs rich client-side filtering/search</li></ul></td>
+        </tr>
+        <tr>
+          <th>SPA framework (React / Vue)</th>
+          <td class="pros"><ul><li>Better fit for rich, highly interactive UI</li><li>Large talent pool</li></ul></td>
+          <td class="cons"><ul><li>Full rewrite of every existing portal &mdash; not defensible before pilot</li><li>Adds a build pipeline and client-state complexity the team doesn't need yet</li></ul></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="notes-recommend">
+    <span class="notes-recommend-tag">Recommendation</span>
+    <p style="margin:0; font-size:0.9rem; color:var(--text-secondary);">Keep the current approach for Broker/Admin/Vendor web. Revisit only if Merchant Integration's marketplace browsing genuinely needs SPA-grade interactivity post-pilot &mdash; don't pre-optimize for it now.</p>
+  </div>
+
+  <h2 class="section-title" style="margin-top: 2.25rem;">Infrastructure</h2>
+  <p>AWS, continued &mdash; it's where the existing architecture expertise already is. The one real change: infrastructure as code (Terraform or AWS CDK) from week 1, owned by the DevOps/Platform hire, so environments are reproducible and reviewable instead of hand-configured in the console. See <a href="engineering-foundations.html">Foundations</a> for the full list.</p>
+
+  <h2 class="section-title" style="margin-top: 2.25rem;">How we build: AI-native with human-in-the-loop</h2>
+  <p>Every developer has Claude coding access. That's a real velocity multiplier on well-specified, well-scoped work &mdash; and a real risk on anything that touches money or law if it's not paired with deliberate review discipline. The practice, not just the principle:</p>
+
+  <div class="table-scroll">
+    <table class="proscons-table">
+      <thead><tr><th>Safe to AI-generate with light review</th><th>Always senior-authored or line-by-line human-verified</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="pros"><ul>
+            <li>Test scaffolding and test cases following an established pattern</li>
+            <li>CRUD boilerplate, UI screens matching the existing design system</li>
+            <li>Documentation, code comments, migration scripts following a known shape</li>
+            <li>Refactors with full test coverage as a safety net</li>
+          </ul></td>
+          <td class="cons"><ul>
+            <li>Jurisdiction rules logic (disclosure timing, forms)</li>
+            <li>Commission/payment math and the Merchant Integration ledger</li>
+            <li>E-signature vendor integration, especially webhook/callback handling</li>
+            <li>Auth and permissions logic</li>
+            <li>The Transitional Document's gap-detection logic (it drives real recommendations)</li>
+          </ul></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>The mechanism that makes this real, not aspirational, is mandatory PR review enforced in CI &mdash; see <a href="engineering-foundations.html">Foundations</a>. "AI wrote it and it looked fine" is not a merge criterion.</p>
+
+  <p class="notes-footer">Every "keep the current stack" recommendation here rests on the same principle: rewriting working code for a hypothetical future need, before product-market fit, is a cost with no offsetting benefit yet.</p>
+
+</div>
+
+</body>
+</html>

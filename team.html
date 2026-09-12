@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Team &middot; RealEZ Planning Notes</title>
+<link rel="stylesheet" href="assets/css/bulma.min.css">
+<link rel="stylesheet" href="assets/css/theme.css">
+<link rel="stylesheet" href="assets/css/custom.css">
+<link rel="stylesheet" href="assets/css/notes.css">
+</head>
+<body>
+
+<div class="notes-topbar">
+  <div class="notes-topbar-inner">
+    <a href="index.html" class="notes-wordmark">RealEZ <span class="accent">Notes</span></a>
+    <nav class="notes-nav">
+      <a href="index.html">Index</a>
+      <a href="scenarios.html">Scenarios</a>
+      <a href="scope.html">Scope</a>
+      <a href="timeline.html">Timeline</a>
+      <a href="dependencies.html">Dependencies</a>
+      <a href="team.html" class="is-active">Team</a>
+      <a href="tech-stack.html">Tech Stack</a>
+      <a href="engineering-foundations.html">Foundations</a>
+      <a href="cost.html">Cost</a>
+      <a href="knowledge.md">Knowledge.md</a>
+    </nav>
+  </div>
+</div>
+
+<div class="notes-shell">
+
+  <p class="notes-eyebrow">Who do we actually need</p>
+  <h1 style="font-family: var(--font-serif); font-size: 1.9rem; margin-bottom: 0.6rem;">Team</h1>
+  <p class="notes-lede">The question isn't "how many people" &mdash; it's what actually creates risk in this specific build, and who removes that risk fastest. Written the way I'd actually staff this if it were my own money and my own pilot.</p>
+
+  <div id="scenario-c-team" class="journey-callout">
+    <strong>The one idea underneath all of this:</strong> AI coding assistance amplifies whoever is
+    directing it. A senior engineer with Claude ships fast <em>and</em> correct. A junior engineer
+    with Claude ships fast and <em>confidently wrong</em> &mdash; code that looks right, passes a
+    cursory read, and fails exactly where it's most expensive to fail: commission math, e-signature
+    callback handling, jurisdiction rules, anything that determines who owes whom what. That single
+    fact reshapes almost every hiring call below.
+  </div>
+
+  <h2 class="section-title" style="margin-top: 2rem;">Three things that change once AI is doing the typing</h2>
+  <ol style="padding-left: 1.3rem; color: var(--text); line-height: 1.7;">
+    <li><strong>The team gets more senior, not larger, for pure feature work.</strong> Raw typing speed stops being the bottleneck the moment everyone has Claude. What doesn't get automated is judgment: does this design hold up, is this edge case handled, would this pass a legal audit. That's a senior skill regardless of who or what wrote the first draft.</li>
+    <li><strong>Review and verification capacity becomes the real constraint.</strong> If code arrives faster than it can be properly reviewed, the team either slows down for review (fine) or starts merging on trust (not fine, and it compounds silently until an incident forces the issue). Hire for review bandwidth on purpose, don't let it become the accidental bottleneck nobody staffed for.</li>
+    <li><strong>Foundations have to exist before feature work, not alongside it.</strong> A team moving fast with AI assistance and no CI gates, no required review, no IaC, is moving fast toward a mess that costs far more to unwind later than it would have cost to prevent in week 1. This is the most common founder mistake in a from-scratch build, AI-assisted or not &mdash; and AI-assisted teams hit the wall faster because they generate volume faster.</li>
+  </ol>
+
+  <h2 class="section-title" style="margin-top: 2.25rem;">Scenario C hiring plan &mdash; tiered</h2>
+
+  <div class="tier-group">
+    <p class="tier-label">Tier 1 &middot; Week 1, before any feature work</p>
+    <ul class="tier-list">
+      <li class="tier-item">
+        <span class="tier-item-num">1</span>
+        <div>
+          <span class="tier-when">Land first, alongside #2</span>
+          <h4>Founding / Staff Engineer</h4>
+          <p>Not "Backend Engineer #2" &mdash; this is the de facto tech lead day to day. Co-owns architecture with the founder, and is the primary reviewer of AI-generated code across the team. If you can only get one exceptional hire in month 1, this is it: everyone else's output quality runs through this person's review discipline.</p>
+        </div>
+      </li>
+      <li class="tier-item">
+        <span class="tier-item-num">2</span>
+        <div>
+          <span class="tier-when">Land first, alongside #1</span>
+          <h4>DevOps / Platform Engineer</h4>
+          <p>Required, not optional, in this scenario &mdash; the founder isn't hands-on, so nobody else naturally owns infra. Their first deliverables, before touching either product pillar: CI pipeline with mandatory checks, infrastructure as code, secrets management, structured logging and error tracking. Skipping this hire doesn't remove the work, it just means the work happens badly, later, under pressure.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="tier-group">
+    <p class="tier-label">Tier 2 &middot; Weeks 2&ndash;4</p>
+    <ul class="tier-list">
+      <li class="tier-item">
+        <span class="tier-item-num">3</span>
+        <div>
+          <span class="tier-when">Weeks 2&ndash;3</span>
+          <h4>QA / Verification Engineer</h4>
+          <p>Moved earlier than a typical plan would put it, on purpose: AI-generated code needs adversarial verification from the start, not a testing pass bolted on in month 4. Owns the test pyramid from day one and does deep, adversarial testing specifically on the two pillars and anything money-adjacent.</p>
+        </div>
+      </li>
+      <li class="tier-item">
+        <span class="tier-item-num">4</span>
+        <div>
+          <span class="tier-when">Weeks 2&ndash;3</span>
+          <h4>Second Mobile / Flutter Engineer</h4>
+          <p>Native UI work across two platforms is still real surface area regardless of AI assistance &mdash; visual polish, platform quirks, and App Store review issues aren't the kind of thing AI collapses the way it collapses backend boilerplate. Agent and Client parity is the part of scope that actually matters for the pilot.</p>
+        </div>
+      </li>
+      <li class="tier-item">
+        <span class="tier-item-num">5</span>
+        <div>
+          <span class="tier-when">Weeks 3&ndash;4</span>
+          <h4>Product / UX Designer</h4>
+          <p>The Transitional Document's authoring flow and the Merchant Integration onboarding flow are genuinely hard UX problems, not just forms. Worth a dedicated senior designer rather than engineers designing as they build, especially once there are two mobile engineers producing screens in parallel.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="tier-group">
+    <p class="tier-label">Tier 3 &middot; Month 2</p>
+    <ul class="tier-list">
+      <li class="tier-item">
+        <span class="tier-item-num">6</span>
+        <div>
+          <span class="tier-when">Month 2, deliberately not week 1</span>
+          <h4>Project Manager</h4>
+          <p>Earns its keep once there are 6+ builders across two flagship workstreams and three external dependency dates owed by other cofounders &mdash; real coordination complexity, not busywork. Brought in earlier than that, a PM mostly adds process overhead to two technical co-leads who are more efficient just talking to each other directly while the team is still small.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <h2 class="section-title" style="margin-top: 2.25rem;">What I'd explicitly <em>not</em> hire yet</h2>
+  <ul class="notes-checklist">
+    <li>A dedicated "AI tooling" or prompt-engineering specialist &mdash; premature at 9 people; this is a practice (a written AI-usage policy, see <a href="engineering-foundations.html">Foundations</a>), not a role, until the team is meaningfully larger</li>
+    <li>A second PM, a chief of staff, or any pure-coordination role beyond the one PM &mdash; a team this size drowns in process faster than it drowns in chaos</li>
+    <li>A dedicated security engineer as an FTE &mdash; contract a pen test before pilot launch instead; a full-time security hire is a Phase 2+ decision once there's real production traffic and real client data volume to justify it</li>
+    <li>Any compliance/legal hire on the build side &mdash; that function is owned by other cofounders in every scenario here on purpose (see <a href="scope.html">Scope</a>)</li>
+  </ul>
+
+  <h2 class="section-title" style="margin-top: 2.25rem;">How this compares to A and B</h2>
+  <div class="table-scroll">
+    <table class="matrix-table">
+      <thead><tr><th></th><th>A &middot; Full Scope</th><th>B &middot; Lean Pilot</th><th>C &middot; AI-Native</th></tr></thead>
+      <tbody>
+        <tr><th>Founder</th><td>Hands-on backend + architecture</td><td>Non-coding</td><td>Non-coding</td></tr>
+        <tr><th>Tech lead</th><td>The founder</td><td>Backend Engineer #2, informally</td><td>Founding/Staff Engineer, explicitly</td></tr>
+        <tr><th>DevOps/Platform</th><td>Founder, hands-on</td><td>Optional 5th hire</td><td>Required, week 1</td></tr>
+        <tr><th>QA start</th><td>Month 3</td><td>Month 2</td><td>Month 1, with foundations</td></tr>
+        <tr><th>Compliance/GTM roles</th><td>Staffed inside this plan (2 hires)</td><td>Owned by other cofounders</td><td>Owned by other cofounders</td></tr>
+        <tr><th>New hires</th><td>5</td><td>5</td><td>6</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="notes-footer">Every role above assumes senior, self-directed hires &mdash; the whole plan depends on that. Hiring junior to save money here defeats the reasoning at the top of this page.</p>
+
+</div>
+
+</body>
+</html>
