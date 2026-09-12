@@ -33,7 +33,7 @@
 
   <p class="notes-eyebrow">How we build</p>
   <h1 style="font-family: var(--font-serif); font-size: 1.9rem; margin-bottom: 0.6rem;">Tech Stack</h1>
-  <p class="notes-lede">Language and framework choices, and what "AI-native with human-in-the-loop" actually means day to day, not just as a slogan.</p>
+  <p class="notes-lede">Language and framework choices, and what "AI-native with human-in-the-loop" actually means day to day, not just as a slogan. AI-native building is the default across every scenario on this site &mdash; it's not something only one plan does.</p>
 
   <h2 class="section-title">Backend language</h2>
   <div class="table-scroll">
@@ -46,9 +46,19 @@
           <td class="cons"><ul><li>Weaker raw throughput than compiled languages at high scale &mdash; irrelevant at pilot volume</li><li>Type safety requires discipline (mypy/pyright), doesn't come for free</li></ul></td>
         </tr>
         <tr>
+          <th>Django (Python)</th>
+          <td class="pros"><ul><li>Batteries-included &mdash; admin panel, ORM, auth out of the box</li><li>Same Python talent pool and AI-assistant strength as FastAPI</li><li>Could reduce custom code for Broker/Admin back-office screens</li></ul></td>
+          <td class="cons"><ul><li>More monolithic/opinionated than FastAPI &mdash; a real migration, not a drop-in swap, for no functional gain since FastAPI already works</li><li>Less natural fit for an API-first architecture serving a mobile app as a primary client</li></ul></td>
+        </tr>
+        <tr>
           <th>Node.js / TypeScript</th>
           <td class="pros"><ul><li>Strong typing by default</li><li>One language across backend and any future frontend SPA</li><li>Very strong AI-assistant support</li></ul></td>
           <td class="cons"><ul><li>Would mean rewriting a working backend for no functional gain right now</li><li>Async footguns are a real, common source of subtle bugs</li></ul></td>
+        </tr>
+        <tr>
+          <th>Ruby / Rails</th>
+          <td class="pros"><ul><li>Mature, convention-over-configuration &mdash; historically strong for fast, CRUD-heavy startups</li><li>Reasonable AI-assistant support</li></ul></td>
+          <td class="cons"><ul><li>Smaller Nepal talent pool than Python/Node</li><li>Ecosystem momentum has slowed relative to Python/TypeScript in recent years</li><li>Rewrite cost with no functional gain</li></ul></td>
         </tr>
         <tr>
           <th>Go</th>
@@ -56,9 +66,14 @@
           <td class="cons"><ul><li>Rewrite cost with no near-term payoff</li><li>Slower to prototype in &mdash; verbose for CRUD-heavy product work</li><li>Smaller Nepal talent pool than Python/Node</li></ul></td>
         </tr>
         <tr>
+          <th>Rust</th>
+          <td class="pros"><ul><li>Best-in-class performance and memory safety</li><li>Growing ecosystem momentum</li></ul></td>
+          <td class="cons"><ul><li>Steepest learning curve of any option here &mdash; slowest to prototype in</li><li>Smallest Nepal talent pool of all options listed</li><li>AI-assistant code generation is improving but still lags Python/JS, and the borrow checker punishes half-correct generated code in a way that's a bad match for a lean, fast-moving pilot team</li></ul></td>
+        </tr>
+        <tr>
           <th>Java / Kotlin</th>
           <td class="pros"><ul><li>Mature ecosystem, strong typing, good for large teams over years</li></ul></td>
-          <td class="cons"><ul><li>Heaviest ceremony of the options here &mdash; wrong trade for a 6&ndash;9 person team validating a pilot</li><li>Rewrite cost with no near-term payoff</li></ul></td>
+          <td class="cons"><ul><li>Heaviest ceremony of the options here &mdash; wrong trade for a lean team validating a pilot</li><li>Rewrite cost with no near-term payoff</li></ul></td>
         </tr>
       </tbody>
     </table>
@@ -75,7 +90,7 @@
       <tbody>
         <tr>
           <th>Flutter <span class="mono" style="font-weight:400;">(current)</span></th>
-          <td class="pros"><ul><li>Already built &mdash; existing FTE dev and app shell</li><li>One codebase for iOS + Android &mdash; critical with only 2 mobile engineers</li><li>Decent AI-assistant support</li></ul></td>
+          <td class="pros"><ul><li>Already built &mdash; existing FTE dev and app shell</li><li>One codebase for iOS + Android &mdash; the only realistic way a single mobile engineer covers both platforms</li><li>Decent AI-assistant support</li></ul></td>
           <td class="cons"><ul><li>Occasional platform-specific quirks need native escape hatches</li><li>Smaller hiring pool than React Native in some markets</li></ul></td>
         </tr>
         <tr>
@@ -86,14 +101,14 @@
         <tr>
           <th>Native (Swift + Kotlin, separately)</th>
           <td class="pros"><ul><li>Best possible platform fit and performance</li></ul></td>
-          <td class="cons"><ul><li>Two codebases to build and review &mdash; directly conflicts with a 2-person mobile team</li><li>Not remotely justified at pilot scale</li></ul></td>
+          <td class="cons"><ul><li>Two codebases to build and review &mdash; directly conflicts with a single mobile engineer covering both platforms</li><li>Not remotely justified at pilot scale</li></ul></td>
         </tr>
       </tbody>
     </table>
   </div>
   <div class="notes-recommend">
     <span class="notes-recommend-tag">Recommendation</span>
-    <p style="margin:0; font-size:0.9rem; color:var(--text-secondary);">Keep Flutter. Same logic as backend &mdash; it's built, it works, and a single codebase is the only realistic way two mobile engineers cover both platforms in a 5-month window.</p>
+    <p style="margin:0; font-size:0.9rem; color:var(--text-secondary);">Keep Flutter. Same logic as backend &mdash; it's built, it works, and a single codebase is what makes one senior mobile engineer, with AI-assisted development, realistically able to cover Agent + Client native parity in a 5-month window without a second hire.</p>
   </div>
 
   <h2 class="section-title" style="margin-top: 2.25rem;">Web frontend</h2>
@@ -120,10 +135,10 @@
   </div>
 
   <h2 class="section-title" style="margin-top: 2.25rem;">Infrastructure</h2>
-  <p>AWS, continued &mdash; it's where the existing architecture expertise already is. The one real change: infrastructure as code (Terraform or AWS CDK) from week 1, owned by the DevOps/Platform hire, so environments are reproducible and reviewable instead of hand-configured in the console. See <a href="engineering-foundations.html">Foundations</a> for the full list.</p>
+  <p>AWS, continued &mdash; it's where the existing architecture expertise already is. The one real change: infrastructure as code (Terraform or AWS CDK) from week 1, owned jointly by the founder and the Senior Backend Engineer #2 &mdash; no dedicated DevOps hire, but AI-assisted scaffolding of IaC templates and CI config makes that realistic for two senior people rather than a full-time platform role. See <a href="engineering-foundations.html">Foundations</a> for the full list.</p>
 
-  <h2 class="section-title" style="margin-top: 2.25rem;">How we build: AI-native with human-in-the-loop</h2>
-  <p>Every developer has Claude coding access. That's a real velocity multiplier on well-specified, well-scoped work &mdash; and a real risk on anything that touches money or law if it's not paired with deliberate review discipline. The practice, not just the principle:</p>
+  <h2 class="section-title" style="margin-top: 2.25rem;">How we build: AI-native with human-in-the-loop, everywhere</h2>
+  <p>This isn't one scenario's approach &mdash; it's the default across A, B, and C. Every developer has Claude coding access. That's a real velocity multiplier on well-specified, well-scoped work, and part of why the team can stay lean (see <a href="team.html">Team</a>) &mdash; but it's a real risk on anything that touches money or law if it's not paired with deliberate review discipline. The practice, not just the principle:</p>
 
   <div class="table-scroll">
     <table class="proscons-table">
