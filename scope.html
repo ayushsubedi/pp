@@ -22,7 +22,7 @@
       <a href="dependencies.html">Dependencies</a>
       <a href="team.html">Team</a>
       <a href="tech-stack.html">Tech Stack</a>
-      <a href="engineering-foundations.html">Foundations</a>
+      <a href="multi-tenancy.html">Multi-Tenancy</a>
       <a href="cost.html">Cost</a>
       <a href="knowledge.md">Knowledge.md</a>
     </nav>
@@ -72,9 +72,7 @@
         </tr>
         <tr>
           <th>Mobile scope</th>
-          <td>1 Flutter engineer, no 2nd hire (flagged risk)</td>
-          <td>Native for Agent + Client; web for Broker/Admin/Vendor &mdash; 1 Flutter engineer</td>
-          <td class="is-recommended">Native for Agent + Client; web for Broker/Admin/Vendor &mdash; 1 Flutter engineer</td>
+          <td colspan="3" style="text-align:center;">Native for Agent + Client; web for Broker/Admin/Vendor &mdash; 2 Flutter engineers, in all three</td>
         </tr>
         <tr>
           <th>Founder's role</th>
@@ -85,8 +83,8 @@
         <tr>
           <th>DevOps/Platform ownership</th>
           <td>Founder, hands-on</td>
-          <td>Senior Backend Eng #2 + founder, no dedicated hire</td>
-          <td class="is-recommended">Senior Backend Eng #2 + founder, required checklist from week 1</td>
+          <td>Dedicated FTE, ad hoc priority</td>
+          <td class="is-recommended">Dedicated FTE, required checklist from week 1</td>
         </tr>
         <tr>
           <th>QA timing</th>
@@ -108,23 +106,19 @@
         </tr>
         <tr>
           <th>Multi-tenancy</th>
-          <td colspan="3" style="text-align:center;">Row-level tenant isolation from month 1, in all three &mdash; see <a href="engineering-foundations.html#multi-tenancy">Foundations</a></td>
+          <td colspan="3" style="text-align:center;">Row-level tenant isolation from month 1, in all three &mdash; see <a href="multi-tenancy.html">Multi-Tenancy</a></td>
         </tr>
         <tr>
           <th>White-label</th>
-          <td colspan="3" style="text-align:center;">Architected for (tenant-configurable branding), not activated in Phase 1 &mdash; see <a href="engineering-foundations.html#multi-tenancy">Foundations</a></td>
+          <td colspan="3" style="text-align:center;">Architected for (tenant-configurable branding), not activated in Phase 1 &mdash; see <a href="multi-tenancy.html">Multi-Tenancy</a></td>
         </tr>
         <tr>
           <th>Team size (new hires)</th>
-          <td>4 FTE + 1 project-based</td>
-          <td>4 FTE + 1 project-based</td>
-          <td class="is-recommended">4 FTE + 1 project-based</td>
+          <td colspan="3" style="text-align:center;">6 FTE + 1 project-based, in all three &mdash; room for up to 2 more within the 8&ndash;10 headroom</td>
         </tr>
         <tr>
           <th>Team size (total, incl. founder)</th>
-          <td>7 FTE + 1 project-based</td>
-          <td>7 FTE + 1 project-based</td>
-          <td class="is-recommended">7 FTE + 1 project-based</td>
+          <td colspan="3" style="text-align:center;">9 (8 FTE + founder) + 1 project-based, in all three</td>
         </tr>
         <tr>
           <th>Timeline</th>
@@ -134,15 +128,51 @@
         </tr>
         <tr>
           <th>Est. build-team cost</th>
-          <td>~$75,895 over 6 months &mdash; see <a href="cost.html#cost-a">Cost &rarr; A</a></td>
-          <td>~$64,550 over 5 months &mdash; see <a href="cost.html#cost-b">Cost &rarr; B</a></td>
-          <td class="is-recommended">~$64,550 over 5 months (identical to B) &mdash; see <a href="cost.html#cost-c">Cost &rarr; C</a></td>
+          <td>~$105,000 over 6 months &mdash; see <a href="cost.html#cost-a">Cost &rarr; A</a></td>
+          <td>~$89,725 over 5 months &mdash; see <a href="cost.html#cost-b">Cost &rarr; B</a></td>
+          <td class="is-recommended">~$89,725 over 5 months (identical to B) &mdash; see <a href="cost.html#cost-c">Cost &rarr; C</a></td>
         </tr>
       </tbody>
     </table>
   </div>
 
-  <p class="notes-footer">Highlighted cells mark where the recommended scenario (C) lands. GTM and Compliance are owned by other cofounders in every scenario, including A &mdash; not staffed inside the build team anywhere on this site.</p>
+  <p class="notes-footer" style="margin-bottom: 2rem;">Highlighted cells mark where the recommended scenario (C) lands. GTM and Compliance are owned by other cofounders in every scenario, including A &mdash; not staffed inside the build team anywhere on this site.</p>
+
+  <h2 class="section-title" style="margin-top: 2.5rem;">The 6-month plan (Scenario A): what ships, what doesn't</h2>
+  <p class="notes-lede" style="margin-bottom: 0;">The dimensions above say <em>how</em> each scenario differs. This is the concrete answer to "what do we actually get in 6 months" for the full-scope plan &mdash; same timeline as before, now with more headroom (8 FTE instead of 6) buying robustness, not extra features beyond this list.</p>
+
+  <div class="scope-split">
+    <div class="scope-col in">
+      <p class="scope-col-title">Ships in 6 months</p>
+      <ul>
+        <li>Core transaction workflow (listing &rarr; offer &rarr; contract &rarr; closing) for 2&ndash;3 pilot states</li>
+        <li>In-house ESIGN/UETA-compliant e-signature engine, reviewed by outside counsel</li>
+        <li>Transitional Document: structured, personalized, gap-detection logic feeding the marketplace</li>
+        <li>Merchant Integration marketplace: vendor onboarding, real payment processing, commission tracking</li>
+        <li>Native iOS + Android apps for Agent and Client</li>
+        <li>Escrow-partner integration (orchestration, not direct custody) for earnest-money tracking</li>
+        <li>Broker/Admin/Vendor as responsive web portals (not native)</li>
+        <li>Multi-tenant data architecture supporting multiple brokerages &mdash; see <a href="multi-tenancy.html">Multi-Tenancy</a></li>
+        <li>Jurisdiction rules engine covering the 2&ndash;3 pilot states' real forms and disclosure timing</li>
+        <li>Basic Admin/Broker reporting and revenue analytics</li>
+        <li>Pen test and remediation before pilot launch</li>
+      </ul>
+    </div>
+    <div class="scope-col out">
+      <p class="scope-col-title">Explicitly not this phase</p>
+      <ul>
+        <li>Direct earnest-money custody (self-licensed escrow or broker-trust) &mdash; the licensing timeline alone exceeds 6 months, see <a href="scenarios.html#scenario-a">Scenario A</a></li>
+        <li>Native mobile apps for Broker/Admin/Vendor &mdash; web-only in Phase 1</li>
+        <li>White-label branding activated for a partner brokerage &mdash; architected for, not turned on, see <a href="multi-tenancy.html">Multi-Tenancy</a></li>
+        <li>MLS/IDX integration &mdash; a real competitive gap, not attempted in Phase 1</li>
+        <li>Expansion beyond the initial 2&ndash;3 pilot states</li>
+        <li>Any LLM-backed client-facing chat or reasoning &mdash; the existing assistant stays scripted</li>
+        <li>SOC 2 or similar formal certification &mdash; sound practices in place, not a certification</li>
+        <li>International markets &mdash; domestic US pilot only</li>
+      </ul>
+    </div>
+  </div>
+  <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 1rem;">B and C run the same list minus the items already off the table by design (1 state not 2&ndash;3, 3rd-party e-signature not in-house, no custody path to defer) &mdash; see the dimensions above for exactly what's smaller.</p>
 
 </div>
 

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Multi-Tenancy &amp; White-Label &middot; RealEZ Planning Notes</title>
+<link rel="stylesheet" href="assets/css/bulma.min.css">
+<link rel="stylesheet" href="assets/css/theme.css">
+<link rel="stylesheet" href="assets/css/custom.css">
+<link rel="stylesheet" href="assets/css/notes.css">
+</head>
+<body>
+
+<div class="notes-topbar">
+  <div class="notes-topbar-inner">
+    <a href="index.html" class="notes-wordmark">RealEZ <span class="accent">Notes</span></a>
+    <nav class="notes-nav">
+      <a href="index.html">Index</a>
+      <a href="scenarios.html">Scenarios</a>
+      <a href="scope.html">Scope</a>
+      <a href="timeline.html">Timeline</a>
+      <a href="dependencies.html">Dependencies</a>
+      <a href="team.html">Team</a>
+      <a href="tech-stack.html">Tech Stack</a>
+      <a href="multi-tenancy.html" class="is-active">Multi-Tenancy</a>
+      <a href="cost.html">Cost</a>
+      <a href="knowledge.md">Knowledge.md</a>
+    </nav>
+  </div>
+</div>
+
+<div class="notes-shell">
+
+  <p class="notes-eyebrow">Architecture decision</p>
+  <h1 style="font-family: var(--font-serif); font-size: 1.9rem; margin-bottom: 0.6rem;">Multi-Tenancy &amp; White-Label</h1>
+  <p class="notes-lede">Two related but different questions: how RealEZ isolates one brokerage's data from another (multi-tenancy), and whether a brokerage can run RealEZ under its own brand (white-label). One is required from day one. The other isn't, but it's cheap to keep open.</p>
+
+  <div class="hairline-card" style="margin-bottom: 2rem;">
+    <p class="section-title" style="margin-bottom: 0.8rem;">Do we pick this up in the first 6 months?</p>
+    <table class="matrix-table" style="min-width:0;">
+      <tbody>
+        <tr>
+          <th>Multi-tenancy (data isolation)</th>
+          <td><span class="status-badge status-complete">Yes &mdash; required, month 1</span></td>
+        </tr>
+        <tr>
+          <th>White-label (branding activated for a partner)</th>
+          <td><span class="status-badge status-not_started">No &mdash; deferred, but architected for now</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="section-title">Multi-tenancy: not optional, not deferrable</h2>
+  <p>Every brokerage in the pilot &mdash; even if Phase 1 only ever signs one &mdash; is a tenant, and Scenario A's plan explicitly targets 1&ndash;2 pilot brokerages across 2&ndash;3 states, so this is real from the first real customer, not a hypothetical future need. Retrofitting tenant isolation into a schema built without it is one of the most expensive mistakes to fix later in a multi-customer SaaS product &mdash; every table, every query, every access-control check has to be revisited. Building it in from the first migration costs almost nothing extra; adding it after the fact means an audit of the entire codebase.</p>
+  <ul class="notes-checklist">
+    <li>Row-level tenant isolation &mdash; a <code>brokerage_id</code> column enforced at the query layer, not just an application-level convention &mdash; rather than a separate database per brokerage. Simpler to operate at pilot scale, and the standard pattern for a B2B2C SaaS at this stage; a database-per-tenant model is worth revisiting only once brokerage count and per-tenant data volume genuinely justify the operational overhead.</li>
+    <li>Every table that holds brokerage-scoped data carries the tenant key from the first migration, not bolted on after the first real brokerage signs up.</li>
+    <li>Auth and permissions are tenant-aware by construction &mdash; a user's access is scoped to their brokerage everywhere, not enforced ad hoc per endpoint.</li>
+    <li>This is explicit week-1 scope for the tech lead (Senior Backend Engineer #2), alongside the rest of the initial data model &mdash; see <a href="team.html">Team</a>.</li>
+  </ul>
+
+  <h2 class="section-title" style="margin-top: 2.25rem;">White-label: a real question, not a Phase 1 feature</h2>
+  <p>Worth asking early specifically because of how the competitive landscape works: Updater and MoveEasy &mdash; the closest precedents to RealEZ's own marketplace model &mdash; are both white-labeled to brokerages as a client-retention perk, and RealEZ's own revenue model (referral commission on post-closing bookings) is loosely modeled on that same two-sided structure. A brokerage running RealEZ under its own name and domain, with RealEZ invisible as the underlying platform, is a plausible and valuable future product shape &mdash; the same way Updater is invisible behind the brokerages that use it.</p>
+  <p><strong>It's not Phase 1 scope.</strong> The pilot runs under RealEZ's own brand, with 1&ndash;2 named pilot brokerages. Building a full white-label activation flow &mdash; custom subdomains, branded email sending domains, a self-serve branding config UI &mdash; before the core product (the two pillars, the transaction flow) is proven with real users would be solving a problem that doesn't exist yet, at the direct expense of time spent on what does.</p>
+
+  <h2 class="section-title" style="margin-top: 2.25rem;">What "architected for, not activated" concretely means</h2>
+  <p>The multi-tenancy work above already does most of the hard part &mdash; once data is properly tenant-scoped, white-label is mostly a presentation-layer problem, not a data-model problem. The cheap insurance to take now:</p>
+  <ul class="notes-checklist">
+    <li>Branding (logo, accent color, product name shown to end users) lives as tenant-level configuration in the data model from the start, even though no UI exists yet to let a brokerage self-edit it &mdash; a few nullable columns on the tenant record, not a new subsystem</li>
+    <li>Templates and emails reference the tenant's branding fields (falling back to RealEZ's own brand when unset) rather than hardcoding "RealEZ" as a string throughout the codebase</li>
+    <li>No commitment to custom domains, branded sending infrastructure, or a self-serve config UI in Phase 1 &mdash; those are real work, deferred until there's an actual white-label customer to build them for</li>
+  </ul>
+
+  <h2 class="section-title" style="margin-top: 2.25rem;">Phase 2+ activation path</h2>
+  <p>If a brokerage partner wants white-label post-pilot: turn the tenant-branding fields into a real settings UI, add custom domain/subdomain support, wire branded email sending (a verified sending domain per tenant), and decide the commercial terms (does white-label change the revenue split, given RealEZ's brand visibility &mdash; and therefore its own brand-building &mdash; goes away for that tenant). None of this is a rebuild if the month-1 groundwork above is done; all of it is a rebuild if it isn't.</p>
+
+  <p class="notes-footer">This page exists because the question came up directly: is this in the first 6 months? Short answer &mdash; the isolation, yes; the feature, no.</p>
+
+</div>
+
+</body>
+</html>

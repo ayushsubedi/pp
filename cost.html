@@ -22,7 +22,7 @@
       <a href="dependencies.html">Dependencies</a>
       <a href="team.html">Team</a>
       <a href="tech-stack.html">Tech Stack</a>
-      <a href="engineering-foundations.html">Foundations</a>
+      <a href="multi-tenancy.html">Multi-Tenancy</a>
       <a href="cost.html" class="is-active">Cost</a>
       <a href="knowledge.md">Knowledge.md</a>
     </nav>
@@ -31,9 +31,9 @@
 
 <div class="notes-shell">
 
-  <p class="notes-eyebrow">Nepal-based team + real infra/tooling</p>
+  <p class="notes-eyebrow">8-person Nepal-based team + real infra/tooling</p>
   <h1 style="font-family: var(--font-serif); font-size: 1.9rem; margin-bottom: 0.6rem;">Cost</h1>
-  <p class="notes-lede">Indicative planning figures, not a quote &mdash; verify current rates locally. Converted at roughly <span class="mono">NPR 133</span> per USD; rescale if that's moved. Team is now identical across all three scenarios, so team cost only differs by timeline length; AWS and app-store/tooling costs are broken out separately, as their own real line items rather than a footnote.</p>
+  <p class="notes-lede">Indicative planning figures, not a quote &mdash; verify current rates locally. Converted at roughly <span class="mono">NPR 133</span> per USD; rescale if that's moved. Team is identical across all three scenarios (8 people: 2 existing + 6 new FTE), so team cost only differs by timeline length; AWS and app-store/tooling costs are broken out separately, as their own real line items.</p>
 
   <h2 class="section-title">Team &mdash; rate assumptions (same in A, B, and C)</h2>
   <div class="table-scroll">
@@ -43,24 +43,26 @@
         <tr><th>Backend Engineer</th><td>Existing FTE</td><td>180,000</td><td>~1,350</td></tr>
         <tr><th>Flutter Engineer</th><td>Existing FTE</td><td>180,000</td><td>~1,350</td></tr>
         <tr><th>Senior Backend Engineer #2 &mdash; tech lead</th><td>New FTE</td><td>200,000</td><td>~1,500</td></tr>
+        <tr><th>DevOps/Platform Engineer</th><td>New FTE</td><td>180,000</td><td>~1,350</td></tr>
+        <tr><th>Second Mobile/Flutter Engineer</th><td>New FTE</td><td>180,000</td><td>~1,350</td></tr>
         <tr><th>QA/Automation Engineer</th><td>New FTE</td><td>140,000</td><td>~1,050</td></tr>
         <tr><th>Project Manager</th><td>New FTE</td><td>160,000</td><td>~1,200</td></tr>
         <tr><th>HR/Payroll/Admin <span class="mono" style="font-weight:400;">(generalist rate)</span></th><td>New FTE</td><td>90,000</td><td>~675</td></tr>
-        <tr class="is-recommended"><th>Gross FTE payroll, 6 people</th><td></td><td>950,000</td><td>~7,145</td></tr>
+        <tr class="is-recommended"><th>Gross FTE payroll, 8 people</th><td></td><td>1,310,000</td><td>~9,850</td></tr>
       </tbody>
     </table>
   </div>
-  <p style="font-size: 0.88rem; color: var(--text-secondary); margin-top: 0.8rem;"><strong>UI/UX Designer is not an FTE</strong> &mdash; one designer, engaged project-based at a flat <strong>NPR 4,00,000</strong> total, covering both pillars' UX plus the mobile design system. Priced as a one-time project cost below, not monthly payroll. The tech lead (Senior Backend Engineer #2) is priced above the other new hires' 180,000 baseline to reflect the added architecture/review responsibility.</p>
+  <p style="font-size: 0.88rem; color: var(--text-secondary); margin-top: 0.8rem;"><strong>UI/UX Designer is not an FTE</strong> &mdash; one designer, engaged project-based at a flat <strong>NPR 4,00,000</strong> total. Priced as a one-time project cost below, not monthly payroll. The tech lead (Senior Backend Engineer #2) is priced above the other new hires' 180,000 baseline to reflect the added architecture/review responsibility.</p>
 
   <h2 class="section-title" style="margin-top: 2.25rem;">Team monthly burn (identical in A, B, and C)</h2>
   <div class="hairline-card">
     <table class="matrix-table" style="min-width:0;">
       <tbody>
-        <tr><td>Gross FTE payroll (6 people)</td><td class="mono">NPR 950,000</td></tr>
-        <tr><td>Employer statutory + benefits (~18%)</td><td class="mono">NPR 171,000</td></tr>
-        <tr><td>Office &mdash; coworking, 7 seats @ NPR 12,000</td><td class="mono">NPR 84,000</td></tr>
-        <tr><td>Contingency (10%)</td><td class="mono">NPR 120,500</td></tr>
-        <tr class="is-recommended"><td><strong>Total team monthly burn</strong></td><td class="mono"><strong>&asymp; NPR 1,325,500 (~$9,965)</strong></td></tr>
+        <tr><td>Gross FTE payroll (8 people)</td><td class="mono">NPR 1,310,000</td></tr>
+        <tr><td>Employer statutory + benefits (~18%)</td><td class="mono">NPR 235,800</td></tr>
+        <tr><td>Office &mdash; coworking, 9 seats @ NPR 12,000</td><td class="mono">NPR 108,000</td></tr>
+        <tr><td>Contingency (10%)</td><td class="mono">NPR 165,380</td></tr>
+        <tr class="is-recommended"><td><strong>Total team monthly burn</strong></td><td class="mono"><strong>&asymp; NPR 1,819,180 (~$13,680)</strong></td></tr>
       </tbody>
     </table>
   </div>
@@ -82,8 +84,8 @@
     <table class="matrix-table" style="min-width:0;">
       <thead><tr><th>Item</th><th>Cadence</th><th>USD</th></tr></thead>
       <tbody>
-        <tr><th>AI coding tool subscriptions (3 developer seats)</th><td>Monthly</td><td>~300/mo</td></tr>
-        <tr><th>PM/comms tools (Linear or Jira, Slack)</th><td>Monthly</td><td>~60/mo</td></tr>
+        <tr><th>AI coding tool subscriptions (5 technical seats: 2 backend, 2 mobile, 1 DevOps)</th><td>Monthly</td><td>~500/mo</td></tr>
+        <tr><th>PM/comms tools (Linear or Jira, Slack)</th><td>Monthly</td><td>~70/mo</td></tr>
         <tr><th>Error tracking/monitoring</th><td>Monthly</td><td>~20/mo</td></tr>
         <tr><th>Apple Developer Program</th><td>Annual</td><td>99/yr</td></tr>
         <tr><th>Google Play Developer registration</th><td>One-time</td><td>25 once</td></tr>
@@ -91,21 +93,23 @@
       </tbody>
     </table>
   </div>
-  <p style="font-size: 0.86rem; color: var(--text-secondary); margin-top: 0.6rem;">Recurring monthly total: ~$380/month (~NPR 50,540). Annual/one-time items (~$144 total) are folded into the one-time setup total below rather than prorated.</p>
+  <p style="font-size: 0.86rem; color: var(--text-secondary); margin-top: 0.6rem;">Recurring monthly total: ~$590/month (~NPR 78,470). Annual/one-time items (~$144 total) are folded into the one-time setup total below rather than prorated.</p>
 
   <h2 class="section-title" style="margin-top: 2.25rem;">One-time setup (identical in A, B, and C)</h2>
   <div class="hairline-card">
     <table class="matrix-table" style="min-width:0;">
       <tbody>
-        <tr><td>Hardware per new FTE hire (laptop NPR 200,000 + monitor + dongle/accessories)</td><td class="mono">NPR 230,000</td></tr>
-        <tr><td>4 new FTE hires &times; NPR 230,000</td><td class="mono">NPR 920,000</td></tr>
+        <tr><td>Hardware, standard (laptop NPR 200,000 + monitor + dongle/accessories) &times; 5 new hires <span class="mono" style="font-weight:400;">(tech lead, DevOps, QA, PM, HR/Admin)</span></td><td class="mono">NPR 1,150,000</td></tr>
+        <tr><td>Hardware, premium &mdash; second Mobile Engineer <span class="mono" style="font-weight:400;">(Mac required for iOS builds: NPR 3,00,000 laptop + accessories)</span></td><td class="mono">NPR 330,000</td></tr>
+        <tr><td>Test device lab (1 iPhone + 2 Android phones, covering OS/screen-size diversity)</td><td class="mono">NPR 180,000</td></tr>
         <tr><td>UI/UX Designer project fee</td><td class="mono">NPR 400,000</td></tr>
         <tr><td>Office inverter/UPS (load-shedding backup)</td><td class="mono">NPR 100,000</td></tr>
         <tr><td>App Store + Play Store + domain (first-year fees)</td><td class="mono">NPR 19,150 (~$144)</td></tr>
-        <tr class="is-recommended"><td><strong>Total one-time setup</strong></td><td class="mono"><strong>&asymp; NPR 1,439,150 (~$10,820)</strong></td></tr>
+        <tr class="is-recommended"><td><strong>Total one-time setup</strong></td><td class="mono"><strong>&asymp; NPR 2,179,150 (~$16,385)</strong></td></tr>
       </tbody>
     </table>
   </div>
+  <p style="font-size: 0.86rem; color: var(--text-secondary); margin-top: 0.6rem;">Assumes the 2 existing developers already have suitable machines. Office inverter/UPS assumes a small office (8&ndash;9 people) &mdash; revisit if the office grows past the room used here.</p>
 
   <h2 class="section-title" style="margin-top: 2.25rem;">Total Phase 1 estimate, by scenario</h2>
 
@@ -120,12 +124,12 @@
     <section id="cost-a" class="notes-tab-panel is-active">
       <table class="matrix-table" style="min-width:0;">
         <tbody>
-          <tr><td>Team monthly burn</td><td class="mono">NPR 1,325,500</td></tr>
+          <tr><td>Team monthly burn</td><td class="mono">NPR 1,819,180</td></tr>
           <tr><td>AWS (A rate, ~$500/mo)</td><td class="mono">NPR 66,500</td></tr>
-          <tr><td>Other tooling (~$380/mo)</td><td class="mono">NPR 50,540</td></tr>
-          <tr class="is-recommended"><td><strong>Total monthly &times; 6 months</strong></td><td class="mono"><strong>&asymp; NPR 8,655,240 (~$65,075)</strong></td></tr>
-          <tr><td>One-time setup</td><td class="mono">NPR 1,439,150 (~$10,820)</td></tr>
-          <tr class="is-recommended"><td><strong>Total Phase 1 build-team budget</strong></td><td class="mono"><strong>&asymp; NPR 10,094,390 (~$75,895)</strong></td></tr>
+          <tr><td>Other tooling (~$590/mo)</td><td class="mono">NPR 78,470</td></tr>
+          <tr class="is-recommended"><td><strong>Total monthly &times; 6 months</strong></td><td class="mono"><strong>&asymp; NPR 11,784,900 (~$88,605)</strong></td></tr>
+          <tr><td>One-time setup</td><td class="mono">NPR 2,179,150 (~$16,385)</td></tr>
+          <tr class="is-recommended"><td><strong>Total Phase 1 build-team budget</strong></td><td class="mono"><strong>&asymp; NPR 13,964,050 (~$105,000)</strong></td></tr>
         </tbody>
       </table>
     </section>
@@ -133,12 +137,12 @@
     <section id="cost-b" class="notes-tab-panel">
       <table class="matrix-table" style="min-width:0;">
         <tbody>
-          <tr><td>Team monthly burn</td><td class="mono">NPR 1,325,500</td></tr>
+          <tr><td>Team monthly burn</td><td class="mono">NPR 1,819,180</td></tr>
           <tr><td>AWS (B/C rate, ~$400/mo)</td><td class="mono">NPR 53,200</td></tr>
-          <tr><td>Other tooling (~$380/mo)</td><td class="mono">NPR 50,540</td></tr>
-          <tr class="is-recommended"><td><strong>Total monthly &times; 5 months</strong></td><td class="mono"><strong>&asymp; NPR 7,146,200 (~$53,730)</strong></td></tr>
-          <tr><td>One-time setup</td><td class="mono">NPR 1,439,150 (~$10,820)</td></tr>
-          <tr class="is-recommended"><td><strong>Total Phase 1 build-team budget</strong></td><td class="mono"><strong>&asymp; NPR 8,585,350 (~$64,550)</strong></td></tr>
+          <tr><td>Other tooling (~$590/mo)</td><td class="mono">NPR 78,470</td></tr>
+          <tr class="is-recommended"><td><strong>Total monthly &times; 5 months</strong></td><td class="mono"><strong>&asymp; NPR 9,754,250 (~$73,340)</strong></td></tr>
+          <tr><td>One-time setup</td><td class="mono">NPR 2,179,150 (~$16,385)</td></tr>
+          <tr class="is-recommended"><td><strong>Total Phase 1 build-team budget</strong></td><td class="mono"><strong>&asymp; NPR 11,933,400 (~$89,725)</strong></td></tr>
         </tbody>
       </table>
     </section>
@@ -147,12 +151,12 @@
       <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 1rem;">Identical to B &mdash; same team, same infra, same tooling. The only difference is process (QA timing, foundations discipline), which doesn't show up as a line item.</p>
       <table class="matrix-table" style="min-width:0;">
         <tbody>
-          <tr><td>Team monthly burn</td><td class="mono">NPR 1,325,500</td></tr>
+          <tr><td>Team monthly burn</td><td class="mono">NPR 1,819,180</td></tr>
           <tr><td>AWS (B/C rate, ~$400/mo)</td><td class="mono">NPR 53,200</td></tr>
-          <tr><td>Other tooling (~$380/mo)</td><td class="mono">NPR 50,540</td></tr>
-          <tr class="is-recommended"><td><strong>Total monthly &times; 5 months</strong></td><td class="mono"><strong>&asymp; NPR 7,146,200 (~$53,730)</strong></td></tr>
-          <tr><td>One-time setup</td><td class="mono">NPR 1,439,150 (~$10,820)</td></tr>
-          <tr class="is-recommended"><td><strong>Total Phase 1 build-team budget</strong></td><td class="mono"><strong>&asymp; NPR 8,585,350 (~$64,550)</strong></td></tr>
+          <tr><td>Other tooling (~$590/mo)</td><td class="mono">NPR 78,470</td></tr>
+          <tr class="is-recommended"><td><strong>Total monthly &times; 5 months</strong></td><td class="mono"><strong>&asymp; NPR 9,754,250 (~$73,340)</strong></td></tr>
+          <tr><td>One-time setup</td><td class="mono">NPR 2,179,150 (~$16,385)</td></tr>
+          <tr class="is-recommended"><td><strong>Total Phase 1 build-team budget</strong></td><td class="mono"><strong>&asymp; NPR 11,933,400 (~$89,725)</strong></td></tr>
         </tbody>
       </table>
     </section>
@@ -160,7 +164,7 @@
   </div>
 
   <div class="assumption-note" style="margin-top:1.5rem; padding:1rem 1.2rem; border:1px dashed var(--border-strong); border-radius:8px; font-size:0.86rem; color:var(--text-secondary);">
-    Excludes in every scenario: founder compensation, GTM and Compliance costs (owned by other cofounders in all three, including A) and e-signature vendor per-envelope fees (~$0.50&ndash;3/envelope, negligible at pilot volume). Ranges vary by company tier and negotiation &mdash; treat each rate as a midpoint, not a ceiling. The inverter/UPS and office-seat lines assume a small office (6&ndash;7 people); scale up with team/office size.
+    Excludes in every scenario: founder compensation, GTM and Compliance costs (owned by other cofounders in all three, including A) and e-signature vendor per-envelope fees (~$0.50&ndash;3/envelope, negligible at pilot volume). Ranges vary by company tier and negotiation &mdash; treat each rate as a midpoint, not a ceiling. 2 more people fit within the stated 8&ndash;10 headroom without changing this budget's order of magnitude &mdash; see <a href="team.html">Team</a> for what that headroom might go to.
   </div>
 
 </div>

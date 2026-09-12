@@ -235,6 +235,33 @@ body {
 .proscons-table li { margin-bottom: 0.3rem; }
 .proscons-table li:last-child { margin-bottom: 0; }
 
+/* ---------------------------------------------------------------- In/out scope split */
+
+.scope-split { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1.5rem; }
+@media (max-width: 700px) { .scope-split { grid-template-columns: 1fr; } }
+.scope-col {
+  border-radius: 10px;
+  padding: 1.3rem 1.4rem;
+  border: 1px solid;
+}
+.scope-col.in { background: var(--badge-success-bg); border-color: var(--badge-success-text); }
+.scope-col.out { background: var(--surface-alt); border-color: var(--border-strong); }
+.scope-col-title {
+  font-family: "Manrope", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.9rem;
+}
+.scope-col.in .scope-col-title { color: var(--badge-success-text); }
+.scope-col.out .scope-col-title { color: var(--text-muted); }
+.scope-col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.6rem; }
+.scope-col li { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.9rem; line-height: 1.5; }
+.scope-col.in li::before { content: "\2713"; color: var(--badge-success-text); font-weight: 700; flex-shrink: 0; }
+.scope-col.out li::before { content: "\2013"; color: var(--text-faint); font-weight: 700; flex-shrink: 0; }
+.scope-col.out li { color: var(--text-secondary); }
+
 /* ---------------------------------------------------------------- Checklist */
 
 .notes-checklist { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.55rem; }
