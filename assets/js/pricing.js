@@ -7,7 +7,7 @@
   var override = params.get("pricing");
   var show = (window.SITE_CONFIG && typeof window.SITE_CONFIG.showPricing === "boolean")
     ? window.SITE_CONFIG.showPricing
-    : true;
+    : false;
   if (override === "0") show = false;
   if (override === "1") show = true;
   if (!show) {
