@@ -8,6 +8,8 @@
 <link rel="stylesheet" href="assets/css/theme.css">
 <link rel="stylesheet" href="assets/css/custom.css">
 <link rel="stylesheet" href="assets/css/notes.css">
+<script src="assets/js/config.js"></script>
+<script src="assets/js/pricing.js"></script>
 </head>
 <body>
 
@@ -24,7 +26,7 @@
       <a href="jd.html">JDs</a>
       <a href="tech-stack.html" class="is-active">Tech Stack</a>
       <a href="multi-tenancy.html">Multi-Tenancy</a>
-      <a href="cost.html">Cost</a>
+      <a href="cost.html" data-pricing>Cost</a>
       <a href="knowledge.md">Knowledge.md</a>
     </nav>
   </div>
@@ -142,7 +144,7 @@
   </div>
   <div class="notes-recommend">
     <span class="notes-recommend-tag">Recommendation</span>
-    <p style="margin:0; font-size:0.9rem; color:var(--text-secondary);">Flutter. The rendering-consistency argument is the deciding one for this specific team shape: one designer, a small mobile team, and a product where Agent/Client screens need to look identically polished on both platforms without a large QA function to catch platform drift.</p>
+    <p style="margin:0; font-size:0.9rem; color:var(--text-secondary);">Flutter. The rendering-consistency argument is the deciding one for this specific team shape: one designer, a single mobile engineer covering all 5 portals, and a product where every persona's screens need to look identically polished on both platforms without a large QA function to catch platform drift.</p>
   </div>
 
   <h2 class="section-title" style="margin-top: 2.25rem;">Web frontend</h2>
@@ -179,12 +181,12 @@
         <tr><th>CDN</th><td>CloudFront in front of S3 and static assets</td></tr>
         <tr><th>Networking</th><td>VPC with private subnets for the database and application, a public-facing ALB for API ingress &mdash; the database is never directly internet-reachable</td></tr>
         <tr><th>Secrets</th><td>Secrets Manager / Parameter Store &mdash; never in code or committed env files</td></tr>
-        <tr><th>Observability</th><td>CloudWatch for logs and metrics; a dedicated error tracker (see <a href="cost.html">Cost</a>) rather than relying on CloudWatch alone for application-level errors</td></tr>
+        <tr><th>Observability</th><td>CloudWatch for logs and metrics; a dedicated error tracker (see <a href="cost.html" data-pricing>Cost</a>) rather than relying on CloudWatch alone for application-level errors</td></tr>
         <tr><th>IaC</th><td>Terraform or AWS CDK from week 1, owned jointly by the founder and the tech lead &mdash; environments reproducible from a repo, not hand-configured in the console</td></tr>
       </tbody>
     </table>
   </div>
-  <p style="font-size: 0.86rem; color: var(--text-secondary); margin-top: 0.6rem;">Deliberately excluded from Phase 1: Kubernetes/EKS (real operational overhead a lean team doesn't need at this scale), multi-region deployment (one region is enough for a single-state or 2&ndash;3-state US pilot). See <a href="cost.html">Cost</a> for the actual AWS spend estimate.</p>
+  <p style="font-size: 0.86rem; color: var(--text-secondary); margin-top: 0.6rem;">Deliberately excluded from Phase 1: Kubernetes/EKS (real operational overhead a lean team doesn't need at this scale), multi-region deployment (one region is enough for a single-state or 2&ndash;3-state US pilot). See <a href="cost.html" data-pricing>Cost</a> for the actual AWS spend estimate.</p>
 
   <h2 class="section-title" style="margin-top: 2.25rem;">How we build: AI-native with human-in-the-loop, everywhere</h2>
   <p>Every developer has Claude coding access, in every scenario on this site. That's a real velocity multiplier on well-specified, well-scoped work, and part of why the team can stay lean (see <a href="team.html">Team</a>) &mdash; but it's a real risk on anything that touches money or law if it's not paired with deliberate review discipline. The practice, not just the principle:</p>

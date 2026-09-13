@@ -8,6 +8,8 @@
 <link rel="stylesheet" href="assets/css/theme.css">
 <link rel="stylesheet" href="assets/css/custom.css">
 <link rel="stylesheet" href="assets/css/notes.css">
+<script src="assets/js/config.js"></script>
+<script src="assets/js/pricing.js"></script>
 </head>
 <body>
 
@@ -24,7 +26,7 @@
       <a href="jd.html">JDs</a>
       <a href="tech-stack.html">Tech Stack</a>
       <a href="multi-tenancy.html">Multi-Tenancy</a>
-      <a href="cost.html">Cost</a>
+      <a href="cost.html" data-pricing>Cost</a>
       <a href="knowledge.md">Knowledge.md</a>
     </nav>
   </div>
@@ -34,16 +36,15 @@
 
   <p class="notes-eyebrow">Phase 1</p>
   <h1 style="font-family: var(--font-serif); font-size: 1.9rem; margin-bottom: 0.6rem;">Scope</h1>
-  <p class="notes-lede">Every scope decision, side by side. Column C is highlighted where it matches the recommendation. AI-native building with human-in-the-loop review is the default across all three &mdash; it's not a column that differs, see <a href="tech-stack.html">Tech Stack</a>.</p>
+  <p class="notes-lede">Every scope decision, side by side. Foundations-first discipline (QA from month 1, CI/CD required week 1) is now the default in both scenarios, not a column that differs &mdash; see <a href="tech-stack.html">Tech Stack</a>.</p>
 
   <div class="table-scroll">
     <table class="matrix-table">
       <thead>
         <tr>
           <th>Dimension</th>
-          <th>A &middot; Full Scope</th>
-          <th>B &middot; Lean Pilot</th>
-          <th>C &middot; Foundations-First</th>
+          <th>Full Pilot</th>
+          <th>Lean Pilot</th>
         </tr>
       </thead>
       <tbody>
@@ -51,96 +52,81 @@
           <th>E-signature</th>
           <td>Build in-house, ESIGN/UETA-compliant</td>
           <td>3rd-party integration</td>
-          <td class="is-recommended">3rd-party integration</td>
         </tr>
         <tr>
           <th>Money custody</th>
-          <td>Direct earnest-money custody (flagged as high-risk &mdash; see <a href="scenarios.html#scenario-a">Scenario A</a>)</td>
+          <td>Direct earnest-money custody (flagged as high-risk &mdash; see <a href="scenarios.html#scenario-full">Full Pilot</a>)</td>
           <td>None &mdash; referral/redirect only</td>
-          <td class="is-recommended">None &mdash; referral/redirect only</td>
         </tr>
         <tr>
           <th>Pilot geography</th>
           <td>2&ndash;3 states</td>
           <td>1 state</td>
-          <td class="is-recommended">1 state</td>
         </tr>
         <tr>
           <th>Product focus</th>
           <td>Full transaction lifecycle, broadly</td>
           <td>Transitional Document + Merchant Integration (two pillars)</td>
-          <td class="is-recommended">Transitional Document + Merchant Integration (two pillars)</td>
         </tr>
         <tr>
           <th>Mobile scope</th>
-          <td colspan="3" style="text-align:center;">Native for Agent + Client; web for Broker/Admin/Vendor &mdash; 1 Flutter engineer, in all three (flagged risk)</td>
+          <td colspan="2" style="text-align:center;">Native apps for all 5 portals (Admin, Broker, Agent, Client, Vendor) &mdash; 1 Flutter engineer, in both (flagged risk)</td>
         </tr>
         <tr>
           <th>Founder's role</th>
-          <td>Hands-on: architecture, AWS, backend, CTO</td>
+          <td>Hands-on: architecture, AWS, backend</td>
           <td>Non-coding: team, vision, roadmap, architecture</td>
-          <td class="is-recommended">Non-coding: team, vision, roadmap, architecture</td>
         </tr>
         <tr>
           <th>DevOps/Platform ownership</th>
-          <td>Founder, hands-on</td>
-          <td>Tech lead + founder, no dedicated hire</td>
-          <td class="is-recommended">Tech lead + founder, required checklist from week 1</td>
+          <td colspan="2" style="text-align:center;">Tech lead + founder, no dedicated hire, required from week 1 &mdash; same in both</td>
         </tr>
         <tr>
           <th>QA timing</th>
-          <td>Continuous from month 3</td>
-          <td>Continuous from month 2</td>
-          <td class="is-recommended">Continuous from month 1, alongside foundations</td>
+          <td colspan="2" style="text-align:center;">Continuous from month 1, alongside foundations &mdash; same in both</td>
         </tr>
         <tr>
           <th>GTM ownership</th>
-          <td>Other cofounders</td>
-          <td>Other cofounders</td>
-          <td class="is-recommended">Other cofounders</td>
+          <td colspan="2" style="text-align:center;">Other cofounders, in both</td>
         </tr>
         <tr>
           <th>Compliance ownership</th>
-          <td>Other cofounders &mdash; not staffed inside the build team even in the direct-custody path</td>
-          <td>Other cofounders</td>
-          <td class="is-recommended">Other cofounders</td>
+          <td colspan="2" style="text-align:center;">Other cofounders, in both &mdash; not staffed inside the build team even in the direct-custody path</td>
         </tr>
         <tr>
           <th>Multi-tenancy</th>
-          <td colspan="3" style="text-align:center;">Row-level tenant isolation from month 1, in all three &mdash; see <a href="multi-tenancy.html">Multi-Tenancy</a></td>
+          <td colspan="2" style="text-align:center;">Row-level tenant isolation from month 1, in both &mdash; see <a href="multi-tenancy.html">Multi-Tenancy</a></td>
         </tr>
         <tr>
           <th>White-label</th>
-          <td colspan="3" style="text-align:center;">Architected for (tenant-configurable branding), not activated in Phase 1 &mdash; see <a href="multi-tenancy.html">Multi-Tenancy</a></td>
+          <td colspan="2" style="text-align:center;">Architected for (tenant-configurable branding), not activated in Phase 1 &mdash; see <a href="multi-tenancy.html">Multi-Tenancy</a></td>
         </tr>
         <tr>
           <th>Team size (new hires)</th>
-          <td colspan="3" style="text-align:center;">4 FTE + 1 project-based, in all three &mdash; room for 3&ndash;4 more within the 8&ndash;10 headroom, left open</td>
+          <td colspan="2" style="text-align:center;">4 FTE + 1 project-based, in both &mdash; room for 3&ndash;4 more within the 8&ndash;10 headroom, left open</td>
         </tr>
         <tr>
           <th>Team size (total, incl. founder)</th>
-          <td colspan="3" style="text-align:center;">7 (6 FTE + founder) + 1 project-based, in all three</td>
+          <td colspan="2" style="text-align:center;">7 (6 FTE + founder) + 1 project-based, in both</td>
         </tr>
         <tr>
           <th>Timeline</th>
           <td>6 months</td>
           <td>5 months (4 if smooth)</td>
-          <td class="is-recommended">5 months &mdash; slower start, safer finish</td>
         </tr>
-        <tr>
+        <tr data-pricing>
           <th>Est. build-team cost</th>
-          <td>~$89,050 over 6 months &mdash; see <a href="cost.html#cost-a">Cost &rarr; A</a></td>
-          <td>~$75,735 over 5 months &mdash; see <a href="cost.html#cost-b">Cost &rarr; B</a></td>
-          <td class="is-recommended">~$75,735 over 5 months (identical to B) &mdash; see <a href="cost.html#cost-c">Cost &rarr; C</a></td>
+          <td>See <a href="cost.html#cost-full">Cost &rarr; Full Pilot</a></td>
+          <td>See <a href="cost.html#cost-lean">Cost &rarr; Lean Pilot</a></td>
         </tr>
       </tbody>
     </table>
   </div>
 
-  <p class="notes-footer" style="margin-bottom: 2rem;">Highlighted cells mark where the recommended scenario (C) lands. GTM and Compliance are owned by other cofounders in every scenario, including A &mdash; not staffed inside the build team anywhere on this site.</p>
+  <p class="notes-footer" style="margin-bottom: 2rem;">GTM and Compliance are owned by other cofounders in both scenarios &mdash; not staffed inside the build team anywhere on this site.</p>
 
-  <h2 class="section-title" style="margin-top: 2.5rem;">The 6-month plan (Scenario A): what ships, what doesn't</h2>
-  <p class="notes-lede" style="margin-bottom: 0;">The dimensions above say <em>how</em> each scenario differs. This is the concrete answer to "what do we actually get in 6 months" for the full-scope plan.</p>
+  <h2 class="section-title" style="margin-top: 2.5rem;">The 6-month plan (Full Pilot): what ships, what doesn't</h2>
+  <p class="notes-lede" style="margin-bottom: 0;">The dimensions above say <em>how</em> the scenarios differ. This is the concrete answer to "what do we actually get in 6 months" for the full-scope plan.</p>
 
   <div class="scope-split">
     <div class="scope-col in">
@@ -150,9 +136,8 @@
         <li>In-house ESIGN/UETA-compliant e-signature engine, reviewed by outside counsel</li>
         <li>Transitional Document: structured, personalized, gap-detection logic feeding the marketplace</li>
         <li>Merchant Integration marketplace: vendor onboarding, real payment processing, commission tracking</li>
-        <li>Native iOS + Android apps for Agent and Client</li>
+        <li>Native iOS + Android apps for all 5 portals (Admin, Broker, Agent, Client, Vendor)</li>
         <li>Escrow-partner integration (orchestration, not direct custody) for earnest-money tracking</li>
-        <li>Broker/Admin/Vendor as responsive web portals (not native)</li>
         <li>Multi-tenant data architecture supporting multiple brokerages &mdash; see <a href="multi-tenancy.html">Multi-Tenancy</a></li>
         <li>Jurisdiction rules engine covering the 2&ndash;3 pilot states' real forms and disclosure timing</li>
         <li>Basic Admin/Broker reporting and revenue analytics</li>
@@ -162,8 +147,7 @@
     <div class="scope-col out">
       <p class="scope-col-title">Explicitly not this phase</p>
       <ul>
-        <li>Direct earnest-money custody (self-licensed escrow or broker-trust) &mdash; the licensing timeline alone exceeds 6 months, see <a href="scenarios.html#scenario-a">Scenario A</a></li>
-        <li>Native mobile apps for Broker/Admin/Vendor &mdash; web-only in Phase 1</li>
+        <li>Direct earnest-money custody (self-licensed escrow or broker-trust) &mdash; the licensing timeline alone exceeds 6 months, see <a href="scenarios.html#scenario-full">Full Pilot</a></li>
         <li>White-label branding activated for a partner brokerage &mdash; architected for, not turned on, see <a href="multi-tenancy.html">Multi-Tenancy</a></li>
         <li>MLS/IDX integration &mdash; a real competitive gap, not attempted in Phase 1</li>
         <li>Expansion beyond the initial 2&ndash;3 pilot states</li>
@@ -173,7 +157,7 @@
       </ul>
     </div>
   </div>
-  <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 1rem;">B and C run the same list minus the items already off the table by design (1 state not 2&ndash;3, 3rd-party e-signature not in-house, no custody path to defer) &mdash; see the dimensions above for exactly what's smaller.</p>
+  <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 1rem;">Lean Pilot runs the same list minus the items already off the table by design (1 state not 2&ndash;3, 3rd-party e-signature not in-house, no custody path to defer) &mdash; native mobile for all 5 portals ships in both.</p>
 
 </div>
 

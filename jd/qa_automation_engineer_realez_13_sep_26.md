@@ -19,14 +19,14 @@ Husig (Human Signal Pvt. Ltd.) is an AI and data solutions consultancy based in 
 
 ## Why This Role Exists
 
-AI-generated code that looks right and quietly isn't is the real risk on this build — specifically in commission math, e-signature callback handling, and jurisdiction rules. This role starts as early as the scenario allows (month 1 in the Foundations-First plan, not bolted on in month 4) and owns adversarial verification of exactly those surfaces, not just "does the feature run."
+AI-generated code that looks right and quietly isn't is the real risk on this build — specifically in commission math, e-signature callback handling, and jurisdiction rules. This role starts in month 1 in both scenarios, not bolted on in month 4, and owns adversarial verification of exactly those surfaces, not just "does the feature run."
 
 ## The Stack You'll Be Testing
 
 | Layer | Tech | Testing Today |
 |---|---|---|
 | **Backend** | Python, FastAPI, PostgreSQL | pytest (unit/integration) |
-| **Mobile** | Flutter (Agent + Client apps) | flutter_test / integration_test |
+| **Mobile** | Flutter (all 5 portals) | flutter_test / integration_test |
 | **CI** | GitHub Actions (or equivalent) | Required checks on every PR |
 | **High-stakes surfaces** | Merchant Integration commission ledger, e-signature webhook/callback handling, jurisdiction-rule edge cases | — |
 
@@ -42,7 +42,7 @@ AI-generated code that looks right and quietly isn't is the real risk on this bu
 - Jurisdiction-rule edge cases for the pilot state(s)
 
 ### Mobile & Cross-Platform QA (15%)
-- Agent + Client app testing across iOS/Android using the team's test device lab
+- App testing across all 5 portals on iOS/Android using the team's test device lab
 
 ### Release Quality (10%)
 - Pre-pilot regression passes, bug triage, clear repros for the tech lead

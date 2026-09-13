@@ -23,7 +23,7 @@ One designer, engaged project-based — not a full-time hire — for a flat proj
 
 - The Transitional Document authoring flow: the seller-facing guided data-entry experience, and the buyer-facing handoff view
 - The Merchant Integration onboarding flow: vendor listing/signup screens and the client-facing marketplace browsing experience
-- A mobile design system covering Agent + Client screens, built for one-to-one implementation in Flutter
+- A mobile design system covering all 5 portals, built for one-to-one implementation in Flutter
 - Developer-ready handoff: Figma specs and assets, not just concept mockups
 
 ## Must-Have

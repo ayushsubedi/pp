@@ -8,6 +8,8 @@
 <link rel="stylesheet" href="assets/css/theme.css">
 <link rel="stylesheet" href="assets/css/custom.css">
 <link rel="stylesheet" href="assets/css/notes.css">
+<script src="assets/js/config.js"></script>
+<script src="assets/js/pricing.js"></script>
 </head>
 <body>
 
@@ -24,7 +26,7 @@
       <a href="jd.html">JDs</a>
       <a href="tech-stack.html">Tech Stack</a>
       <a href="multi-tenancy.html">Multi-Tenancy</a>
-      <a href="cost.html">Cost</a>
+      <a href="cost.html" data-pricing>Cost</a>
       <a href="knowledge.md">Knowledge.md</a>
     </nav>
   </div>
@@ -32,7 +34,7 @@
 
 <div class="notes-shell">
 
-  <p class="notes-eyebrow">Phase 1 &middot; Scenario C (applies to B too, minus the foundations node)</p>
+  <p class="notes-eyebrow">Phase 1 &middot; applies to both scenarios</p>
   <h1 style="font-family: var(--font-serif); font-size: 1.9rem; margin-bottom: 0.6rem;">Dependencies</h1>
   <p class="notes-lede">What engineering is blocked on from other cofounders, and what blocks what internally. The build can be fully ready and still stuck on an external box below.</p>
 
@@ -46,7 +48,7 @@ flowchart TB
         brokerage["Pilot brokerage identified + contracted"]
     end
 
-    subgraph FOUND["Engineering foundations (Scenario C, month 1)"]
+    subgraph FOUND["Engineering foundations (required week 1, both scenarios)"]
         direction TB
         cicd["CI/CD + IaC + security baseline"]
     end
@@ -57,7 +59,7 @@ flowchart TB
         esig["E-sig integration"]
         td["Transitional Document"]
         mi["Merchant Integration"]
-        mobile["Agent + Client mobile apps"]
+        mobile["Native mobile, all 5 portals"]
     end
 
     subgraph VERIFY["Verification"]
@@ -102,12 +104,12 @@ flowchart TB
   <h2 class="section-title" style="margin-top: 2rem;">Reading it</h2>
   <ul class="notes-checklist">
     <li>Nothing in jurisdiction rules, e-sig, or onboarding can really start until its orange-box input lands &mdash; those three are owed by Compliance/GTM, not engineering</li>
-    <li>In Scenario C, nothing else starts meaningfully until the CI/CD + IaC + security baseline exists &mdash; that's the point of making it a required week-1 deliverable for the Senior Backend Engineer #2 and founder, not an afterthought squeezed in later</li>
+    <li>Nothing else starts meaningfully until the CI/CD + IaC + security baseline exists &mdash; that's the point of making it a required week-1 deliverable for the tech lead and founder, in both scenarios, not an afterthought squeezed in later</li>
     <li>Transitional Document feeds Merchant Integration directly (gap-driven recommendations) &mdash; it should be built slightly ahead, not in lockstep</li>
     <li>QA and the pen test gate go/no-go together with onboarding being ready &mdash; both have to be true, not either</li>
   </ul>
 
-  <p class="notes-footer">Scenario B has the same shape, minus the dedicated Foundations subgraph &mdash; CI/CD still exists, just built when there's time rather than as a required week-1 deliverable. Same people own it in both (the Senior Backend Engineer #2 and founder) &mdash; only the priority differs.</p>
+  <p class="notes-footer">Full Pilot's mobile node covers all 5 portals over 2&ndash;3 states' worth of jurisdiction rules; Lean Pilot runs the same graph over 1 state. The dependency shape itself is identical &mdash; see <a href="scope.html">Scope</a> for what's smaller in Lean Pilot.</p>
 
 </div>
 

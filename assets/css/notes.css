@@ -235,6 +235,23 @@ body {
 .proscons-table li { margin-bottom: 0.3rem; }
 .proscons-table li:last-child { margin-bottom: 0; }
 
+/* ---------------------------------------------------------------- Pricing visibility */
+/* Controlled by assets/js/config.js (SITE_CONFIG.showPricing) + assets/js/pricing.js,
+   which stamp .pricing-hidden on <html> before paint when costs should stay hidden. */
+
+html.pricing-hidden [data-pricing] { display: none !important; }
+.pricing-placeholder, .pricing-placeholder-block { display: none; }
+html.pricing-hidden .pricing-placeholder { display: inline; }
+html.pricing-hidden .pricing-placeholder-block { display: block; }
+.pricing-placeholder-block {
+  padding: 1.4rem 1.6rem;
+  border: 1px dashed var(--border-strong);
+  border-radius: 10px;
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  background: var(--surface-alt);
+}
+
 /* ---------------------------------------------------------------- In/out scope split */
 
 .scope-split { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1.5rem; }

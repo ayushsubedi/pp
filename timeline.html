@@ -8,6 +8,8 @@
 <link rel="stylesheet" href="assets/css/theme.css">
 <link rel="stylesheet" href="assets/css/custom.css">
 <link rel="stylesheet" href="assets/css/notes.css">
+<script src="assets/js/config.js"></script>
+<script src="assets/js/pricing.js"></script>
 </head>
 <body>
 
@@ -24,7 +26,7 @@
       <a href="jd.html">JDs</a>
       <a href="tech-stack.html">Tech Stack</a>
       <a href="multi-tenancy.html">Multi-Tenancy</a>
-      <a href="cost.html">Cost</a>
+      <a href="cost.html" data-pricing>Cost</a>
       <a href="knowledge.md">Knowledge.md</a>
     </nav>
   </div>
@@ -34,96 +36,70 @@
 
   <p class="notes-eyebrow">Phase 1</p>
   <h1 style="font-family: var(--font-serif); font-size: 1.9rem; margin-bottom: 0.6rem;">Timeline</h1>
-  <p class="notes-lede">Same six-ish months, three different shapes. Scenario C's month 1 splits into a parallel foundations bar &mdash; that's the main structural difference from B.</p>
+  <p class="notes-lede">Two shapes, same foundations-first discipline in both: QA starts month 1, CI/CD and IaC are a required week-1 deliverable. The real difference is duration and scope, not process.</p>
 
   <div class="notes-tabs" data-panels="#timeline-panels">
-    <button class="notes-tab-btn is-active" data-tab-target="#gantt-a">A &middot; Full Scope</button>
-    <button class="notes-tab-btn" data-tab-target="#gantt-b">B &middot; Lean Pilot</button>
-    <button class="notes-tab-btn" data-tab-target="#gantt-c">C &middot; Foundations-First</button>
+    <button class="notes-tab-btn is-active" data-tab-target="#gantt-full">Full Pilot</button>
+    <button class="notes-tab-btn" data-tab-target="#gantt-lean">Lean Pilot</button>
   </div>
 
   <div id="timeline-panels">
 
-    <section id="gantt-a" class="notes-tab-panel is-active">
+    <section id="gantt-full" class="notes-tab-panel is-active">
       <div class="diagram-card">
         <pre class="mermaid">
 gantt
-    title Scenario A — Full Scope (6 months)
+    title Full Pilot (6 months)
     dateFormat  YYYY-MM-DD
     axisFormat  %b
-    section Foundation
-    Auth, multi-tenancy, AWS prod       :a1, 2026-01-01, 60d
-    E-signature engine (in-house) begins :a2, 2026-01-15, 90d
-    Jurisdiction rules design (2-3 states):a3, 2026-01-01, 60d
+    section Foundation (Month 1-2, foundations required week 1)
+    CI-CD, IaC, security baseline (week 1)  :a1, 2026-01-01, 14d
+    QA starts immediately, not month 3      :a1b, 2026-01-01, 60d
+    Auth, multi-tenancy, AWS prod            :a1c, 2026-01-01, 60d
+    E-signature engine (in-house) begins     :a2, 2026-01-15, 90d
+    Jurisdiction rules design (2-3 states)   :a3, 2026-01-01, 60d
     Hiring ramp (4 FTE hires; Designer engaged project-based) :a4, 2026-01-01, 30d
-    section Build
-    E-sig legal review                   :a5, after a2, 45d
-    Jurisdiction rules + forms built     :a6, after a3, 60d
-    Escrow-partner sandbox integration   :a7, 2026-03-01, 60d
-    Marketplace productionized           :a8, 2026-03-01, 60d
-    Mobile Agent+Client feature-complete :a9, 2026-03-01, 60d
-    section Harden and Launch
-    Pen test and remediation             :a10, 2026-05-01, 30d
-    Counsel sign-off                     :a11, 2026-05-01, 30d
-    App store submission                 :a12, 2026-05-15, 30d
-    Pilot onboarding                     :a13, 2026-06-01, 30d
+    section Build (Month 3-4)
+    E-sig legal review                       :a5, after a2, 45d
+    Jurisdiction rules + forms built         :a6, after a3, 60d
+    Escrow-partner sandbox integration       :a7, 2026-03-01, 60d
+    Marketplace productionized               :a8, 2026-03-01, 60d
+    Native mobile build, all 5 portals       :a9, 2026-03-01, 60d
+    section Harden and Launch (Month 5-6)
+    Pen test and remediation                 :a10, 2026-05-01, 30d
+    Counsel sign-off                         :a11, 2026-05-01, 30d
+    App store submission                     :a12, 2026-05-15, 30d
+    Pilot onboarding                         :a13, 2026-06-01, 30d
         </pre>
       </div>
     </section>
 
-    <section id="gantt-b" class="notes-tab-panel">
+    <section id="gantt-lean" class="notes-tab-panel">
       <div class="diagram-card">
         <pre class="mermaid">
 gantt
-    title Scenario B — Lean Pilot (5 months)
+    title Lean Pilot (5 months)
     dateFormat  YYYY-MM-DD
     axisFormat  %b
-    section Foundation (Month 1)
-    Auth, multi-tenancy, single-state data model, AWS :b1, 2026-01-01, 30d
-    E-sig vendor sandbox wired up         :b2, 2026-01-01, 30d
-    Jurisdiction rules (1 state) design   :b3, 2026-01-01, 30d
-    Hiring ramp (4 FTE hires; Designer engaged project-based) :b4, 2026-01-01, 30d
-    section Core Build (Months 2-3)
-    Transitional Document build           :b5, 2026-02-01, 60d
-    Merchant Integration build            :b6, 2026-02-01, 60d
-    E-sig wired into transaction flow     :b7, 2026-02-01, 30d
-    Agent+Client mobile build             :b8, 2026-02-01, 60d
-    QA automation (continuous from M2)    :b9, 2026-02-01, 90d
-    section Test and Polish (Months 4-5)
-    Regression + pen test                 :b10, 2026-04-01, 30d
-    App store submission                  :b11, 2026-04-01, 30d
-    UX polish pass                        :b12, 2026-05-01, 30d
-    Pilot readiness go/no-go              :b13, 2026-05-25, 6d
-        </pre>
-      </div>
-    </section>
-
-    <section id="gantt-c" class="notes-tab-panel">
-      <div class="diagram-card">
-        <pre class="mermaid">
-gantt
-    title Scenario C — Foundations-First (5 months)
-    dateFormat  YYYY-MM-DD
-    axisFormat  %b
-    section Foundations (Month 1, parallel)
-    CI-CD, IaC, secrets, security baseline :c1, 2026-01-01, 30d
-    Tech lead + HR/Admin land first :c2, 2026-01-01, 14d
-    QA/Verification starts (not month 2)   :c3, 2026-01-01, 30d
-    section Pillar design (Month 1)
-    Transitional Document data model       :c4, 2026-01-01, 30d
-    Merchant Integration data model        :c5, 2026-01-01, 30d
-    E-sig vendor sandbox wired up          :c6, 2026-01-01, 30d
-    QA, PM land; Designer engaged :c7, 2026-01-01, 30d
-    section Core Build (Months 2-3)
-    Transitional Document build            :c8, 2026-02-01, 60d
-    Merchant Integration build             :c9, 2026-02-01, 60d
-    Agent+Client mobile build              :c10, 2026-02-01, 60d
-    HITL review on every merge (continuous):c11, 2026-02-01, 90d
-    section Test and Polish (Months 4-5)
-    Regression + pen test                  :c12, 2026-04-01, 30d
-    App store submission                   :c13, 2026-04-01, 30d
-    UX polish pass                         :c14, 2026-05-01, 30d
-    Pilot readiness go/no-go               :c15, 2026-05-25, 6d
+    section Foundation (Month 1, foundations required week 1)
+    Tech lead + HR/Admin land first           :b0, 2026-01-01, 14d
+    CI-CD, IaC, security baseline (week 1)    :b1, 2026-01-01, 14d
+    QA starts immediately, not month 2        :b1b, 2026-01-01, 30d
+    Auth, multi-tenancy, single-state data model, AWS :b1c, 2026-01-01, 30d
+    E-sig vendor sandbox wired up             :b2, 2026-01-01, 30d
+    Jurisdiction rules (1 state) design       :b3, 2026-01-01, 30d
+    QA, PM land; Designer engaged             :b4, 2026-01-01, 30d
+    section Core Build (Month 2-3)
+    Transitional Document build               :b5, 2026-02-01, 60d
+    Merchant Integration build                :b6, 2026-02-01, 60d
+    E-sig wired into transaction flow         :b7, 2026-02-01, 30d
+    Native mobile build, all 5 portals        :b8, 2026-02-01, 60d
+    QA automation (continuous from month 1)   :b9, 2026-02-01, 90d
+    section Test and Polish (Month 4-5)
+    Regression + pen test                     :b10, 2026-04-01, 30d
+    App store submission                      :b11, 2026-04-01, 30d
+    UX polish pass                            :b12, 2026-05-01, 30d
+    Pilot readiness go/no-go                  :b13, 2026-05-25, 6d
         </pre>
       </div>
     </section>

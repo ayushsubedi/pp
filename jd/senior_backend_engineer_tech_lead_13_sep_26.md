@@ -19,7 +19,7 @@ Husig (Human Signal Pvt. Ltd.) is an AI and data solutions consultancy based in 
 
 RealEZ is a full transaction OS for real estate: e-signature workflow, a structured seller-to-buyer "Transitional Document" handoff, and a post-closing marketplace connecting movers, inspectors, and other service providers to a deal's actual condition. Phase 1 is a real pilot with 1–2 brokerages, not a demo, built by a small, senior, AI-native team — every developer uses Claude for day-to-day development, with mandatory human review on anything touching money or law.
 
-**Team:** RealEZ Engineering (a Husig product team) · **Reports to:** RealEZ's founder/CTO
+**Team:** RealEZ Engineering (a Husig product team) · **Reports to:** RealEZ's founder
 
 ## Why This Role Exists
 

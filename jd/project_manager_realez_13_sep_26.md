@@ -15,7 +15,7 @@ excerpt: "Coordinate delivery and cross-team dependencies for RealEZ's Phase 1 p
 
 Husig (Human Signal Pvt. Ltd.) is an AI and data solutions consultancy based in Kathmandu, Nepal. This role sits on the team building **RealEZ**, a Husig product: a full transaction OS for real estate, currently in its Phase 1 pilot build.
 
-**Team:** RealEZ Engineering · **Reports to:** RealEZ's founder/CTO
+**Team:** RealEZ Engineering · **Reports to:** RealEZ's founder
 
 ## Why This Role Exists
 

@@ -8,6 +8,8 @@
 <link rel="stylesheet" href="assets/css/theme.css">
 <link rel="stylesheet" href="assets/css/custom.css">
 <link rel="stylesheet" href="assets/css/notes.css">
+<script src="assets/js/config.js"></script>
+<script src="assets/js/pricing.js"></script>
 </head>
 <body>
 
@@ -24,7 +26,7 @@
       <a href="jd.html">JDs</a>
       <a href="tech-stack.html">Tech Stack</a>
       <a href="multi-tenancy.html">Multi-Tenancy</a>
-      <a href="cost.html">Cost</a>
+      <a href="cost.html" data-pricing>Cost</a>
       <a href="knowledge.md">Knowledge.md</a>
     </nav>
   </div>
@@ -35,54 +37,44 @@
   <p class="notes-eyebrow">RealEZ &middot; Founder Planning</p>
   <h1 style="font-family: var(--font-serif); font-size: 2.1rem; margin-bottom: 0.6rem;">Phase 1 Planning Notes</h1>
   <p class="notes-lede">
-    A growing collection of build-planning notes for RealEZ's Phase 1: three full scenarios (scope,
-    team, timeline, cost), a deep look at who we actually need to hire, tech-stack reasoning, and the
-    engineering foundations we're committing to from day one. This is a living reference &mdash;
-    expect more pages over time.
+    A growing collection of build-planning notes for RealEZ's Phase 1: two scenarios (scope, team,
+    timeline, cost), a deep look at who we actually need to hire, job descriptions ready to post,
+    and tech-stack reasoning. Both scenarios build with the same disciplined defaults &mdash; QA
+    from month 1, foundations required in week 1 &mdash; as standard practice, not an option. This
+    is a living reference &mdash; expect more pages over time.
   </p>
 
   <div class="hairline-card" style="margin-bottom: 2.5rem;">
-    <p class="section-title" style="margin-bottom: 0.6rem;">Three scenarios, side by side</p>
+    <p class="section-title" style="margin-bottom: 0.6rem;">Two scenarios, side by side</p>
     <table class="matrix-table" style="min-width: 0;">
       <thead>
         <tr><th>Scenario</th><th>Shape</th><th></th></tr>
       </thead>
       <tbody>
         <tr>
-          <th>A &middot; Full Scope</th>
+          <th>Full Pilot</th>
           <td>6 months &middot; 2&ndash;3 states &middot; in-house ESIGN e-signature &middot; direct earnest-money custody</td>
-          <td><a href="scenarios.html#scenario-a">View &rarr;</a></td>
+          <td><a href="scenarios.html#scenario-full">View &rarr;</a></td>
         </tr>
         <tr>
-          <th>B &middot; Lean Pilot</th>
-          <td>5 months &middot; 1 state &middot; 3rd-party e-signature &middot; no custody &middot; Nepal-costed</td>
-          <td><a href="scenarios.html#scenario-b">View &rarr;</a></td>
-        </tr>
-        <tr class="is-recommended">
-          <th>C &middot; Foundations-First</th>
-          <td>The exact same team and cost as B &mdash; QA starts a month earlier and engineering foundations are a required week-1 deliverable, not headcount</td>
-          <td><a href="scenarios.html#scenario-c">View &rarr;</a></td>
+          <th>Lean Pilot</th>
+          <td>5 months &middot; 1 state &middot; 3rd-party e-signature &middot; no custody</td>
+          <td><a href="scenarios.html#scenario-lean">View &rarr;</a></td>
         </tr>
       </tbody>
     </table>
-    <div class="notes-recommend" style="margin-top: 1.1rem; margin-bottom: 0;">
-      <span class="notes-recommend-tag">Recommended</span>
-      <p style="margin: 0; font-size: 0.9rem; color: var(--text-secondary);">
-        Scenario C. Identical cost and team to B &mdash; the difference is entirely sequencing and
-        discipline, not resources &mdash; see <a href="team.html">Team</a> for the full reasoning.
-      </p>
-    </div>
+    <p style="margin-top: 1rem; font-size: 0.88rem; color: var(--text-secondary);">Same team, same foundations-first discipline, same native mobile apps for all 5 portals in both &mdash; the real choice is product/legal scope and timeline, not process. See <a href="scope.html">Scope</a> for the full breakdown.</p>
   </div>
 
   <p class="section-title">Every page</p>
   <div class="notes-card-grid">
     <a class="notes-card hairline-card" href="scenarios.html">
       <div class="notes-card-title">Scenarios</div>
-      <div class="notes-card-desc">Full A / B / C comparison, tabbed &mdash; objective, team, timeline, exit criteria, risks for each.</div>
+      <div class="notes-card-desc">Full Pilot / Lean Pilot comparison, tabbed &mdash; objective, team, timeline, exit criteria, risks for each.</div>
     </a>
     <a class="notes-card hairline-card" href="scope.html">
       <div class="notes-card-title">Scope</div>
-      <div class="notes-card-desc">One matrix: e-signature, custody, geography, product focus, mobile, team size, cost &mdash; across all three.</div>
+      <div class="notes-card-desc">One matrix: e-signature, custody, geography, product focus, mobile, team size &mdash; across both.</div>
     </a>
     <a class="notes-card hairline-card" href="timeline.html">
       <div class="notes-card-title">Timeline</div>
@@ -108,7 +100,7 @@
       <div class="notes-card-title">Multi-Tenancy</div>
       <div class="notes-card-desc">Tenant data isolation and white-label &mdash; what's in the first 6 months and what isn't.</div>
     </a>
-    <a class="notes-card hairline-card" href="cost.html">
+    <a class="notes-card hairline-card" href="cost.html" data-pricing>
       <div class="notes-card-title">Cost</div>
       <div class="notes-card-desc">Nepal-based senior team costs, per scenario &mdash; payroll, overhead, hardware, office.</div>
     </a>
@@ -118,7 +110,7 @@
     </a>
   </div>
 
-  <p class="notes-footer">Founder/business planning notes, not product documentation &mdash; kept separate from the RealEZ app repo on purpose. Figures throughout are planning estimates, not commitments.</p>
+  <p class="notes-footer">Founder/business planning notes, not product documentation &mdash; kept separate from the RealEZ app repo on purpose. Figures throughout are planning estimates, not commitments. Pricing visibility is controlled by <span class="mono">assets/js/config.js</span> &mdash; see the note at the bottom of <a href="cost.html">Cost</a>.</p>
 
 </div>
 

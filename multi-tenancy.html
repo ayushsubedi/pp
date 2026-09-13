@@ -8,6 +8,8 @@
 <link rel="stylesheet" href="assets/css/theme.css">
 <link rel="stylesheet" href="assets/css/custom.css">
 <link rel="stylesheet" href="assets/css/notes.css">
+<script src="assets/js/config.js"></script>
+<script src="assets/js/pricing.js"></script>
 </head>
 <body>
 
@@ -24,7 +26,7 @@
       <a href="jd.html">JDs</a>
       <a href="tech-stack.html">Tech Stack</a>
       <a href="multi-tenancy.html" class="is-active">Multi-Tenancy</a>
-      <a href="cost.html">Cost</a>
+      <a href="cost.html" data-pricing>Cost</a>
       <a href="knowledge.md">Knowledge.md</a>
     </nav>
   </div>
@@ -53,7 +55,7 @@
   </div>
 
   <h2 class="section-title">Multi-tenancy: not optional, not deferrable</h2>
-  <p>Every brokerage in the pilot &mdash; even if Phase 1 only ever signs one &mdash; is a tenant, and Scenario A's plan explicitly targets 1&ndash;2 pilot brokerages across 2&ndash;3 states, so this is real from the first real customer, not a hypothetical future need. Retrofitting tenant isolation into a schema built without it is one of the most expensive mistakes to fix later in a multi-customer SaaS product &mdash; every table, every query, every access-control check has to be revisited. Building it in from the first migration costs almost nothing extra; adding it after the fact means an audit of the entire codebase.</p>
+  <p>Every brokerage in the pilot &mdash; even if Phase 1 only ever signs one &mdash; is a tenant, and Full Pilot's plan explicitly targets 1&ndash;2 pilot brokerages across 2&ndash;3 states, so this is real from the first real customer, not a hypothetical future need. Retrofitting tenant isolation into a schema built without it is one of the most expensive mistakes to fix later in a multi-customer SaaS product &mdash; every table, every query, every access-control check has to be revisited. Building it in from the first migration costs almost nothing extra; adding it after the fact means an audit of the entire codebase.</p>
   <ul class="notes-checklist">
     <li>Row-level tenant isolation &mdash; a <code>brokerage_id</code> column enforced at the query layer, not just an application-level convention &mdash; rather than a separate database per brokerage. Simpler to operate at pilot scale, and the standard pattern for a B2B2C SaaS at this stage; a database-per-tenant model is worth revisiting only once brokerage count and per-tenant data volume genuinely justify the operational overhead.</li>
     <li>Every table that holds brokerage-scoped data carries the tenant key from the first migration, not bolted on after the first real brokerage signs up.</li>
