@@ -1,5 +1,5 @@
 ---
-title: "QA / Automation Engineer, RealEZ"
+title: "QA / Automation Engineer"
 date: 2026-09-13
 draft: true
 type: "job"
@@ -8,14 +8,16 @@ location: "Kathmandu, Nepal"
 workType: "Onsite"
 employmentType: "Full-time"
 hideTOC: true
-excerpt: "Own test automation and adversarial verification for RealEZ's two flagship product pillars and everything money-adjacent, from month 1."
+excerpt: "Own test automation and adversarial verification for the two flagship product pillars and everything money-adjacent, from month 1."
 ---
 
-## About Husig & RealEZ
+**Start date:** available from Mangsir 1 (November 17, 2026)
 
-Husig (Human Signal Pvt. Ltd.) is an AI and data solutions consultancy based in Kathmandu, Nepal. This role sits on the team building **RealEZ**, a Husig product: a full transaction OS for real estate, built by a small, senior, AI-native team where every developer uses Claude for day-to-day development.
+## About Husig
 
-**Team:** RealEZ Engineering · **Reports to:** the RealEZ tech lead
+Husig (Human Signal Pvt. Ltd.) is an AI and data solutions consultancy based in Kathmandu, Nepal. This role sits on the team building one of Husig's own products: a full transaction OS for real estate, built by a small, senior, AI-native team where every developer uses Claude for day-to-day development.
+
+**Team:** Product Engineering · **Reports to:** the tech lead
 
 ## Why This Role Exists
 
@@ -28,7 +30,7 @@ AI-generated code that looks right and quietly isn't is the real risk on this bu
 | **Backend** | Python, FastAPI, PostgreSQL | pytest (unit/integration) |
 | **Mobile** | Flutter (all 5 portals) | flutter_test / integration_test |
 | **CI** | GitHub Actions (or equivalent) | Required checks on every PR |
-| **High-stakes surfaces** | Merchant Integration commission ledger, e-signature webhook/callback handling, jurisdiction-rule edge cases | — |
+| **High-stakes surfaces** | Commission ledger, e-signature webhook/callback handling, jurisdiction-rule edge cases | — |
 
 ## Key Responsibilities
 
@@ -37,8 +39,8 @@ AI-generated code that looks right and quietly isn't is the real risk on this bu
 - Wire tests into CI as required merge gates; own flake control
 
 ### Adversarial / Money-Adjacent Testing (35%)
-- Deep, adversarial testing on the Transitional Document's gap-detection logic
-- The Merchant Integration commission ledger and e-signature webhook/callback handling
+- Deep, adversarial testing on the property-handoff document's gap-detection logic
+- The marketplace's commission ledger and e-signature webhook/callback handling
 - Jurisdiction-rule edge cases for the pilot state(s)
 
 ### Mobile & Cross-Platform QA (15%)

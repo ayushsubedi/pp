@@ -1,5 +1,5 @@
 ---
-title: "Senior Backend Engineer — Tech Lead, RealEZ"
+title: "Senior Backend Engineer — Tech Lead"
 date: 2026-09-13
 draft: true
 type: "job"
@@ -8,22 +8,24 @@ location: "Kathmandu, Nepal"
 workType: "Onsite"
 employmentType: "Full-time"
 hideTOC: true
-excerpt: "Be the day-to-day technical lead for RealEZ, Husig's real estate transaction platform — architecture, AI-code review, and infrastructure from week 1."
+excerpt: "Be the day-to-day technical lead for one of Husig's own products, a real estate transaction platform — architecture, AI-code review, and infrastructure from week 1."
 ---
+
+**Start date:** available from Mangsir 1 (November 17, 2026)
 
 ## About Husig
 
-Husig (Human Signal Pvt. Ltd.) is an AI and data solutions consultancy based in Kathmandu, Nepal, building products and engineering teams for clients and its own ventures across compliance automation, conversational AI, data annotation, and real estate AI. This role sits on the team building **RealEZ**, one of Husig's own products.
+Husig (Human Signal Pvt. Ltd.) is an AI and data solutions consultancy based in Kathmandu, Nepal, building products and engineering teams for clients and its own ventures across compliance automation, conversational AI, data annotation, and real estate AI. This role sits on the team building one of Husig's own products.
 
-## About RealEZ
+## About the Product
 
-RealEZ is a full transaction OS for real estate: e-signature workflow, a structured seller-to-buyer "Transitional Document" handoff, and a post-closing marketplace connecting movers, inspectors, and other service providers to a deal's actual condition. Phase 1 is a real pilot with 1–2 brokerages, not a demo, built by a small, senior, AI-native team — every developer uses Claude for day-to-day development, with mandatory human review on anything touching money or law.
+A full transaction OS for real estate: e-signature workflow, a structured seller-to-buyer property handoff document, and a post-closing marketplace connecting movers, inspectors, and other service providers to a deal's actual condition. Phase 1 is a real pilot with 1–2 brokerages, not a demo, built by a small, senior, AI-native team — every developer uses Claude for day-to-day development, with mandatory human review on anything touching money or law.
 
-**Team:** RealEZ Engineering (a Husig product team) · **Reports to:** RealEZ's founder
+**Team:** Product Engineering · **Reports to:** the founder (part-time, architecture sign-off rather than day-to-day)
 
 ## Why This Role Exists
 
-The founder has stepped back from hands-on coding to focus on architecture, hiring, and roadmap — this hire is the day-to-day technical lead. Not a second peer to the existing backend engineer: this person co-owns architecture, is the primary reviewer of every AI-generated pull request, and stands up CI/CD, infrastructure-as-code, and the security baseline in week 1. There is no dedicated DevOps/Platform Engineer on this team — that ground is covered by this role, using AI-assisted scaffolding rather than a separate hire.
+The founder is part-time for now, focused on occasional architecture sign-off rather than daily direction — this hire is the day-to-day technical lead. Not a second peer to the existing backend engineer: this person owns architecture, is the primary reviewer of every AI-generated pull request, and stands up CI/CD, infrastructure-as-code, and the security baseline in week 1. There is no dedicated DevOps/Platform Engineer on this team — that ground is covered by this role, using AI-assisted scaffolding rather than a separate hire.
 
 ## The Stack
 
@@ -37,7 +39,7 @@ The founder has stepped back from hands-on coding to focus on architecture, hiri
 ## Key Responsibilities
 
 ### Architecture & Technical Leadership (35%)
-- Co-own architecture with the founder, including the two-pillar data model (Transitional Document + Merchant Integration)
+- Own architecture, with the founder available for occasional sign-off, including the two-pillar data model (structured property handoff + service marketplace)
 - Design multi-tenant, row-level tenant isolation from day one
 - Own the jurisdiction-rules-engine design for the pilot state(s)
 
@@ -53,7 +55,7 @@ The founder has stepped back from hands-on coding to focus on architecture, hiri
 
 ### Integration Work (15%)
 - 3rd-party e-signature vendor integration, including webhook/callback handling
-- Merchant Integration's payment and commission-ledger logic
+- The marketplace's payment and commission-ledger logic
 
 ## Must-Have
 
@@ -74,7 +76,7 @@ The founder has stepped back from hands-on coding to focus on architecture, hiri
 ## First 90 Days
 
 - **30 days:** CI/CD live with required checks; IaC deployed for staging + prod; multi-tenant schema and tenant-aware auth in place
-- **60 days:** Transitional Document and Merchant Integration data models built; e-signature vendor integrated in sandbox
+- **60 days:** both pillars' data models built; e-signature vendor integrated in sandbox
 - **90 days:** both pillars feature-complete for the pilot state; review discipline running smoothly on every PR
 
 ## What We Offer

@@ -1,5 +1,5 @@
 ---
-title: "UI/UX Designer — Project Engagement, RealEZ"
+title: "UI/UX Designer — Project Engagement"
 date: 2026-09-13
 draft: true
 type: "job"
@@ -8,21 +8,23 @@ location: "Remote or Kathmandu"
 workType: "Remote / Hybrid"
 employmentType: "Contract (Project-based)"
 hideTOC: true
-excerpt: "A fixed-scope design engagement covering RealEZ's two flagship product pillars and its mobile design system — not a full-time hire."
+excerpt: "A fixed-scope design engagement covering two flagship product pillars and a mobile design system — not a full-time hire."
 ---
 
-## About Husig & RealEZ
+**Start date:** available from Mangsir 1 (November 17, 2026)
 
-Husig (Human Signal Pvt. Ltd.) is an AI and data solutions consultancy based in Kathmandu, Nepal. This engagement covers **RealEZ**, a Husig product: a full transaction OS for real estate, currently building its Phase 1 pilot around two product pillars.
+## About Husig
+
+Husig (Human Signal Pvt. Ltd.) is an AI and data solutions consultancy based in Kathmandu, Nepal. This engagement covers one of Husig's own products: a full transaction OS for real estate, currently building its Phase 1 pilot around two product pillars.
 
 ## Why This Engagement Exists
 
-One designer, engaged project-based — not a full-time hire — for a flat project fee (NPR 4,00,000) covering both flagship pillars' UX plus the mobile design system. A fixed-scope deliverable matched to Phase 1's build window, not an ongoing role.
+One designer, engaged project-based — not a full-time hire — for a fixed project fee, covering both flagship pillars' UX plus the mobile design system for all 5 portals. A fixed-scope deliverable matched to Phase 1's build window, not an ongoing role.
 
 ## Deliverables
 
-- The Transitional Document authoring flow: the seller-facing guided data-entry experience, and the buyer-facing handoff view
-- The Merchant Integration onboarding flow: vendor listing/signup screens and the client-facing marketplace browsing experience
+- The property-handoff document's authoring flow: the seller-facing guided data-entry experience, and the buyer-facing handoff view
+- The marketplace onboarding flow: vendor listing/signup screens and the client-facing browsing experience
 - A mobile design system covering all 5 portals, built for one-to-one implementation in Flutter
 - Developer-ready handoff: Figma specs and assets, not just concept mockups
 
@@ -38,13 +40,9 @@ One designer, engaged project-based — not a full-time hire — for a flat proj
 - Experience designing for real estate, fintech, or another compliance-adjacent product
 - Experience designing a single design system used consistently across multiple portal types
 
-## Project Fee
-
-NPR 4,00,000 flat, for the full Phase 1 engagement.
-
 ## How to Apply
 
-Send your portfolio plus a proposed timeline against the deliverables above to **[careers@husig.ai]**.
+Send your portfolio plus a proposed timeline and fee against the deliverables above to **[careers@husig.ai]**.
 
 ---
 

@@ -7,8 +7,9 @@ Founder/business planning notes, not product documentation — kept separate fro
 repo on purpose. Figures throughout are planning estimates, not commitments.
 
 **Note on this file:** the HTML site supports hiding pricing for external publishing (see
-`assets/js/config.js`). This markdown file is static and always shows full detail, including cost
-figures — don't share it externally if the version you're sharing should hide pricing.
+`assets/js/config.js`, currently `showPricing: true`). This markdown file is static and always
+shows full detail, including cost figures — don't share it externally if the version you're
+sharing should hide pricing. Job descriptions never carry pricing, regardless of that toggle.
 
 ---
 
@@ -41,31 +42,38 @@ figures — don't share it externally if the version you're sharing should hide 
 Both scenarios now build with the same foundations-first discipline as standard practice — QA
 starts month 1, CI/CD and infrastructure-as-code are a required week-1 deliverable — not a
 separate option to choose between. What actually differs between the two is product/legal scope
-and timeline, not process.
+and timeline, not process or team.
 
 AI-native building with human-in-the-loop review is the default in both. Every developer has
 Claude coding access. Native mobile apps for all 5 portals (Admin, Broker, Agent, Client, Vendor)
 are required in both scenarios too — not just Agent + Client.
+
+**The founder is part-time in both scenarios, for now** — architecture sign-off and high-level
+guidance, not day-to-day vision, roadmap, or hands-on building. This is no longer a scenario
+difference; it used to only be true in Lean Pilot. See [Team](#team--who-we-actually-need) for how
+that gap gets covered.
 
 ## The team is unified across both scenarios
 
 **7 people total (4 new FTE hires + 2 existing), plus 1 project-based designer — the same roster in
 both scenarios.** A confirmed 8–10 person budget headroom exists, but it stays mostly unspent:
 
-- **4 new FTE hires:** Senior Backend Engineer #2 (the tech lead), QA/Automation Engineer, Project
-  Manager, HR/Payroll/Admin
+- **4 new FTE hires, all week 1:** Senior Backend Engineer #2 (the tech lead), Technical Product
+  Manager, HR/Payroll/Admin, plus QA/Automation Engineer landing weeks 2–4
 - **1 project-based engagement, not an FTE:** a UI/UX Designer, at a flat project fee (see
   [Cost](#cost))
 - **No Compliance & Trust Operations Lead anywhere** — even in Full Pilot's direct-custody path,
   compliance is owned by other cofounders, not staffed inside the build team
-- **No dedicated DevOps/Platform Engineer, no second mobile engineer** — both were tried on for
-  size given the available headroom and cut back out: the tech lead covers infrastructure/CI/CD
-  with AI-assisted scaffolding, and one Flutter engineer covers all 5 portals. Neither is cut for
-  budget — both are judged genuinely sufficient at this team size, with the mobile bet now
-  carrying more risk given it covers every persona, not just Agent + Client.
+- **No dedicated DevOps/Platform Engineer, no second mobile engineer, no Engineering Manager** —
+  all were tried on for size given the available headroom and cut back out: the tech lead covers
+  infrastructure/CI/CD with AI-assisted scaffolding, one Flutter engineer covers all 5 portals, and
+  a dedicated people-manager layer isn't justified for a 4-person engineering function. None are
+  cut for budget — all are judged genuinely sufficient at this team size, with the mobile bet
+  carrying the most risk since it covers every persona, not just Agent + Client.
 
-What still differs by scenario: product/legal scope (states, e-signature approach, money custody),
-whether the founder is hands-on (Full Pilot) or not (Lean Pilot), and timeline length.
+What still differs by scenario: product/legal scope (states, e-signature approach, money custody)
+and timeline length. The founder's role and the team roster no longer differ — both changed this
+round.
 
 ## The earnest-money custody risk, in detail
 
@@ -198,13 +206,13 @@ Live pilot with 1–2 real brokerages across 2–3 states by month 6.
 | Timeline | 6 months |
 
 ### Team (4 new FTE hires + 1 project-based)
-Existing: You (architect, AWS, backend — **hands-on**), 1 FTE Backend Engineer, 1 FTE Flutter
-Engineer.
+Existing: You (part-time — architecture sign-off, not day-to-day, for now), 1 FTE Backend
+Engineer, 1 FTE Flutter Engineer.
 
 New: Senior Backend Engineer #2 (tech lead — also covers DevOps/foundations, no dedicated platform
-hire), HR/Payroll/Admin, QA/Automation Engineer, Project Manager, plus UI/UX Designer
-(project-based, not FTE). No GTM or Compliance hire — both cofounder-owned. No second mobile
-engineer.
+hire); Technical Product Manager (owns vision/roadmap now that the founder is part-time);
+HR/Payroll/Admin; QA/Automation Engineer; plus UI/UX Designer (project-based, not FTE). No GTM or
+Compliance hire — both cofounder-owned. No second mobile engineer, no Engineering Manager.
 
 ### Timeline shape
 Months 1–2 Foundation & Scaffolding (CI/CD, IaC, security baseline required week 1; repo and app
@@ -227,6 +235,9 @@ for all 5 portals; jurisdiction rules validated for all pilot states; pen test r
 3. Legal review as a bottleneck across e-sig, escrow-partner agreements, and 2–3 state pilot contracts
 4. Jurisdiction-rules workload across 2–3 states may still warrant using more of the remaining
    headcount headroom
+5. The founder going part-time lands hardest here — this is the heavier-scope plan, and it now
+   runs on the tech lead and Technical Product Manager without the founder's own hands-on time as
+   backup capacity
 
 ---
 
@@ -239,7 +250,7 @@ and GTM (other cofounders) landing on a compatible timeline.
 ### Key inputs
 | | |
 |---|---|
-| Your role | Team, vision, roadmap, architecture — not hands-on |
+| Your role | Part-time — architecture sign-off, not day-to-day, for now |
 | E-signature | 3rd-party integration |
 | Pilot geography | 1 state |
 | Money handling | No direct earnest-money custody |
@@ -255,9 +266,9 @@ and GTM (other cofounders) landing on a compatible timeline.
   surface through gap-driven recommendations, and get paid automatically through the platform.
 
 ### Team (4 new FTE hires + 1 project-based)
-Identical roster to Full Pilot, minus the founder being hands-on: Senior Backend Engineer #2 (tech
-lead), HR/Payroll/Admin, QA/Automation Engineer, Project Manager, plus project-based UI/UX
-Designer.
+Identical roster to Full Pilot: Senior Backend Engineer #2 (tech lead), Technical Product Manager,
+HR/Payroll/Admin, QA/Automation Engineer, plus project-based UI/UX Designer. The founder's role is
+also now identical across both scenarios — part-time in both, not a Lean-only trait anymore.
 
 ### Timeline shape
 Month 1 Foundation & Scaffolding (CI/CD, IaC, security baseline required week 1; repo and app
@@ -295,8 +306,9 @@ pilot brokerage identified/contracted (by month 3–4).
 | Pilot geography | 2–3 states | 1 state |
 | Product focus | Full transaction lifecycle | Transitional Document + Merchant Integration |
 | Mobile | Native apps for all 5 portals, 1 Flutter engineer (flagged risk) | same |
-| Founder's role | Hands-on | Non-coding |
-| DevOps/Platform | Tech lead + founder, no dedicated hire, required week 1 | same |
+| Founder's role | Part-time in both, for now — no longer a scenario difference | same |
+| Vision / roadmap | Technical Product Manager, in both — week-1 hire | same |
+| DevOps/Platform | Tech lead, no dedicated hire, required week 1 | same |
 | QA timing | Month 1, with foundations | same |
 | GTM / Compliance ownership | Other cofounders | same |
 | Multi-tenancy | Row-level isolation from month 1 | same |
@@ -319,6 +331,9 @@ Month 1 Foundation & Scaffolding (foundations required week 1, QA from month 1, 
 both pillars starts here too) → Months 2–3 Core Build (POCs go feature-complete) → Months
 4–5 Test & Polish.
 
+Gantt charts render relative month numbers (M1, M2, ...) rather than calendar months, since the
+dates are illustrative, not a real committed start date.
+
 ---
 
 ## Dependencies
@@ -327,47 +342,80 @@ External, owed by other cofounders, in both scenarios: pilot state confirmed (ga
 rules); e-signature vendor contracted (gates e-sig integration); pilot brokerage contracted (gates
 onboarding/go-live).
 
-Internal: CI/CD + IaC + security baseline is a required week-1 deliverable for the tech lead and
-founder, in both scenarios (this used to differ between plans — it doesn't anymore). Transitional
-Document feeds Merchant Integration; QA + security review gate go/no-go together with onboarding
-readiness. Full Pilot's mobile node covers all 5 portals over 2–3 states of jurisdiction rules;
-Lean Pilot runs the same graph over 1 state — the dependency shape itself is identical.
+Internal: CI/CD + IaC + security baseline is a required week-1 deliverable for the tech lead, in
+both scenarios (this used to differ between plans — it doesn't anymore, and the founder is no
+longer hands-on for it either). Transitional Document feeds Merchant Integration; QA + security
+review gate go/no-go together with onboarding readiness. Full Pilot's mobile node covers all 5
+portals over 2–3 states of jurisdiction rules; Lean Pilot runs the same graph over 1 state — the
+dependency shape itself is identical.
 
 ---
 
 ## Team — who we actually need
 
-### The core idea
-AI coding assistance means a senior team covers more ground than the same size team could before.
-A tech lead with Claude, using well-reviewed Terraform/CI templates, can stand up and maintain
-solid infrastructure without a dedicated platform hire. One senior Flutter engineer, the same way,
-is expected to cover native apps for all 5 portals without a second — a bigger ask than before, and
+### What changed and why it matters
+With the founder stepping back to part-time, three things that used to have an owner need one
+again. **Architecture** mostly already sat with the tech lead (co-owned with the founder before) —
+that becomes closer to full ownership, with the founder available for occasional sign-off, not
+daily direction. **Team** coordination splits across existing roles: HR/Admin for the
+administrative side, the tech lead for technical direction and review. **Vision and roadmap** don't
+have a natural home in the existing roster — that's what the Technical Product Manager now owns,
+which is why it can't wait until month 2 anymore.
+
+AI coding assistance means a senior team covers more ground than the same size team could before. A
+tech lead with Claude, using well-reviewed Terraform/CI templates, can stand up and maintain solid
+infrastructure without a dedicated platform hire. One senior Flutter engineer, the same way, is
+expected to cover native apps for all 5 portals without a second — a bigger ask than before, and
 the risk most worth watching. Budget headroom exists, but it doesn't get spent just because it's
 there — it stays open for a role that's actually justified when one comes up.
 
 ### Already on the team
-You (hands-on in Full Pilot, non-coding in Lean Pilot), FTE Backend Engineer, FTE Flutter Engineer
-— the two developers already building today.
+You (part-time — architecture sign-off and high-level guidance, not day-to-day, in both scenarios
+for now), FTE Backend Engineer, FTE Flutter Engineer — the two developers already building today.
 
 ### Hiring plan — tiered, same in both scenarios
 
-**Tier 1 — Week 1:** Senior Backend Engineer #2 (tech lead — architecture, review, and
-CI/CD/IaC/security baseline in week 1 via AI-assisted scaffolding; the highest-leverage hire); HR/
-Payroll/Admin (onboards everyone else joining).
+**Tier 1 — Week 1 (land together):**
+- **Senior Backend Engineer #2 — the tech lead.** Not a second peer to the existing Backend
+  Engineer. Owns architecture (with the founder available for occasional sign-off, not daily
+  direction), is the primary reviewer of AI-generated code across the team, and stands up CI/CD,
+  infrastructure-as-code, and the security baseline in week 1 using AI-assisted scaffolding rather
+  than a dedicated platform hire. The single highest-leverage engineering hire on this list.
+- **Technical Product Manager.** Elevated from a plain Project Manager, and moved from month 2 to
+  week 1, specifically because the founder going part-time leaves vision and roadmap without an
+  owner otherwise. Owns product prioritization and the two pillars' roadmap, runs delivery
+  coordination, and tracks the cross-team dependencies owed by the GTM/Compliance cofounders (pilot
+  state, e-sig vendor, pilot brokerage). "Technical" matters here: this person needs enough
+  fluency in the two pillars' actual shape to make real trade-off calls, not just track a board.
+  Priced with a premium closer to the tech lead's than a standard senior rate, given the scope.
+- **HR / Payroll / Admin.** Brought in early on purpose: processes paperwork, payroll, and
+  onboarding for everyone else joining over the next few weeks, and is the team's administrative
+  point of contact as it grows.
 
-**Tier 2 — Weeks 2–4:** QA/Verification Engineer (starts month 1 in both scenarios now); UI/UX
-Designer (project-based, not FTE).
+**Tier 2 — Weeks 2–4:**
+- **QA / Verification Engineer.** Starts month 1 in both scenarios — AI-generated code needs
+  adversarial verification from the start, not a testing pass bolted on later. Owns the test
+  pyramid from day one, plus deep adversarial testing on the two pillars and anything
+  money-adjacent.
+- **UI/UX Designer.** Project/contract engagement, not FTE — a flat project fee, not a monthly
+  salary line. Covers the Transitional Document authoring flow and the Merchant Integration
+  onboarding flow, plus the mobile design system for all 5 portals.
 
-**Tier 3 — Month 2:** Project Manager (once there are 5+ builders and real dependency dates to
-track).
+### Why not Product Manager or Engineering Manager instead?
+**Product Manager** alone undersells it — this person also runs delivery and owns the cross-team
+dependency tracking, not just prioritization. **Engineering Manager** doesn't fit at all: there's
+no people-management or hiring scope here, and a dedicated EM layer isn't justified for a
+4-person engineering function anyway. **Technical Product Manager** is the accurate title: product
+ownership (vision, roadmap, prioritization) plus delivery coordination, with enough technical
+fluency in the two pillars to make real trade-off calls rather than just track a board.
 
 ### 7 hired, headroom left fully open
-4 new FTE + 2 existing + 1 project-based designer = 7 people against a confirmed 8–10 budget
-headroom. That headroom stays unspent on purpose: neither DevOps/Platform nor a second mobile
-engineer earned a seat on their own merits. If a real need shows up — a second backend engineer for
-Full Pilot's 2–3-state jurisdiction workload, a security engineer once there's production traffic
-to justify it, or a second mobile engineer if native apps for all 5 portals slip — the room is
-there.
+4 new FTE (tech lead, Technical Product Manager, QA, HR/Admin) + 2 existing + 1 project-based
+designer = 7 people against a confirmed 8–10 budget headroom. That headroom stays unspent on
+purpose: neither DevOps/Platform, a second mobile engineer, nor an Engineering Manager earned a
+seat on their own merits. If a real need shows up — a second backend engineer for Full Pilot's
+2–3-state jurisdiction workload, a security engineer once there's production traffic to justify
+it, or a second mobile engineer if native apps for all 5 portals slip — the room is there.
 
 ### What's not hired, and why
 - A dedicated DevOps/Platform Engineer — the tech lead, with AI-assisted IaC/CI scaffolding, covers
@@ -376,6 +424,9 @@ there.
 - A second mobile engineer — one senior Flutter engineer with AI assistance is expected to cover
   native apps for all 5 portals. The tightest assumption in this plan, worth watching closely now
   that mobile scope covers every persona, not just Agent + Client.
+- An Engineering Manager — the tech lead provides technical direction and review for a team this
+  size; a dedicated people-manager layer isn't justified until the engineering headcount is
+  meaningfully larger.
 - Compliance & Trust Operations Lead — not this team's job, in both scenarios, not a budget call.
 - A dedicated AI-tooling specialist — a practice, not a role, at this size.
 - A dedicated security engineer as an FTE — contract a pen test, unless the headroom above is used here.
@@ -385,10 +436,14 @@ there.
 
 ## Job descriptions
 
-Five open roles have full JDs, ready to post: Senior Backend Engineer (tech lead), QA/Automation
-Engineer, Project Manager, HR/Payroll/Admin, and the project-based UI/UX Designer. Written in
-Husig's own careers format (see `husig_hugo/themes/husig/content/careers/` for precedent): About
-Husig + About RealEZ, a stack table, Must-Have/Nice-to-Have, First 90 Days, How to Apply.
+Five open roles have full JDs, ready to post: Senior Backend Engineer (tech lead), Technical
+Product Manager, QA/Automation Engineer, HR/Payroll/Admin, and the project-based UI/UX Designer.
+Written in Husig's own careers format (see `husig_hugo/themes/husig/content/careers/` for
+precedent): About Husig + About the Product, a stack table, Must-Have/Nice-to-Have, First 90 Days,
+How to Apply.
+
+All five are available from **Mangsir 1 (November 17, 2026)**, and none of them name the internal
+product or carry a compensation figure — both deliberate, regardless of the site's pricing toggle.
 
 See `jd.html` for the full text of each, and `jd/*.md` for Hugo-ready versions with matching
 frontmatter that can be dropped directly into husig_hugo's careers content folder.
@@ -457,7 +512,7 @@ default. Concretely for Phase 1:
 | Networking | VPC, private subnets for DB and app, public ALB for API ingress — the database is never directly internet-reachable |
 | Secrets | Secrets Manager / Parameter Store |
 | Observability | CloudWatch for logs/metrics, plus a dedicated error tracker for application-level errors |
-| IaC | Terraform or AWS CDK from week 1, owned jointly by the founder and the tech lead |
+| IaC | Terraform or AWS CDK from week 1, owned by the tech lead |
 
 Deliberately excluded from Phase 1: Kubernetes/EKS (real operational overhead a lean team doesn't
 need at this scale) and multi-region deployment (one region is enough for a US pilot).
@@ -477,11 +532,12 @@ Enforced by mandatory PR review (1 senior approval standard, 2 for the always-ve
 
 Indicative planning figures, not a quote — verify current rates locally. Converted at roughly NPR
 133/USD. Team cost is identical across both scenarios (7 people); only timeline length and AWS
-differ.
+differ. Never shown in the job descriptions themselves.
 
 **Publishing note:** the HTML site can hide everything in this section via `assets/js/config.js`
-(`showPricing: false`) for external sharing, without deleting the underlying content. This markdown
-file always shows full detail — don't share it externally if pricing should stay hidden.
+(`showPricing: false`) for external sharing, without deleting the underlying content — currently
+set to `true` (shown). This markdown file always shows full detail — don't share it externally if
+pricing should stay hidden.
 
 ### Team — rate assumptions
 | Role | Status | NPR/month | USD/month |
@@ -489,16 +545,19 @@ file always shows full detail — don't share it externally if pricing should st
 | Backend Engineer | Existing FTE | 180,000 | ~1,350 |
 | Flutter Engineer | Existing FTE | 180,000 | ~1,350 |
 | Senior Backend Engineer #2 — tech lead | New FTE | 200,000 | ~1,500 |
+| Technical Product Manager | New FTE | 190,000 | ~1,425 |
 | QA/Automation Engineer | New FTE | 140,000 | ~1,050 |
-| Project Manager | New FTE | 160,000 | ~1,200 |
 | HR/Payroll/Admin *(generalist rate)* | New FTE | 90,000 | ~675 |
-| **Gross FTE payroll, 7 people** | | **1,130,000** | **~8,495** |
+| **Gross FTE payroll, 6 people** | | **980,000** | **~7,370** |
 
-UI/UX Designer: not FTE — project-based, flat NPR 4,00,000, priced as a one-time cost.
+UI/UX Designer: not FTE — project-based, flat NPR 4,00,000, priced as a one-time cost. The tech
+lead and the Technical Product Manager are both priced above the other new hires' 180,000 baseline
+— the tech lead for architecture/review/foundations ownership, the Technical Product Manager for
+absorbing vision/roadmap now that the founder is part-time.
 
 ### Team monthly burn (identical in both scenarios)
-Payroll 1,130,000 + statutory/benefits ~18% (203,400) + office (8 seats @ 12,000 = 96,000) +
-contingency 10% (142,940) = **≈ NPR 1,572,340/month (~$11,820)**.
+Payroll 980,000 + statutory/benefits ~18% (176,400) + office (8 seats @ 12,000 = 96,000) +
+contingency 10% (125,240) = **≈ NPR 1,377,640/month (~$10,360)**.
 
 ### Infrastructure (AWS) — separated
 Lean Pilot: ~$400/month (staging+prod, small RDS, S3/CDN, backups, Secrets Manager, CloudWatch — 1
@@ -515,7 +574,7 @@ registration ($25 once); domain+SSL (~$20/yr, SSL via ACM is free). Recurring mo
 ### One-time setup (identical in both scenarios)
 | | NPR |
 |---|---|
-| Hardware, standard (laptop 200,000 + monitor + dongle) × 4 new hires (tech lead, QA, PM, HR/Admin) | 920,000 |
+| Hardware, standard (laptop 200,000 + monitor + dongle) × 4 new hires (tech lead, Technical PdM, QA, HR/Admin) | 920,000 |
 | Test device lab (1 iPhone + 2 Android phones, for testing across all 5 portals) | 180,000 |
 | UI/UX Designer project fee | 400,000 |
 | Office inverter/UPS (load-shedding backup) | 100,000 |
@@ -526,10 +585,10 @@ Assumes the 2 existing developers already have suitable machines, including the 
 Mac for iOS builds.
 
 ### Total Phase 1, by scenario
-- **Full Pilot (6 months):** (1,572,340 + 66,500 + 65,170) × 6 = 10,224,060, + one-time 1,619,150 =
-  **≈ NPR 11,843,210 (~$89,050)**
-- **Lean Pilot (5 months):** (1,572,340 + 53,200 + 65,170) × 5 = 8,453,550, + one-time 1,619,150 =
-  **≈ NPR 10,072,700 (~$75,735)**
+- **Full Pilot (6 months):** (1,377,640 + 66,500 + 65,170) × 6 = 9,055,860, + one-time 1,619,150 =
+  **≈ NPR 10,675,010 (~$80,265)**
+- **Lean Pilot (5 months):** (1,377,640 + 53,200 + 65,170) × 5 = 7,480,050, + one-time 1,619,150 =
+  **≈ NPR 9,099,200 (~$68,415)**
 
 **Excluded from every figure:** founder compensation, GTM and Compliance costs (owned by other
 cofounders), e-signature vendor per-envelope fees. 3–4 more people fit within the stated 8–10
