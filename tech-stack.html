@@ -106,7 +106,7 @@
         <tr>
           <th>Self-hosted Postgres on EC2</th>
           <td class="pros"><ul><li>Marginally cheaper at small scale, more low-level control</li></ul></td>
-          <td class="cons"><ul><li>Backups, patching, and failover become the DevOps/Platform Engineer's manual responsibility instead of AWS's &mdash; real time taken from foundations/feature work for a cost saving that doesn't matter yet</li></ul></td>
+          <td class="cons"><ul><li>Backups, patching, and failover become the tech lead's manual responsibility instead of AWS's &mdash; real time taken from foundations/feature work for a cost saving that doesn't matter yet</li></ul></td>
         </tr>
       </tbody>
     </table>
@@ -179,7 +179,7 @@
         <tr><th>Networking</th><td>VPC with private subnets for the database and application, a public-facing ALB for API ingress &mdash; the database is never directly internet-reachable</td></tr>
         <tr><th>Secrets</th><td>Secrets Manager / Parameter Store &mdash; never in code or committed env files</td></tr>
         <tr><th>Observability</th><td>CloudWatch for logs and metrics; a dedicated error tracker (see <a href="cost.html">Cost</a>) rather than relying on CloudWatch alone for application-level errors</td></tr>
-        <tr><th>IaC</th><td>Terraform or AWS CDK from week 1, owned jointly by the founder and the DevOps/Platform Engineer &mdash; environments reproducible from a repo, not hand-configured in the console</td></tr>
+        <tr><th>IaC</th><td>Terraform or AWS CDK from week 1, owned jointly by the founder and the tech lead &mdash; environments reproducible from a repo, not hand-configured in the console</td></tr>
       </tbody>
     </table>
   </div>

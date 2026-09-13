@@ -36,26 +36,26 @@ repo on purpose. Figures throughout are planning estimates, not commitments.
 | **C — Foundations-First** | Identical team and cost to B — the difference is sequencing and discipline, not headcount |
 
 **Recommendation: Scenario C.** Same team, same cost as B — QA starts a month earlier, and
-engineering foundations are the DevOps/Platform Engineer's required week-1 deliverable rather than
-ad hoc.
+engineering foundations are the tech lead's required week-1 deliverable rather than ad hoc.
 
 AI-native building with human-in-the-loop review is the default across all three scenarios, not a
 distinguishing trait of any one of them. Every developer has Claude coding access.
 
 ## The team is unified across all three scenarios
 
-**8 people total (6 new FTE hires + 2 existing), plus 1 project-based designer — the same roster in
-A, B, and C.** This is the low end of a confirmed 8–10 person budget headroom that costs nothing
-extra to use:
+**7 people total (4 new FTE hires + 2 existing), plus 1 project-based designer — the same roster in
+A, B, and C.** A confirmed 8–10 person budget headroom exists, but it stays mostly unspent:
 
-- **6 new FTE hires:** Senior Backend Engineer #2 (the tech lead), DevOps/Platform Engineer, Second
-  Mobile/Flutter Engineer, QA/Automation Engineer, Project Manager, HR/Payroll/Admin
+- **4 new FTE hires:** Senior Backend Engineer #2 (the tech lead), QA/Automation Engineer, Project
+  Manager, HR/Payroll/Admin
 - **1 project-based engagement, not an FTE:** a UI/UX Designer, at a flat NPR 4,00,000 project fee
 - **No Compliance & Trust Operations Lead anywhere** — even in Scenario A's direct-custody path,
   compliance is owned by other cofounders, not staffed inside the build team
-- **DevOps/Platform Engineer and a second mobile engineer are back in**, having been cut in an
-  earlier, budget-constrained pass — they were cut for cost discipline, not because the work wasn't
-  real, and the budget headroom removes that constraint
+- **No dedicated DevOps/Platform Engineer, no second mobile engineer** — both were tried on for
+  size given the available headroom and cut back out: the tech lead covers infrastructure/CI/CD
+  with AI-assisted scaffolding, and one Flutter engineer covers Agent + Client native parity. Both
+  are judged genuinely sufficient at this team size, not cut for budget — the headroom stays open
+  for a role that's actually justified rather than spent to hit a number.
 
 What still differs by scenario: product/legal scope (states, e-signature approach, money custody),
 whether the founder is hands-on (A) or not (B, C), and QA timing (month 3 in A, month 2 in B, month
@@ -147,8 +147,7 @@ None of this is a rebuild if the month-1 groundwork is done; all of it is a rebu
 
 ## The 6-month plan: what ships, what doesn't
 
-For Scenario A specifically — the literal 6-month plan. Same timeline as before; the extra
-headcount (8 FTE instead of 6) buys robustness within this scope, not more scope.
+For Scenario A specifically — the literal 6-month plan.
 
 **Ships in 6 months:**
 - Core transaction workflow (listing → offer → contract → closing) for 2–3 pilot states
@@ -188,18 +187,19 @@ Live pilot with 1–2 real brokerages across 2–3 states by month 6.
 | | |
 |---|---|
 | E-signature | Build in-house, ESIGN/UETA-compliant |
-| Mobile | 2 Flutter engineers — native Agent + Client |
+| Mobile | 1 Flutter engineer — native Agent + Client (flagged risk) |
 | Pilot geography | 2–3 states |
 | Money handling | RealEZ holds/moves earnest money directly (see the detailed risk above) |
 | Timeline | 6 months |
 
-### Team (6 new FTE hires + 1 project-based)
+### Team (4 new FTE hires + 1 project-based)
 Existing: You (architect/AWS/backend/CTO, **hands-on**), 1 FTE Backend Engineer, 1 FTE Flutter
 Engineer.
 
-New: Senior Backend Engineer #2 (tech lead), DevOps/Platform Engineer, HR/Payroll/Admin, Second
-Mobile/Flutter Engineer, QA/Automation Engineer, Project Manager, plus UI/UX Designer (project-based,
-NPR 4,00,000, not FTE). No GTM or Compliance hire — both cofounder-owned.
+New: Senior Backend Engineer #2 (tech lead — also covers DevOps/foundations, no dedicated platform
+hire), HR/Payroll/Admin, QA/Automation Engineer, Project Manager, plus UI/UX Designer
+(project-based, NPR 4,00,000, not FTE). No GTM or Compliance hire — both cofounder-owned. No second
+mobile engineer.
 
 ### Timeline shape
 Months 1–2 Foundation (auth, multi-tenancy, AWS prod, e-signature engine begins, jurisdiction rules
@@ -216,8 +216,7 @@ Client; jurisdiction rules validated for all pilot states; pen test remediated.
 1. Money-transmitter/escrow licensing arriving late or being shortcut
 2. Legal review as a bottleneck across e-sig, escrow-partner agreements, and 2–3 state pilot contracts
 3. Founder bandwidth split across architecture, AWS, backend, and leadership
-4. Jurisdiction-rules workload across 2–3 states may still warrant using more of the remaining
-   headcount headroom
+4. Agent + Client native parity resting on one Flutter engineer, not two
 
 ---
 
@@ -244,10 +243,9 @@ and GTM (other cofounders) landing on a compatible timeline.
 - **Merchant Integration — the revenue engine.** Vendors onboard with real listings and pricing,
   surface through gap-driven recommendations, and get paid automatically through the platform.
 
-### Team (6 new FTE hires + 1 project-based)
+### Team (4 new FTE hires + 1 project-based)
 Same roster as Scenario A minus the founder being hands-on: Senior Backend Engineer #2 (tech lead),
-DevOps/Platform Engineer, HR/Payroll/Admin, Second Mobile/Flutter Engineer, QA/Automation Engineer,
-Project Manager, plus project-based UI/UX Designer.
+HR/Payroll/Admin, QA/Automation Engineer, Project Manager, plus project-based UI/UX Designer.
 
 ### Timeline shape
 Month 1 Foundation (auth, multi-tenancy, single-state data model, AWS, e-sig vendor sandbox,
@@ -261,9 +259,10 @@ tracking; 3rd-party e-signature wired in; jurisdiction rules validated for the p
 Agent + Client apps; QA suite passing, pen-test findings remediated.
 
 ### Top risks
-1. Hiring six seniors fast enough to hit the 5-month window
+1. Hiring four seniors fast enough to hit the 5-month window
 2. E-sig vendor contracting delay blocking backend integration
 3. Testing compressed into the last two months
+4. Agent + Client native parity resting on one Flutter engineer, not two
 
 ### Dependency checkpoints owed by GTM/Compliance cofounders
 Final pilot state confirmed (end month 1); e-signature vendor selected/contracted (end month 1);
@@ -274,9 +273,8 @@ pilot brokerage identified/contracted (by month 3–4).
 ## Scenario C — Foundations-First (recommended)
 
 ### Objective
-The same pilot-ready product as Scenario B, with engineering foundations as the DevOps/Platform
-Engineer's required, checked-off week-1 deliverable, and QA starting alongside them instead of a
-month later.
+The same pilot-ready product as Scenario B, with engineering foundations as the tech lead's
+required, checked-off week-1 deliverable, and QA starting alongside them instead of a month later.
 
 ### The reasoning
 Hires the exact same roles as B, at the exact same cost. The difference is entirely sequencing and
@@ -284,17 +282,19 @@ discipline: QA starts month 1 not month 2, and foundations (CI/CD, IaC, security
 required in week 1, not built ad hoc alongside features.
 
 ### Timeline shape
-Month 1 splits into a parallel Foundations bar (the DevOps/Platform Engineer's required week-1
-deliverable) alongside pillar design led by the tech lead. Months 2–3 Core Build, Months 4–5 Test &
-Polish — same shape as B otherwise.
+Month 1 splits into a parallel Foundations bar — the tech lead's required week-1 deliverable,
+alongside the founder's architecture input — running with pillar design. Months 2–3 Core Build,
+Months 4–5 Test & Polish — same shape as B otherwise.
 
 ### Exit criteria
 Everything in B's exit criteria, plus a CI pipeline enforcing lint/type-check/tests/security
 scanning on every merge, infrastructure as code, and a written AI-usage policy.
 
 ### Top risks
-1. Review discipline eroding under deadline pressure
-2. E-sig vendor contracting delay (same as B)
+1. Foundations work competing for the tech lead's time against feature deadlines, with no dedicated
+   platform hire to absorb it
+2. Review discipline eroding under deadline pressure
+3. E-sig vendor contracting delay (same as B)
 
 ---
 
@@ -306,16 +306,16 @@ scanning on every merge, infrastructure as code, and a written AI-usage policy.
 | Money custody | Direct earnest-money custody (flagged high-risk) | None | None |
 | Pilot geography | 2–3 states | 1 state | 1 state |
 | Product focus | Full transaction lifecycle | Transitional Document + Merchant Integration | same |
-| Mobile | 2 Flutter engineers, all three | same | same |
+| Mobile | 1 Flutter engineer, all three (flagged risk) | same | same |
 | Founder's role | Hands-on | Non-coding | Non-coding |
-| DevOps/Platform | Dedicated FTE, ad hoc priority | same | Dedicated FTE, required week 1 |
+| DevOps/Platform | Founder, hands-on | Tech lead + founder, no dedicated hire | Tech lead + founder, required week 1 |
 | QA timing | Month 3 | Month 2 | Month 1, with foundations |
 | GTM / Compliance ownership | Other cofounders, all three | same | same |
 | Multi-tenancy | Row-level isolation from month 1, all three | same | same |
 | White-label | Architected for, not activated, all three | same | same |
-| New hires | 6 FTE + 1 project-based, all three (room for 2 more within 8–10) | same | same |
+| New hires | 4 FTE + 1 project-based, all three (3–4 more fit within 8–10 headroom, left open) | same | same |
 | Timeline | 6 months | 5 months | 5 months |
-| Est. build-team cost | ~$105,000 over 6 months | ~$89,725 over 5 months | ~$89,725 over 5 months |
+| Est. build-team cost | ~$89,050 over 6 months | ~$75,735 over 5 months | ~$75,735 over 5 months |
 
 ---
 
@@ -328,9 +328,9 @@ Months 1–2 Foundation → Months 3–4 Build → Months 5–6 Harden & Launch.
 Month 1 Foundation → Months 2–3 Core Build → Months 4–5 Test & Polish.
 
 ### Scenario C (5 months)
-Month 1 Foundations (tech lead + DevOps + HR/Admin land first; QA starts here, not month 2) in
-parallel with Pillar design (2nd Mobile Eng, QA, PM land; Designer engaged) → Months 2–3 Core Build
-→ Months 4–5 Test & Polish (same as B).
+Month 1 Foundations (tech lead + HR/Admin land first; QA starts here, not month 2) in parallel with
+Pillar design (QA, PM land; Designer engaged) → Months 2–3 Core Build → Months 4–5 Test & Polish
+(same as B).
 
 ---
 
@@ -339,10 +339,10 @@ parallel with Pillar design (2nd Mobile Eng, QA, PM land; Designer engaged) → 
 External, owed by other cofounders: pilot state confirmed (gates jurisdiction rules); e-signature
 vendor contracted (gates e-sig integration); pilot brokerage contracted (gates onboarding/go-live).
 
-Internal: in Scenario C, CI/CD + IaC + security baseline is the DevOps/Platform Engineer's required
-week-1 deliverable (same work, same owner in B, without the "required in week 1" priority);
-Transitional Document feeds Merchant Integration; QA + security review gate go/no-go together with
-onboarding readiness.
+Internal: in Scenario C, CI/CD + IaC + security baseline is the tech lead's required week-1
+deliverable (same work, same owner in B, without the "required in week 1" priority); Transitional
+Document feeds Merchant Integration; QA + security review gate go/no-go together with onboarding
+readiness.
 
 ---
 
@@ -350,9 +350,12 @@ onboarding readiness.
 
 ### The core idea
 AI coding assistance means a senior team covers more ground than the same size team could before —
-that's what made a lean team *viable*. It doesn't mean a dedicated platform owner or a second
-mobile engineer stop being real risk reduction; it means a lean team could survive without them.
-With budget headroom for 8–10 people, there's no reason to keep carrying that risk.
+that's what made a lean team *viable*. A tech lead with Claude, using well-reviewed Terraform/CI
+templates, can stand up and maintain solid infrastructure without a dedicated platform hire. One
+senior Flutter engineer, the same way, can cover Agent + Client native parity without a second.
+Budget headroom for 8–10 people exists, but it doesn't get spent just because it's there — both
+roles were tried on given the headroom and cut back out, because neither earned its seat on the
+merits, not because of cost.
 
 ### Already on the team
 You (hands-on in A, non-coding in B/C), FTE Backend Engineer, FTE Flutter Engineer — the two
@@ -360,27 +363,33 @@ developers already building today.
 
 ### Hiring plan — tiered, same across A, B, C
 
-**Tier 1 — Week 1:** Senior Backend Engineer #2 (tech lead — architecture, review, the highest-
-leverage hire); DevOps/Platform Engineer (CI/CD, IaC, security baseline as an actual job); HR/
+**Tier 1 — Week 1:** Senior Backend Engineer #2 (tech lead — architecture, review, and
+CI/CD/IaC/security baseline in week 1 via AI-assisted scaffolding; the highest-leverage hire); HR/
 Payroll/Admin (onboards everyone else joining).
 
-**Tier 2 — Weeks 2–4:** Second Mobile/Flutter Engineer (native parity no longer rests on one
-person); QA/Verification Engineer (starts as early as the scenario allows); UI/UX Designer
-(project-based, NPR 4,00,000, not FTE).
+**Tier 2 — Weeks 2–4:** QA/Verification Engineer (starts as early as the scenario allows); UI/UX
+Designer (project-based, NPR 4,00,000, not FTE).
 
-**Tier 3 — Month 2:** Project Manager (once there are 6+ builders and real dependency dates to
+**Tier 3 — Month 2:** Project Manager (once there are 5+ builders and real dependency dates to
 track).
 
-### 8 hired, room for up to 2 more
-6 new FTE + 2 existing = 8, the low end of the 8–10 headroom. Real, uncommitted headroom: a second
-backend engineer if Scenario A's 2–3-state jurisdiction workload needs it, or a security-focused
-engineer once real production traffic justifies it over a contract pen test.
+### 7 hired, headroom left fully open
+4 new FTE + 2 existing + 1 project-based designer = 7 people against a confirmed 8–10 budget
+headroom. That headroom stays unspent on purpose: neither DevOps/Platform nor a second mobile
+engineer earned a seat on their own merits. If a real need shows up — a second backend engineer for
+Scenario A's 2–3-state jurisdiction workload, a security engineer once there's production traffic
+to justify it — the room is there.
 
-### What's still not hired, and why
-- Compliance & Trust Operations Lead — not this team's job, in every scenario, not a budget call
-- A dedicated AI-tooling specialist — a practice, not a role, at this size
-- A dedicated security engineer as an FTE — contract a pen test, unless the headroom above is used here
-- Any GTM hire on the build side
+### What's not hired, and why
+- A dedicated DevOps/Platform Engineer — the tech lead, with AI-assisted IaC/CI scaffolding, covers
+  this at this team size. Not a budget call; revisit once there's real production traffic and
+  on-call load to justify a dedicated owner.
+- A second mobile engineer — one senior Flutter engineer with AI assistance covers Agent + Client
+  native parity. The tightest assumption in this plan, worth watching, but the right default bet.
+- Compliance & Trust Operations Lead — not this team's job, in every scenario, not a budget call.
+- A dedicated AI-tooling specialist — a practice, not a role, at this size.
+- A dedicated security engineer as an FTE — contract a pen test, unless the headroom above is used here.
+- Any GTM hire on the build side.
 
 ---
 
@@ -408,16 +417,15 @@ ecosystem); **Ruby/Rails** (a genuine CRUD-startup fit, smaller Nepal pool, slow
 **Recommendation: PostgreSQL, managed via RDS.** The product's actual shape — transactions,
 parties, documents, jurisdiction rules, and the commission ledger, all deeply related, plus real
 Broker/Admin reporting needs — is a relational problem. JSONB covers the parts that need schema
-flexibility (jurisdiction-specific fields, the Transitional Document's variable structure) without
-giving up relational integrity everywhere else; row-level security pairs directly with tenant
-isolation; RDS handles backups/patching/failover without a dedicated DBA.
+flexibility without giving up relational integrity elsewhere; row-level security pairs directly
+with tenant isolation; RDS handles backups/patching/failover without a dedicated DBA.
 
 Also considered: **DynamoDB** (scales horizontally with little ops effort, but forces awkward
 modeling for deeply relational data with many access patterns and painful ad hoc reporting — wrong
 shape for the system of record, though a legitimate secondary store later for something narrow like
 an activity/audit-event log); **MySQL via RDS** (a legitimate relational alternative, but weaker
 JSON/extensibility than Postgres with no offsetting advantage here); **self-hosted Postgres on EC2**
-(marginally cheaper, but backups/patching/failover become the DevOps engineer's manual burden for a
+(marginally cheaper, but backups/patching/failover become the tech lead's manual burden for a
 savings that isn't the actual constraint yet).
 
 ### Mobile
@@ -447,7 +455,7 @@ default. Concretely for Phase 1:
 | Networking | VPC, private subnets for DB and app, public ALB for API ingress — the database is never directly internet-reachable |
 | Secrets | Secrets Manager / Parameter Store |
 | Observability | CloudWatch for logs/metrics, plus a dedicated error tracker for application-level errors |
-| IaC | Terraform or AWS CDK from week 1, owned jointly by the founder and the DevOps/Platform Engineer |
+| IaC | Terraform or AWS CDK from week 1, owned jointly by the founder and the tech lead |
 
 Deliberately excluded from Phase 1: Kubernetes/EKS (real operational overhead a lean team doesn't
 need at this scale) and multi-region deployment (one region is enough for a US pilot).
@@ -455,18 +463,18 @@ need at this scale) and multi-region deployment (one region is enough for a US p
 ### How we build: AI-native with human-in-the-loop, everywhere
 Every developer has Claude coding access, in every scenario. **Safe to AI-generate with light
 review:** test scaffolding, CRUD boilerplate, UI screens matching the design system, documentation,
-migrations, refactors with full test coverage. **Always senior-authored or line-by-line
-human-verified:** jurisdiction rules logic, commission/payment math, e-signature webhook/callback
-handling, auth/permissions logic, the Transitional Document's gap-detection logic. Enforced by
-mandatory PR review (1 senior approval standard, 2 for the always-verified column) — "AI wrote it
-and it looked fine" is not a merge criterion.
+migrations following a known shape, refactors with full test coverage. **Always senior-authored or
+line-by-line human-verified:** jurisdiction rules logic, commission/payment math, e-signature
+webhook/callback handling, auth/permissions logic, the Transitional Document's gap-detection logic.
+Enforced by mandatory PR review (1 senior approval standard, 2 for the always-verified column) —
+"AI wrote it and it looked fine" is not a merge criterion.
 
 ---
 
 ## Cost
 
 Indicative planning figures, not a quote — verify current rates locally. Converted at roughly NPR
-133/USD. Team cost is identical across A, B, C (8 people); only timeline length and AWS differ.
+133/USD. Team cost is identical across A, B, C (7 people); only timeline length and AWS differ.
 
 ### Team — rate assumptions
 | Role | Status | NPR/month | USD/month |
@@ -474,50 +482,53 @@ Indicative planning figures, not a quote — verify current rates locally. Conve
 | Backend Engineer | Existing FTE | 180,000 | ~1,350 |
 | Flutter Engineer | Existing FTE | 180,000 | ~1,350 |
 | Senior Backend Engineer #2 — tech lead | New FTE | 200,000 | ~1,500 |
-| DevOps/Platform Engineer | New FTE | 180,000 | ~1,350 |
-| Second Mobile/Flutter Engineer | New FTE | 180,000 | ~1,350 |
 | QA/Automation Engineer | New FTE | 140,000 | ~1,050 |
 | Project Manager | New FTE | 160,000 | ~1,200 |
 | HR/Payroll/Admin *(generalist rate)* | New FTE | 90,000 | ~675 |
-| **Gross FTE payroll, 8 people** | | **1,310,000** | **~9,850** |
+| **Gross FTE payroll, 7 people** | | **1,130,000** | **~8,495** |
 
 UI/UX Designer: not FTE — project-based, flat NPR 4,00,000, priced as a one-time cost.
 
 ### Team monthly burn (identical in A, B, C)
-Payroll 1,310,000 + statutory/benefits ~18% (235,800) + office (9 seats @ 12,000 = 108,000) +
-contingency 10% (165,380) = **≈ NPR 1,819,180/month (~$13,680)**.
+Payroll 1,130,000 + statutory/benefits ~18% (203,400) + office (8 seats @ 12,000 = 96,000) +
+contingency 10% (142,940) = **≈ NPR 1,572,340/month (~$11,820)**.
 
 ### Infrastructure (AWS) — separated
 B, C: ~$400/month (staging+prod, small RDS, S3/CDN, backups, Secrets Manager, CloudWatch — 1 state,
 3rd-party e-sig keeps this light). A: ~$500/month (same, plus in-house e-sig storage/audit-trail
-and 2–3 states' jurisdiction data). AWS bills in USD regardless of team location.
+and 2–3 states' jurisdiction data). AWS bills in USD regardless of team location. See the reference
+architecture above.
 
 ### Other Phase 1 costs
-AI coding tool subscriptions, 5 technical seats (~$500/mo); PM/comms tools (~$70/mo); error
-tracking/monitoring (~$20/mo); Apple Developer Program ($99/yr); Google Play registration ($25
-once); domain+SSL (~$20/yr, SSL via ACM is free). Recurring monthly total ~$590 (~NPR 78,470).
+AI coding tool subscriptions, 4 technical seats — 2 backend, 2 mobile (~$400/mo); PM/comms tools
+(~$70/mo); error tracking/monitoring (~$20/mo); Apple Developer Program ($99/yr); Google Play
+registration ($25 once); domain+SSL (~$20/yr, SSL via ACM is free). Recurring monthly total ~$490
+(~NPR 65,170).
 
 ### One-time setup (identical in A, B, C)
 | | NPR |
 |---|---|
-| Hardware, standard (laptop 200,000 + monitor + dongle) × 5 new hires | 1,150,000 |
-| Hardware, premium — 2nd Mobile Engineer (Mac for iOS builds: 300,000 laptop + accessories) | 330,000 |
-| Test device lab (1 iPhone + 2 Android phones) | 180,000 |
+| Hardware, standard (laptop 200,000 + monitor + dongle) × 4 new hires (tech lead, QA, PM, HR/Admin) | 920,000 |
+| Test device lab (1 iPhone + 2 Android phones, for the existing mobile engineer's testing use) | 180,000 |
 | UI/UX Designer project fee | 400,000 |
 | Office inverter/UPS (load-shedding backup) | 100,000 |
 | App Store + Play Store + domain (first-year fees) | 19,150 (~$144) |
-| **Total one-time setup** | **≈ 2,179,150 (~$16,385)** |
+| **Total one-time setup** | **≈ 1,619,150 (~$12,175)** |
+
+Assumes the 2 existing developers already have suitable machines, including the Flutter engineer's
+Mac for iOS builds.
 
 ### Total Phase 1, by scenario
-- **A (6 months):** (1,819,180 + 66,500 + 78,470) × 6 = 11,784,900, + one-time 2,179,150 =
-  **≈ NPR 13,964,050 (~$105,000)**
-- **B (5 months):** (1,819,180 + 53,200 + 78,470) × 5 = 9,754,250, + one-time 2,179,150 =
-  **≈ NPR 11,933,400 (~$89,725)**
-- **C (5 months):** identical to B — **≈ NPR 11,933,400 (~$89,725)**
+- **A (6 months):** (1,572,340 + 66,500 + 65,170) × 6 = 10,224,060, + one-time 1,619,150 =
+  **≈ NPR 11,843,210 (~$89,050)**
+- **B (5 months):** (1,572,340 + 53,200 + 65,170) × 5 = 8,453,550, + one-time 1,619,150 =
+  **≈ NPR 10,072,700 (~$75,735)**
+- **C (5 months):** identical to B — **≈ NPR 10,072,700 (~$75,735)**
 
 **Excluded from every figure:** founder compensation, GTM and Compliance costs (owned by other
-cofounders in all three, including A), e-signature vendor per-envelope fees. 2 more people fit
-within the stated 8–10 headroom without changing this budget's order of magnitude.
+cofounders in all three, including A), e-signature vendor per-envelope fees. 3–4 more people fit
+within the stated 8–10 headroom without changing this budget's order of magnitude, left open rather
+than pre-committed to a role.
 
 ---
 
