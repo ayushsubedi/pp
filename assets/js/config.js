@@ -4,5 +4,5 @@
 // Can also be overridden per-visit with a URL param: ?pricing=0 or ?pricing=1
 // (useful for previewing either version without editing this file).
 window.SITE_CONFIG = {
-  showPricing: true
+  showPricing: false
 };

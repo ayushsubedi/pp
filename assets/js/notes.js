@@ -15,7 +15,7 @@ function runMermaidIn(root) {
 
 document.addEventListener("DOMContentLoaded", function () {
   if (window.mermaid) {
-    mermaid.initialize({ startOnLoad: false, theme: "neutral" });
+    mermaid.initialize({ startOnLoad: false, theme: "neutral", gantt: { useWidth: 1400, barHeight: 26, barGap: 6, topPadding: 50, leftPadding: 200 } });
   }
 
   document.querySelectorAll(".notes-tabs").forEach(function (tabGroup) {

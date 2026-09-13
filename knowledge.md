@@ -207,11 +207,13 @@ hire), HR/Payroll/Admin, QA/Automation Engineer, Project Manager, plus UI/UX Des
 engineer.
 
 ### Timeline shape
-Months 1–2 Foundation (CI/CD, IaC, security baseline required week 1; QA starts immediately, not
-month 3; auth, multi-tenancy, AWS prod; e-signature engine begins; jurisdiction rules design;
-hiring ramp) → Months 3–4 Build (e-sig legal review, jurisdiction rules + forms, escrow-partner
-sandbox, marketplace, native mobile build across all 5 portals) → Months 5–6 Harden & Launch (pen
-test, counsel sign-off, app store, pilot onboarding).
+Months 1–2 Foundation & Scaffolding (CI/CD, IaC, security baseline required week 1; repo and app
+scaffolding for all 5 portals; QA starts immediately, not month 3; auth, multi-tenancy, AWS prod;
+e-signature engine begins; jurisdiction rules design; POC-level work on both pillars starts here
+too, not after foundations are "done"; hiring ramp) → Months 3–4 Build (e-sig legal review,
+jurisdiction rules + forms, escrow-partner sandbox, both pillars go from POC to feature-complete,
+native mobile build across all 5 portals) → Months 5–6 Harden & Launch (pen test, counsel sign-off,
+app store, pilot onboarding).
 
 ### Exit criteria
 10–20 real transactions closed end-to-end; e-signature engine approved by outside counsel;
@@ -258,10 +260,12 @@ lead), HR/Payroll/Admin, QA/Automation Engineer, Project Manager, plus project-b
 Designer.
 
 ### Timeline shape
-Month 1 Foundation (CI/CD, IaC, security baseline required week 1; QA starts immediately, not
-month 2; auth, multi-tenancy, single-state data model, AWS; e-sig vendor sandbox; jurisdiction
-rules for the one state) → Months 2–3 Core Build (both pillars, e-sig wired in, native mobile build
-across all 5 portals, QA continuous throughout) → Months 4–5 Test & Polish (regression + pen test,
+Month 1 Foundation & Scaffolding (CI/CD, IaC, security baseline required week 1; repo and app
+scaffolding for all 5 portals; QA starts immediately, not month 2; auth, multi-tenancy,
+single-state data model, AWS; e-sig vendor sandbox; jurisdiction rules for the one state; POCs for
+both pillars start here too, not after foundations are "done") → Months 2–3 Core Build (POCs go
+feature-complete, e-sig wired in, native mobile build across all 5 portals, QA continuous
+throughout) → Months 4–5 Test & Polish (regression + pen test,
 app store, UX polish, go/no-go).
 
 ### Exit criteria
@@ -306,11 +310,13 @@ pilot brokerage identified/contracted (by month 3–4).
 ## Timeline
 
 ### Full Pilot (6 months)
-Months 1–2 Foundation (foundations required week 1, QA from month 1) → Months 3–4 Build → Months
-5–6 Harden & Launch.
+Months 1–2 Foundation & Scaffolding (foundations required week 1, QA from month 1, POC-level work
+on both pillars starts here too) → Months 3–4 Build (POCs go feature-complete) → Months 5–6 Harden
+& Launch.
 
 ### Lean Pilot (5 months)
-Month 1 Foundation (foundations required week 1, QA from month 1) → Months 2–3 Core Build → Months
+Month 1 Foundation & Scaffolding (foundations required week 1, QA from month 1, POC-level work on
+both pillars starts here too) → Months 2–3 Core Build (POCs go feature-complete) → Months
 4–5 Test & Polish.
 
 ---

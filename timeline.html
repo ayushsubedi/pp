@@ -51,21 +51,25 @@
 gantt
     title Full Pilot (6 months)
     dateFormat  YYYY-MM-DD
-    axisFormat  %b
-    section Foundation (Month 1-2, foundations required week 1)
-    CI-CD, IaC, security baseline (week 1)  :a1, 2026-01-01, 14d
+    axisFormat  M%-m
+    section Foundation & Scaffolding
+    CI-CD, IaC, security baseline  :a1, 2026-01-01, 20d
+    App scaffolding, all 5 portals :a1s, 2026-01-01, 25d
     QA starts immediately, not month 3      :a1b, 2026-01-01, 60d
     Auth, multi-tenancy, AWS prod            :a1c, 2026-01-01, 60d
     E-signature engine (in-house) begins     :a2, 2026-01-15, 90d
     Jurisdiction rules design (2-3 states)   :a3, 2026-01-01, 60d
+    Transitional Document POC                :a1p, 2026-01-15, 45d
+    Merchant Integration POC                 :a1q, 2026-01-15, 45d
     Hiring ramp (4 FTE hires; Designer engaged project-based) :a4, 2026-01-01, 30d
-    section Build (Month 3-4)
+    section Build
     E-sig legal review                       :a5, after a2, 45d
     Jurisdiction rules + forms built         :a6, after a3, 60d
     Escrow-partner sandbox integration       :a7, 2026-03-01, 60d
-    Marketplace productionized               :a8, 2026-03-01, 60d
+    Transitional Document feature-complete   :a8a, after a1p, 60d
+    Merchant Integration feature-complete    :a8b, after a1q, 60d
     Native mobile build, all 5 portals       :a9, 2026-03-01, 60d
-    section Harden and Launch (Month 5-6)
+    section Harden & Launch
     Pen test and remediation                 :a10, 2026-05-01, 30d
     Counsel sign-off                         :a11, 2026-05-01, 30d
     App store submission                     :a12, 2026-05-15, 30d
@@ -80,26 +84,29 @@ gantt
 gantt
     title Lean Pilot (5 months)
     dateFormat  YYYY-MM-DD
-    axisFormat  %b
-    section Foundation (Month 1, foundations required week 1)
-    Tech lead + HR/Admin land first           :b0, 2026-01-01, 14d
-    CI-CD, IaC, security baseline (week 1)    :b1, 2026-01-01, 14d
+    axisFormat  M%-m
+    section Foundation & Scaffolding
+    Tech lead + HR/Admin join      :b0, 2026-01-01, 20d
+    CI-CD, IaC, security baseline   :b1, 2026-01-01, 20d
+    App scaffolding, all 5 portals  :b1s, 2026-01-01, 25d
     QA starts immediately, not month 2        :b1b, 2026-01-01, 30d
-    Auth, multi-tenancy, single-state data model, AWS :b1c, 2026-01-01, 30d
+    Auth + multi-tenancy + AWS       :b1c, 2026-01-01, 30d
     E-sig vendor sandbox wired up             :b2, 2026-01-01, 30d
     Jurisdiction rules (1 state) design       :b3, 2026-01-01, 30d
+    Transitional Document POC                 :b1p, 2026-01-10, 25d
+    Merchant Integration POC                  :b1q, 2026-01-10, 25d
     QA, PM land; Designer engaged             :b4, 2026-01-01, 30d
-    section Core Build (Month 2-3)
-    Transitional Document build               :b5, 2026-02-01, 60d
-    Merchant Integration build                :b6, 2026-02-01, 60d
+    section Core Build
+    Transitional Document feature-complete    :b5, after b1p, 45d
+    Merchant Integration feature-complete     :b6, after b1q, 45d
     E-sig wired into transaction flow         :b7, 2026-02-01, 30d
     Native mobile build, all 5 portals        :b8, 2026-02-01, 60d
-    QA automation (continuous from month 1)   :b9, 2026-02-01, 90d
-    section Test and Polish (Month 4-5)
+    QA automation (continuous from month 1)   :b9, 2026-01-01, 120d
+    section Test & Polish
     Regression + pen test                     :b10, 2026-04-01, 30d
     App store submission                      :b11, 2026-04-01, 30d
     UX polish pass                            :b12, 2026-05-01, 30d
-    Pilot readiness go/no-go                  :b13, 2026-05-25, 6d
+    Go/no-go                        :b13, 2026-05-20, 11d
         </pre>
       </div>
     </section>
